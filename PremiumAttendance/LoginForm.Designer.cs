@@ -30,6 +30,7 @@
         {
             this.loginTextBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.passwordTextBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.singInBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.SuspendLayout();
             // 
             // loginTextBox
@@ -66,6 +67,28 @@
             this.passwordTextBox.Enter += new System.EventHandler(this.passwordTextBox_Enter);
             this.passwordTextBox.Leave += new System.EventHandler(this.passwordTextBox_Leave);
             // 
+            // singInBtn
+            // 
+            this.singInBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.singInBtn.Location = new System.Drawing.Point(292, 357);
+            this.singInBtn.Name = "singInBtn";
+            this.singInBtn.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.singInBtn.Size = new System.Drawing.Size(200, 53);
+            this.singInBtn.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.singInBtn.StateCommon.Border.Rounding = 10;
+            this.singInBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.singInBtn.StatePressed.Back.Color1 = System.Drawing.Color.Silver;
+            this.singInBtn.StatePressed.Back.Color2 = System.Drawing.Color.Silver;
+            this.singInBtn.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.singInBtn.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.singInBtn.TabIndex = 2;
+            this.singInBtn.Values.Text = "Sign in";
+            this.singInBtn.Click += new System.EventHandler(this.singInBtn_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -73,6 +96,7 @@
             this.BackgroundImage = global::PremiumAttendance.Properties.Resources.Untitled_design;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(782, 503);
+            this.Controls.Add(this.singInBtn);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.loginTextBox);
             this.DoubleBuffered = true;
@@ -90,6 +114,7 @@
 
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox loginTextBox;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox passwordTextBox;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton singInBtn;
     }
 }
 

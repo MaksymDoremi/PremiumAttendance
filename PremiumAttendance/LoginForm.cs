@@ -58,6 +58,7 @@ namespace PremiumAttendance
             {
                 this.passwordTextBox.StateCommon.Content.Color1 = System.Drawing.Color.Black;
                 this.passwordTextBox.Text = "";
+                this.passwordTextBox.PasswordChar = '*';
             }
         }
 
@@ -72,6 +73,7 @@ namespace PremiumAttendance
             {
                 this.passwordTextBox.StateCommon.Content.Color1 = System.Drawing.Color.Gray;
                 this.passwordTextBox.Text = "Password";
+                this.passwordTextBox.PasswordChar = '\0';
             }
         }
 
@@ -88,10 +90,20 @@ namespace PremiumAttendance
             // if not null or empty => procees to login
             if (!string.IsNullOrWhiteSpace(username) && !string.IsNullOrWhiteSpace(password) )
             {
-                
+                //todo
             }
 
 
+        }
+
+        private void passwordTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = (e.KeyChar == (char)Keys.Space);
+        }
+
+        private void loginTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = (e.KeyChar == (char)Keys.Space);
         }
     }
 }

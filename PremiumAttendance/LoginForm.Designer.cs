@@ -48,6 +48,7 @@
             this.loginTextBox.TabIndex = 0;
             this.loginTextBox.Text = "Login";
             this.loginTextBox.Enter += new System.EventHandler(this.loginTextBox_Enter);
+            this.loginTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.loginTextBox_KeyPress);
             this.loginTextBox.Leave += new System.EventHandler(this.loginTextBox_Leave);
             // 
             // passwordTextBox
@@ -65,6 +66,7 @@
             this.passwordTextBox.TabIndex = 1;
             this.passwordTextBox.Text = "Password";
             this.passwordTextBox.Enter += new System.EventHandler(this.passwordTextBox_Enter);
+            this.passwordTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.passwordTextBox_KeyPress);
             this.passwordTextBox.Leave += new System.EventHandler(this.passwordTextBox_Leave);
             // 
             // singInBtn

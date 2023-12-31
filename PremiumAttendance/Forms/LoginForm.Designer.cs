@@ -1,4 +1,6 @@
-﻿namespace PremiumAttendance
+﻿using System.Diagnostics.Tracing;
+
+namespace PremiumAttendance
 {
     partial class LoginForm
     {

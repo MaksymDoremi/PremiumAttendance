@@ -29,25 +29,32 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoardForm));
             this.sidebarPanel = new System.Windows.Forms.Panel();
-            this.upperPanel = new System.Windows.Forms.Panel();
-            this.dateTimeLabel = new System.Windows.Forms.Label();
-            this.timer = new System.Windows.Forms.Timer(this.components);
-            this.logoutBtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.attendanceBtn = new System.Windows.Forms.Button();
             this.employeesBtn = new System.Windows.Forms.Button();
             this.myDashboardBtn = new System.Windows.Forms.Button();
+            this.logoutBtn = new System.Windows.Forms.Button();
             this.notificationsBtn = new System.Windows.Forms.Button();
             this.myAccountBtn = new System.Windows.Forms.Button();
             this.homepageBtn = new System.Windows.Forms.Button();
+            this.upperPanel = new System.Windows.Forms.Panel();
+            this.dashboardEmployeeAvatar = new System.Windows.Forms.PictureBox();
+            this.dashboardEmployeeNameLabel = new System.Windows.Forms.Label();
+            this.dateTimeLabel = new System.Windows.Forms.Label();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.childFormPanel = new System.Windows.Forms.Panel();
             this.sidebarPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.upperPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dashboardEmployeeAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // sidebarPanel
             // 
             this.sidebarPanel.BackColor = System.Drawing.Color.SlateGray;
+            this.sidebarPanel.Controls.Add(this.pictureBox1);
             this.sidebarPanel.Controls.Add(this.attendanceBtn);
             this.sidebarPanel.Controls.Add(this.employeesBtn);
             this.sidebarPanel.Controls.Add(this.myDashboardBtn);
@@ -60,45 +67,20 @@
             this.sidebarPanel.Size = new System.Drawing.Size(290, 850);
             this.sidebarPanel.TabIndex = 0;
             // 
-            // upperPanel
+            // pictureBox1
             // 
-            this.upperPanel.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.upperPanel.Controls.Add(this.dateTimeLabel);
-            this.upperPanel.Location = new System.Drawing.Point(290, 0);
-            this.upperPanel.Name = "upperPanel";
-            this.upperPanel.Size = new System.Drawing.Size(1192, 100);
-            this.upperPanel.TabIndex = 1;
-            // 
-            // dateTimeLabel
-            // 
-            this.dateTimeLabel.AutoSize = true;
-            this.dateTimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateTimeLabel.Location = new System.Drawing.Point(26, 34);
-            this.dateTimeLabel.Name = "dateTimeLabel";
-            this.dateTimeLabel.Size = new System.Drawing.Size(92, 32);
-            this.dateTimeLabel.TabIndex = 0;
-            this.dateTimeLabel.Text = "label1";
-            // 
-            // timer
-            // 
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // logoutBtn
-            // 
-            this.logoutBtn.BackColor = System.Drawing.Color.Silver;
-            this.logoutBtn.FlatAppearance.BorderSize = 0;
-            this.logoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logoutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.logoutBtn.Location = new System.Drawing.Point(0, 783);
-            this.logoutBtn.Name = "logoutBtn";
-            this.logoutBtn.Size = new System.Drawing.Size(290, 63);
-            this.logoutBtn.TabIndex = 3;
-            this.logoutBtn.Text = "Logout";
-            this.logoutBtn.UseVisualStyleBackColor = false;
-            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
+            this.pictureBox1.Image = global::PremiumAttendance.Properties.Resources.logo;
+            this.pictureBox1.InitialImage = global::PremiumAttendance.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(10, 32);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(272, 132);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // attendanceBtn
             // 
+            this.attendanceBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.attendanceBtn.FlatAppearance.BorderSize = 0;
             this.attendanceBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.attendanceBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -115,6 +97,7 @@
             // 
             // employeesBtn
             // 
+            this.employeesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.employeesBtn.FlatAppearance.BorderSize = 0;
             this.employeesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.employeesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -132,12 +115,13 @@
             // 
             // myDashboardBtn
             // 
+            this.myDashboardBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.myDashboardBtn.FlatAppearance.BorderSize = 0;
             this.myDashboardBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.myDashboardBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.myDashboardBtn.Image = global::PremiumAttendance.Properties.Resources.home_FILL0_wght400_GRAD0_opsz24;
             this.myDashboardBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.myDashboardBtn.Location = new System.Drawing.Point(0, 130);
+            this.myDashboardBtn.Location = new System.Drawing.Point(0, 180);
             this.myDashboardBtn.Name = "myDashboardBtn";
             this.myDashboardBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.myDashboardBtn.Size = new System.Drawing.Size(290, 63);
@@ -147,8 +131,24 @@
             this.myDashboardBtn.Visible = false;
             this.myDashboardBtn.Click += new System.EventHandler(this.myDashboardBtn_Click);
             // 
+            // logoutBtn
+            // 
+            this.logoutBtn.BackColor = System.Drawing.Color.Silver;
+            this.logoutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logoutBtn.FlatAppearance.BorderSize = 0;
+            this.logoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logoutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.logoutBtn.Location = new System.Drawing.Point(0, 783);
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.Size = new System.Drawing.Size(290, 63);
+            this.logoutBtn.TabIndex = 3;
+            this.logoutBtn.Text = "Logout";
+            this.logoutBtn.UseVisualStyleBackColor = false;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
+            // 
             // notificationsBtn
             // 
+            this.notificationsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.notificationsBtn.FlatAppearance.BorderSize = 0;
             this.notificationsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.notificationsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -165,6 +165,7 @@
             // 
             // myAccountBtn
             // 
+            this.myAccountBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.myAccountBtn.FlatAppearance.BorderSize = 0;
             this.myAccountBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.myAccountBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -181,6 +182,7 @@
             // 
             // homepageBtn
             // 
+            this.homepageBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.homepageBtn.FlatAppearance.BorderSize = 0;
             this.homepageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.homepageBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -195,6 +197,50 @@
             this.homepageBtn.UseVisualStyleBackColor = true;
             this.homepageBtn.Visible = false;
             this.homepageBtn.Click += new System.EventHandler(this.homepageBtn_Click);
+            // 
+            // upperPanel
+            // 
+            this.upperPanel.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.upperPanel.Controls.Add(this.dashboardEmployeeAvatar);
+            this.upperPanel.Controls.Add(this.dashboardEmployeeNameLabel);
+            this.upperPanel.Controls.Add(this.dateTimeLabel);
+            this.upperPanel.Location = new System.Drawing.Point(290, 0);
+            this.upperPanel.Name = "upperPanel";
+            this.upperPanel.Size = new System.Drawing.Size(1192, 100);
+            this.upperPanel.TabIndex = 1;
+            // 
+            // dashboardEmployeeAvatar
+            // 
+            this.dashboardEmployeeAvatar.Location = new System.Drawing.Point(760, 12);
+            this.dashboardEmployeeAvatar.Name = "dashboardEmployeeAvatar";
+            this.dashboardEmployeeAvatar.Size = new System.Drawing.Size(100, 77);
+            this.dashboardEmployeeAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.dashboardEmployeeAvatar.TabIndex = 2;
+            this.dashboardEmployeeAvatar.TabStop = false;
+            // 
+            // dashboardEmployeeNameLabel
+            // 
+            this.dashboardEmployeeNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dashboardEmployeeNameLabel.Location = new System.Drawing.Point(866, 9);
+            this.dashboardEmployeeNameLabel.Name = "dashboardEmployeeNameLabel";
+            this.dashboardEmployeeNameLabel.Size = new System.Drawing.Size(314, 80);
+            this.dashboardEmployeeNameLabel.TabIndex = 1;
+            this.dashboardEmployeeNameLabel.Text = "name surname";
+            this.dashboardEmployeeNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // dateTimeLabel
+            // 
+            this.dateTimeLabel.AutoSize = true;
+            this.dateTimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dateTimeLabel.Location = new System.Drawing.Point(26, 34);
+            this.dateTimeLabel.Name = "dateTimeLabel";
+            this.dateTimeLabel.Size = new System.Drawing.Size(92, 32);
+            this.dateTimeLabel.TabIndex = 0;
+            this.dateTimeLabel.Text = "label1";
+            // 
+            // timer
+            // 
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // childFormPanel
             // 
@@ -213,14 +259,17 @@
             this.Controls.Add(this.upperPanel);
             this.Controls.Add(this.sidebarPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "DashBoardForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DashBoardForm";
+            this.Text = "Premium Attendance";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DashBoardForm_FormClosed);
             this.sidebarPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.upperPanel.ResumeLayout(false);
             this.upperPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dashboardEmployeeAvatar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -239,5 +288,8 @@
         private System.Windows.Forms.Button employeesBtn;
         private System.Windows.Forms.Button attendanceBtn;
         private System.Windows.Forms.Panel childFormPanel;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox dashboardEmployeeAvatar;
+        private System.Windows.Forms.Label dashboardEmployeeNameLabel;
     }
 }

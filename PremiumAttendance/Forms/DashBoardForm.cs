@@ -71,6 +71,11 @@ namespace PremiumAttendance.Forms
                 }
                 myDashboardBtn_Click(this.myDashboardBtn, null);
             }
+            //photo
+            this.dashboardEmployeeAvatar.Image = Program.ConvertByteArrayToImage(currentUser.Photo);
+
+            //homepage label with user's name
+            this.dashboardEmployeeNameLabel.Text = currentUser.Name + " " + currentUser.Surname;
         }
 
         private struct RGBColors
@@ -146,7 +151,7 @@ namespace PremiumAttendance.Forms
         private void myAccountBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.activeColor);
-            OpenChildForm(new MyAccountForm());
+            OpenChildForm(new MyAccountForm(currentUser));
         }
 
         private void notificationsBtn_Click(object sender, EventArgs e)

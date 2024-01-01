@@ -30,6 +30,7 @@ namespace PremiumAttendance
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.loginTextBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.passwordTextBox = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.singInBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -105,10 +106,11 @@ namespace PremiumAttendance
             this.Controls.Add(this.loginTextBox);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
+            this.Text = "Premium Attendance";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

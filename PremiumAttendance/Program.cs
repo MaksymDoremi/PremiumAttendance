@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -38,6 +40,47 @@ namespace PremiumAttendance
             }
 
             return hash;
+        }
+
+        /// <summary>
+        /// Takes Image and converts to byte[]
+        /// </summary>
+        /// <param name="imageIn"></param>
+        /// <returns></returns>
+        public static byte[] ImageToByteArray(Image imageIn)
+        {
+            //ImageConverter converter = new ImageConverter();
+
+            //return (byte[])converter.ConvertTo(imageIn, typeof(byte[]));
+            if (imageIn == null)
+            {
+                return null;
+            }
+
+            using (var ms = new MemoryStream())
+            {
+                //imageIn.Save(ms, imageIn.RawFormat);
+                (new Bitmap(imageIn)).Save(ms, imageIn.RawFormat);
+                return ms.ToArray();
+            }
+
+        }
+        /// <summary>
+        /// Takes byte[] and converts to Image
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public static Image ConvertByteArrayToImage(byte[] data)
+        {
+            if (data != null)
+            {
+                using (MemoryStream ms = new MemoryStream(data))
+                {
+                    return Image.FromStream(ms);
+                }
+            }
+            return null;
+
         }
     }
 }

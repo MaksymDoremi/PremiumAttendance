@@ -31,6 +31,10 @@ create table Employee
 	[Phone] varchar(30) null DEFAULT null
 );
 
+insert into Employee(Employee_Role_ID,[Name],[Surname], [Login], [Password])
+-- password = 123
+values(1,'Maksym','Kintor','admin', '6A2DAF302F70D5F0E24F699FA7F09F408514BE8186F49328BFFF36AEEDB2B5C1'),
+(2,'Maksym','Kintor Pracovni','employee', '6A2DAF302F70D5F0E24F699FA7F09F408514BE8186F49328BFFF36AEEDB2B5C1');
 /* Create a filtered index on the colum RFID_Tag */
 CREATE UNIQUE INDEX IX_UsersRFIDTag_NotNull
     ON Employee(RFID_Tag) WHERE RFID_Tag IS NOT NULL;
@@ -101,3 +105,5 @@ end catch;
 go
 
 commit transaction;
+
+select Employee.ID, Employee.RFID_Tag, Employee_Role.Role_name, Employee.Login, Employee.Name, Employee.Surname, Employee.Photo, Employee.Email, Employee.Phone from Employee inner join Employee_Role on Employee.Employee_Role_ID = Employee_Role.ID where Login='admin'

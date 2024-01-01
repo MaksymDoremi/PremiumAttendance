@@ -1,4 +1,6 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
+using PremiumAttendance.Forms;
+using PremiumAttendance.Objects;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +10,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,12 +18,26 @@ namespace PremiumAttendance
 {
     public partial class LoginForm : Form
     {
-        
+        private Employee currentEmployee;
+        private Thread rfidThread;
         public LoginForm()
         {
-            
+
             InitializeComponent();
-            
+            //start rfid thread
+            try
+            {
+                RFID r = new RFID();
+
+                rfidThread = new Thread(r.ReadTag);
+                rfidThread.Start();
+            }
+            catch (Exception ex)
+            {
+                //ignore error
+                //MessageBox.Show("RFID can't be opened");
+            }
+
         }
 
         /// <summary>
@@ -93,13 +110,20 @@ namespace PremiumAttendance
             string password = this.passwordTextBox.Text;
 
             // if not null or empty => procees to login
-            if (!string.IsNullOrWhiteSpace(username) && !string.IsNullOrWhiteSpace(password) 
+            if (!string.IsNullOrWhiteSpace(username) && !string.IsNullOrWhiteSpace(password)
                 && username != "Login" && password != "Password")
             {
 
+                BusinessLogicLayer bll = new BusinessLogicLayer();
+                
+                if (bll.Login(username, Program.ComputeSHA256(password)))
+                {
+                    currentEmployee = bll.GetCurrentUser(username);
+                    DashBoardForm form = new DashBoardForm(this, currentEmployee, ref rfidThread);
+                    form.Show();
+                    this.Hide();
+                }
 
-                Console.WriteLine(username);
-                Console.WriteLine(password);
 
             }
         }
@@ -114,5 +138,9 @@ namespace PremiumAttendance
             e.Handled = (e.KeyChar == (char)Keys.Space);
         }
 
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

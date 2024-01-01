@@ -14,7 +14,7 @@ namespace PremiumAttendance.DB
 
         private static SqlConnection _connection = null;
         private static readonly object _lock = new object();
-        public static SqlConnection GetConnection(string value)
+        public static SqlConnection GetConnection()
         {
             if (_connection == null)
             {

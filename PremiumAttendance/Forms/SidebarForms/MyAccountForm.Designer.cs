@@ -157,6 +157,7 @@
             this.changeAccountInfoBtn.TabIndex = 23;
             this.changeAccountInfoBtn.Text = "Customize Account";
             this.changeAccountInfoBtn.UseVisualStyleBackColor = true;
+            this.changeAccountInfoBtn.Click += new System.EventHandler(this.changeAccountInfoBtn_Click);
             // 
             // changePasswordBtn
             // 
@@ -167,6 +168,7 @@
             this.changePasswordBtn.TabIndex = 22;
             this.changePasswordBtn.Text = "Change Password";
             this.changePasswordBtn.UseVisualStyleBackColor = true;
+            this.changePasswordBtn.Click += new System.EventHandler(this.changePasswordBtn_Click);
             // 
             // MyAccountForm
             // 

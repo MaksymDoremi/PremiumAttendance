@@ -18,14 +18,14 @@
     AddEmployeeForm
     
 ### Main forms to develop
-    LoginForm
+    ✅LoginForm
     DashboardForm
 
 ### Sidebar forms to develop
     HomepageForm
     MyDashboardForm
     NotificationForm
-    MyAccountForm
+    ✅MyAccountForm
     EmployeesForm
     AttendanceForm
     ReportForm
@@ -34,7 +34,7 @@
     MyDayForm
     AttendanceDetailsForm
     NotificationDetailsForm
-    CustomizeAccountForm
+    ✅CustomizeAccountForm
     ChangePasswordForm
     AddEmployeeForm
 

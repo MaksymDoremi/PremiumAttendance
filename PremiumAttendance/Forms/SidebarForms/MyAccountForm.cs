@@ -1,4 +1,5 @@
-﻿using PremiumAttendance.Objects;
+﻿using PremiumAttendance.Forms.SubForms;
+using PremiumAttendance.Objects;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,13 +15,15 @@ namespace PremiumAttendance.Forms.SidebarForms
     public partial class MyAccountForm : Form
     {
         private Employee currentUser;
+        private DashBoardForm dashboardForm;
         private BusinessLogicLayer bll;
-        public MyAccountForm(Employee currentUser)
+        public MyAccountForm(DashBoardForm dashboardForm, Employee currentUser)
         {
             InitializeComponent();
             bll = new BusinessLogicLayer();
 
             this.currentUser = currentUser;
+            this.dashboardForm = dashboardForm;
             InitItems();
         }
 
@@ -44,6 +47,17 @@ namespace PremiumAttendance.Forms.SidebarForms
 
             //LOAD PHONE
             this.actualPhoneFromDB.Text = currentUser.Phone;
+
+        }
+
+        private void changeAccountInfoBtn_Click(object sender, EventArgs e)
+        {
+            CustomizeAccountForm form = new CustomizeAccountForm();
+            this.dashboardForm.OpenChildFormOverChildForm(form);
+        }
+
+        private void changePasswordBtn_Click(object sender, EventArgs e)
+        {
 
         }
     }

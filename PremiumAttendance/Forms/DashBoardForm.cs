@@ -31,7 +31,7 @@ namespace PremiumAttendance.Forms
             InitializeComponent();
 
             //load home page
-            
+
 
             this.currentUser = currentUser;
             InitItems();
@@ -49,10 +49,10 @@ namespace PremiumAttendance.Forms
             if (currentUser.Role == "Administrator")
             {
                 int i = 0;
-                foreach (Button btn in administratorBtns) 
+                foreach (Button btn in administratorBtns)
                 {
                     btn.Visible = true;
-                    btn.Location = new System.Drawing.Point(0, 180+i*(10+btn.Size.Height));
+                    btn.Location = new System.Drawing.Point(0, 180 + i * (10 + btn.Size.Height));
                     i++;
                 }
 
@@ -126,6 +126,17 @@ namespace PremiumAttendance.Forms
             childForm.BringToFront();
             childForm.Show();
         }
+
+        public void OpenChildFormOverChildForm(Form childForm)
+        {
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            childFormPanel.Controls.Add(childForm);
+            childFormPanel.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
         private void DashBoardForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
@@ -151,7 +162,7 @@ namespace PremiumAttendance.Forms
         private void myAccountBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.activeColor);
-            OpenChildForm(new MyAccountForm(currentUser));
+            OpenChildForm(new MyAccountForm(this, currentUser));
         }
 
         private void notificationsBtn_Click(object sender, EventArgs e)

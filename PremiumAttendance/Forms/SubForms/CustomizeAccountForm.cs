@@ -14,6 +14,7 @@ namespace PremiumAttendance.Forms.SubForms
     public partial class CustomizeAccountForm : Form
     {
         private Employee currentUser;
+        public event EventHandler submitChangeEventHandler;
         public CustomizeAccountForm(Employee currentUser)
         {
             InitializeComponent();
@@ -68,10 +69,10 @@ namespace PremiumAttendance.Forms.SubForms
             if (bll.UpdateEmployee(emp))
             {
                 MessageBox.Show("Changes applied");
-                //if (SubmitChanges != null)
-                //{
-                //    SubmitChanges.Invoke(this, e);
-                //}
+                if (submitChangeEventHandler != null)
+                {
+                    submitChangeEventHandler.Invoke(this, e);
+                }
                 this.Close();
             }
             else

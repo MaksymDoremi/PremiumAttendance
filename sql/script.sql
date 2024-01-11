@@ -27,8 +27,13 @@ create table Employee
 	[Name] varchar(20) not null,
 	[Surname] varchar(20) not null,
 	[Photo] varbinary(MAX) null default null,
-	[Email] varchar(40) null DEFAULT null,
-	[Phone] varchar(30) null DEFAULT null
+	[Email] varchar(100) check(Email like '%@%.%'),
+	[Phone] varchar(16) CHECK(
+        [Phone] LIKE '+420[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]' OR
+        [Phone] LIKE '+420 [0-9][0-9][0-9] [0-9][0-9][0-9] [0-9][0-9][0-9]' OR
+        [Phone] LIKE '[0-9][0-9][0-9] [0-9][0-9][0-9] [0-9][0-9][0-9]' OR
+        [Phone] LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'
+    ) 
 );
 
 insert into Employee(Employee_Role_ID,[Name],[Surname], [Login], [Password])

@@ -17,7 +17,7 @@ namespace PremiumAttendance.Forms.SidebarForms
         private Employee currentUser;
         private DashBoardForm dashboardForm;
         private BusinessLogicLayer bll;
-        public MyAccountForm(DashBoardForm dashboardForm, Employee currentUser)
+        public MyAccountForm(DashBoardForm dashboardForm, ref Employee currentUser)
         {
             InitializeComponent();
             bll = new BusinessLogicLayer();
@@ -58,10 +58,22 @@ namespace PremiumAttendance.Forms.SidebarForms
             this.actualPhoneFromDB.Text = currentUser.Phone;
 
         }
+        public void InitItemsEvent(object sender, EventArgs e)
+        {
+            BusinessLogicLayer bll = new BusinessLogicLayer();
+            currentUser = bll.GetCurrentUser(currentUser.Login);
+            InitItems();
+            //if (updateChanges != null)
+            //{
+            //    updateChanges.Invoke(this, e);
+            //}
 
+        }
         private void changeAccountInfoBtn_Click(object sender, EventArgs e)
         {
             CustomizeAccountForm form = new CustomizeAccountForm(currentUser);
+            form.submitChangeEventHandler += InitItemsEvent;
+            
             this.dashboardForm.OpenChildFormOverChildForm(form);
         }
 

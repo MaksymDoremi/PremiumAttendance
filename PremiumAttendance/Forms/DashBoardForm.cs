@@ -26,7 +26,7 @@ namespace PremiumAttendance.Forms
         private BusinessLogicLayer bll;
 
         private Thread rfidThread;
-        public DashBoardForm(Form loginForm, Employee currentUser, ref Thread rfidThread)
+        public DashBoardForm(Form loginForm, ref Employee currentUser, ref Thread rfidThread)
         {
             InitializeComponent();
 
@@ -162,7 +162,7 @@ namespace PremiumAttendance.Forms
         private void myAccountBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.activeColor);
-            OpenChildForm(new MyAccountForm(this, currentUser));
+            OpenChildForm(new MyAccountForm(this, ref currentUser));
         }
 
         private void notificationsBtn_Click(object sender, EventArgs e)

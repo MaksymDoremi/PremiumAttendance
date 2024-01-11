@@ -119,7 +119,7 @@ namespace PremiumAttendance
                 if (bll.Login(username, Program.ComputeSHA256(password)))
                 {
                     currentEmployee = bll.GetCurrentUser(username);
-                    DashBoardForm form = new DashBoardForm(this, currentEmployee, ref rfidThread);
+                    DashBoardForm form = new DashBoardForm(this, ref currentEmployee, ref rfidThread);
                     form.Show();
                     this.Hide();
                 }

@@ -71,9 +71,9 @@
             // 
             this.pictureBox1.Image = global::PremiumAttendance.Properties.Resources.logo;
             this.pictureBox1.InitialImage = global::PremiumAttendance.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(10, 32);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 32);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(272, 132);
+            this.pictureBox1.Size = new System.Drawing.Size(290, 142);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
@@ -213,7 +213,7 @@
             // 
             this.dashboardEmployeeAvatar.Location = new System.Drawing.Point(760, 12);
             this.dashboardEmployeeAvatar.Name = "dashboardEmployeeAvatar";
-            this.dashboardEmployeeAvatar.Size = new System.Drawing.Size(100, 77);
+            this.dashboardEmployeeAvatar.Size = new System.Drawing.Size(90, 80);
             this.dashboardEmployeeAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.dashboardEmployeeAvatar.TabIndex = 2;
             this.dashboardEmployeeAvatar.TabStop = false;

@@ -42,6 +42,20 @@ namespace PremiumAttendance.Objects
         }
         #endregion
         #region UPDATE
+        public bool UpdateEmployee(Employee userInstance)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                return dal.UpdateEmployee(userInstance);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+
+        }
         #endregion
         #region DELETES
         #endregion

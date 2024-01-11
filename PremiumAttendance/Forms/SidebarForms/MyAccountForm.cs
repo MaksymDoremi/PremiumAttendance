@@ -40,7 +40,16 @@ namespace PremiumAttendance.Forms.SidebarForms
             this.actualSurnameFromDB.Text = currentUser.Surname;
 
             //LOAD PHOTO
-            this.bigAvatarPicture.Image = Program.ConvertByteArrayToImage(currentUser.Photo);
+            if (currentUser.Photo is null)
+            {
+                this.bigAvatarPicture.Visible = false;
+            }
+            else
+            {
+                this.bigAvatarPicture.Visible = true;
+                this.bigAvatarPicture.Image = Program.ConvertByteArrayToImage(currentUser.Photo);
+            }
+            
 
             //LOAD EMAIL
             this.actualEmailFromDB.Text = currentUser.Email;
@@ -52,7 +61,7 @@ namespace PremiumAttendance.Forms.SidebarForms
 
         private void changeAccountInfoBtn_Click(object sender, EventArgs e)
         {
-            CustomizeAccountForm form = new CustomizeAccountForm();
+            CustomizeAccountForm form = new CustomizeAccountForm(currentUser);
             this.dashboardForm.OpenChildFormOverChildForm(form);
         }
 

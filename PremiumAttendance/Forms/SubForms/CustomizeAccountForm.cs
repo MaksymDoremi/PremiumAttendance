@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PremiumAttendance.Objects;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,28 @@ namespace PremiumAttendance.Forms.SubForms
 {
     public partial class CustomizeAccountForm : Form
     {
-        public CustomizeAccountForm()
+        private Employee currentUser;
+        public CustomizeAccountForm(Employee currentUser)
         {
             InitializeComponent();
+            this.currentUser = currentUser;
+            InitItems();
         }
+        public void InitItems()
+        {
+            this.changeNameTextBox.Text = currentUser.Name;
+            this.changeSurnameTextBox.Text = currentUser.Surname;
+            this.changeRfidTagTextBox.Text = currentUser.Rfid_tag;
+            this.changeEmailTextBox.Text = currentUser.Email;
+            this.changePhoneTextBox.Text = currentUser.Phone;
 
+            if (currentUser.Photo != null)
+            {
+                this.changeImageBox.Image = Program.ConvertByteArrayToImage(currentUser.Photo);
+
+            }
+
+        }
         private void closeBtn_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -40,6 +58,25 @@ namespace PremiumAttendance.Forms.SubForms
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void applyChangesAccountInfoBtn_Click(object sender, EventArgs e)
+        {
+            Employee emp = new Employee(currentUser.Id, this.changeRfidTagTextBox.Text, currentUser.Role, currentUser.Login, this.changeNameTextBox.Text, this.changeSurnameTextBox.Text, Program.ImageToByteArray(this.changeImageBox.Image), this.changeEmailTextBox.Text, this.changePhoneTextBox.Text);
+            BusinessLogicLayer bll = new BusinessLogicLayer();
+            if (bll.UpdateEmployee(emp))
+            {
+                MessageBox.Show("Changes applied");
+                //if (SubmitChanges != null)
+                //{
+                //    SubmitChanges.Invoke(this, e);
+                //}
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong");
             }
         }
     }

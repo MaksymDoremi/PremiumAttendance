@@ -73,6 +73,7 @@
             this.applyChangesAccountInfoBtn.TabIndex = 32;
             this.applyChangesAccountInfoBtn.Text = "Apply Changes";
             this.applyChangesAccountInfoBtn.UseVisualStyleBackColor = true;
+            this.applyChangesAccountInfoBtn.Click += new System.EventHandler(this.applyChangesAccountInfoBtn_Click);
             // 
             // changePhoneTextBox
             // 

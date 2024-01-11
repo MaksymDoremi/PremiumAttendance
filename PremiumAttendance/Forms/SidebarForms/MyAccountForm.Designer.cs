@@ -34,13 +34,14 @@
             this.actualEmailFromDB = new System.Windows.Forms.Label();
             this.actualSurnameFromDB = new System.Windows.Forms.Label();
             this.actualNameFromDB = new System.Windows.Forms.Label();
-            this.bigAvatarPicture = new System.Windows.Forms.PictureBox();
             this.phoneLabel = new System.Windows.Forms.Label();
             this.emailLabel = new System.Windows.Forms.Label();
             this.surnameLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
             this.changeAccountInfoBtn = new System.Windows.Forms.Button();
             this.changePasswordBtn = new System.Windows.Forms.Button();
+            this.photoNotSetLabel = new System.Windows.Forms.Label();
+            this.bigAvatarPicture = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bigAvatarPicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,15 +99,6 @@
             this.actualNameFromDB.Name = "actualNameFromDB";
             this.actualNameFromDB.Size = new System.Drawing.Size(0, 36);
             this.actualNameFromDB.TabIndex = 16;
-            // 
-            // bigAvatarPicture
-            // 
-            this.bigAvatarPicture.Location = new System.Drawing.Point(737, 53);
-            this.bigAvatarPicture.Name = "bigAvatarPicture";
-            this.bigAvatarPicture.Size = new System.Drawing.Size(366, 456);
-            this.bigAvatarPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bigAvatarPicture.TabIndex = 15;
-            this.bigAvatarPicture.TabStop = false;
             // 
             // phoneLabel
             // 
@@ -170,11 +162,32 @@
             this.changePasswordBtn.UseVisualStyleBackColor = true;
             this.changePasswordBtn.Click += new System.EventHandler(this.changePasswordBtn_Click);
             // 
+            // photoNotSetLabel
+            // 
+            this.photoNotSetLabel.AutoSize = true;
+            this.photoNotSetLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.photoNotSetLabel.Location = new System.Drawing.Point(759, 249);
+            this.photoNotSetLabel.Name = "photoNotSetLabel";
+            this.photoNotSetLabel.Size = new System.Drawing.Size(319, 57);
+            this.photoNotSetLabel.TabIndex = 24;
+            this.photoNotSetLabel.Text = "Photo not set";
+            // 
+            // bigAvatarPicture
+            // 
+            this.bigAvatarPicture.Location = new System.Drawing.Point(733, 53);
+            this.bigAvatarPicture.Name = "bigAvatarPicture";
+            this.bigAvatarPicture.Size = new System.Drawing.Size(366, 456);
+            this.bigAvatarPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bigAvatarPicture.TabIndex = 25;
+            this.bigAvatarPicture.TabStop = false;
+            // 
             // MyAccountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1174, 703);
+            this.Controls.Add(this.bigAvatarPicture);
+            this.Controls.Add(this.photoNotSetLabel);
             this.Controls.Add(this.changeAccountInfoBtn);
             this.Controls.Add(this.changePasswordBtn);
             this.Controls.Add(this.actualRoleFromDB);
@@ -183,7 +196,6 @@
             this.Controls.Add(this.actualEmailFromDB);
             this.Controls.Add(this.actualSurnameFromDB);
             this.Controls.Add(this.actualNameFromDB);
-            this.Controls.Add(this.bigAvatarPicture);
             this.Controls.Add(this.phoneLabel);
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.surnameLabel);
@@ -204,12 +216,13 @@
         private System.Windows.Forms.Label actualEmailFromDB;
         private System.Windows.Forms.Label actualSurnameFromDB;
         private System.Windows.Forms.Label actualNameFromDB;
-        private System.Windows.Forms.PictureBox bigAvatarPicture;
         private System.Windows.Forms.Label phoneLabel;
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.Label surnameLabel;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Button changeAccountInfoBtn;
         private System.Windows.Forms.Button changePasswordBtn;
+        private System.Windows.Forms.Label photoNotSetLabel;
+        private System.Windows.Forms.PictureBox bigAvatarPicture;
     }
 }

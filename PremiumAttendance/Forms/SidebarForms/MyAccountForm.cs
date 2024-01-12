@@ -60,8 +60,8 @@ namespace PremiumAttendance.Forms.SidebarForms
         }
         public void InitItemsEvent(object sender, EventArgs e)
         {
-            BusinessLogicLayer bll = new BusinessLogicLayer();
-            currentUser = bll.GetCurrentUser(currentUser.Login);
+            //BusinessLogicLayer bll = new BusinessLogicLayer();
+            //currentUser = bll.GetCurrentUser(currentUser.Login);
             InitItems();
             //if (updateChanges != null)
             //{
@@ -71,7 +71,7 @@ namespace PremiumAttendance.Forms.SidebarForms
         }
         private void changeAccountInfoBtn_Click(object sender, EventArgs e)
         {
-            CustomizeAccountForm form = new CustomizeAccountForm(currentUser);
+            CustomizeAccountForm form = new CustomizeAccountForm(ref currentUser);
             form.submitChangeEventHandler += InitItemsEvent;
             
             this.dashboardForm.OpenChildFormOverChildForm(form);

@@ -15,7 +15,7 @@ namespace PremiumAttendance.Forms.SubForms
     {
         private Employee currentUser;
         public event EventHandler submitChangeEventHandler;
-        public CustomizeAccountForm(Employee currentUser)
+        public CustomizeAccountForm(ref Employee currentUser)
         {
             InitializeComponent();
             this.currentUser = currentUser;
@@ -69,10 +69,19 @@ namespace PremiumAttendance.Forms.SubForms
             if (bll.UpdateEmployee(emp))
             {
                 MessageBox.Show("Changes applied");
+
+                this.currentUser.Name = emp.Name;
+                this.currentUser.Surname = emp.Surname;
+                this.currentUser.Rfid_tag = emp.Rfid_tag;
+                this.currentUser.Email = emp.Email;
+                this.currentUser.Phone = emp.Phone;
+                this.currentUser.Photo = emp.Photo;
+
                 if (submitChangeEventHandler != null)
                 {
                     submitChangeEventHandler.Invoke(this, e);
                 }
+
                 this.Close();
             }
             else

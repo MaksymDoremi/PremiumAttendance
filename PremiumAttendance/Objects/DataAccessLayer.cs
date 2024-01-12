@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlTypes;
 
 namespace PremiumAttendance.Objects
 {
@@ -124,7 +125,8 @@ namespace PremiumAttendance.Objects
                 using (SqlCommand cmd = new SqlCommand(UPDATE_USER, DatabaseConnection.GetConnection()))
                 {
                     cmd.Parameters.AddWithValue("@userID", userInstance.Id);
-                    if (userInstance.Rfid_tag == "" || userInstance.Rfid_tag == null)
+
+                    if (String.IsNullOrEmpty(userInstance.Rfid_tag))
                     {
                         cmd.Parameters.AddWithValue("@rfidTag", DBNull.Value);
                     }
@@ -134,9 +136,33 @@ namespace PremiumAttendance.Objects
                     }
                     cmd.Parameters.AddWithValue("@name", userInstance.Name);
                     cmd.Parameters.AddWithValue("@surname", userInstance.Surname);
-                    cmd.Parameters.AddWithValue("@photo", userInstance.Photo);
-                    cmd.Parameters.AddWithValue("@email", userInstance.Email);
-                    cmd.Parameters.AddWithValue("@phone", userInstance.Phone);
+                    if (userInstance.Photo == null)
+                    {
+                        cmd.Parameters.AddWithValue("@photo", SqlBinary.Null);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@photo", userInstance.Photo);
+                    }
+
+                    if (String.IsNullOrEmpty(userInstance.Email))
+                    {
+                        cmd.Parameters.AddWithValue("@email", DBNull.Value);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@email", userInstance.Email);
+                    }
+
+                    if (String.IsNullOrEmpty(userInstance.Phone))
+                    {
+                        cmd.Parameters.AddWithValue("@phone", DBNull.Value);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@phone", userInstance.Phone);
+                    }
+
 
                     cmd.ExecuteNonQuery();
                 }

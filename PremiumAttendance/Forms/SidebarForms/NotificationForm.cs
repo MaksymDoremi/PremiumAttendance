@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PremiumAttendance.Objects;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,23 @@ namespace PremiumAttendance.Forms.SidebarForms
 {
     public partial class NotificationForm : Form
     {
-        public NotificationForm()
+
+        private Employee currentUser;
+        private DashBoardForm dashboardForm;
+        public NotificationForm(DashBoardForm dashboardForm, ref Employee currentUser)
         {
             InitializeComponent();
+            this.dashboardForm = dashboardForm;
+            this.currentUser = currentUser;
+
+            InitItems();
+        }
+
+        public void InitItems()
+        {
+            this.notificationsFloatLayoutPanel.Controls.Clear();
+
+            Notification
         }
     }
 }

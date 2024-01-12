@@ -179,7 +179,7 @@ namespace PremiumAttendance.Forms
         private void notificationsBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.activeColor);
-            OpenChildForm(new NotificationForm());
+            OpenChildForm(new NotificationForm(this, ref currentUser));
         }
 
         private void employeesBtn_Click(object sender, EventArgs e)

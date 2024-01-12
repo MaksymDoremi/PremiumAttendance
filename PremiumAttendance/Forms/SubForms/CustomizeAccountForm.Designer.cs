@@ -150,7 +150,7 @@
             // browseImagesBtn
             // 
             this.browseImagesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.browseImagesBtn.Location = new System.Drawing.Point(854, 458);
+            this.browseImagesBtn.Location = new System.Drawing.Point(906, 496);
             this.browseImagesBtn.Name = "browseImagesBtn";
             this.browseImagesBtn.Size = new System.Drawing.Size(145, 43);
             this.browseImagesBtn.TabIndex = 36;
@@ -171,9 +171,9 @@
             // 
             // changeImageBox
             // 
-            this.changeImageBox.Location = new System.Drawing.Point(757, 70);
+            this.changeImageBox.Location = new System.Drawing.Point(787, 31);
             this.changeImageBox.Name = "changeImageBox";
-            this.changeImageBox.Size = new System.Drawing.Size(333, 369);
+            this.changeImageBox.Size = new System.Drawing.Size(381, 446);
             this.changeImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.changeImageBox.TabIndex = 35;
             this.changeImageBox.TabStop = false;
@@ -182,7 +182,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1174, 703);
+            this.ClientSize = new System.Drawing.Size(1269, 703);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.browseImagesBtn);
             this.Controls.Add(this.changeImageBox);

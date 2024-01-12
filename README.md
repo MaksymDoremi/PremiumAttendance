@@ -12,7 +12,6 @@
     MyDayForm
     AttendanceDetailsForm
     NotificationDetailsForm
-    Report(admin only)
     CustomizeAccountForm
     ChangePasswordForm
     AddEmployeeForm
@@ -24,23 +23,22 @@
 ### Sidebar forms to develop
     HomepageForm
     MyDashboardForm
-    NotificationForm
+    ⚠️NotificationForm
     ✅MyAccountForm
     EmployeesForm
     AttendanceForm
-    ReportForm
 
 ### Subforms to develop
     MyDayForm
     AttendanceDetailsForm
-    NotificationDetailsForm
+    ⚠️NotificationDetailsForm
     ✅CustomizeAccountForm
     ✅ChangePasswordForm
     AddEmployeeForm
 
 ### Controls to develop
     EmployeeStatusControl
-    NotificationControl
+    ⚠️NotificationControl
     ColleagueControl
     EmployeeControl
     DayControl

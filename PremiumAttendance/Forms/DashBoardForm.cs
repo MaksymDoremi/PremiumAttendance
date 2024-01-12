@@ -78,6 +78,15 @@ namespace PremiumAttendance.Forms
             this.dashboardEmployeeNameLabel.Text = currentUser.Name + " " + currentUser.Surname;
         }
 
+        public void InitItemsEvent(object sender, EventArgs e)
+        {
+            //photo
+            this.dashboardEmployeeAvatar.Image = Program.ConvertByteArrayToImage(currentUser.Photo);
+
+            //homepage label with user's name
+            this.dashboardEmployeeNameLabel.Text = currentUser.Name + " " + currentUser.Surname;
+        }
+
         private struct RGBColors
         {
             public static Color activeColor = Color.FromArgb(171, 171, 171);
@@ -162,7 +171,9 @@ namespace PremiumAttendance.Forms
         private void myAccountBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.activeColor);
-            OpenChildForm(new MyAccountForm(this, ref currentUser));
+            MyAccountForm form = new MyAccountForm(this, ref currentUser);
+            form.updateChangesEventHandler += InitItemsEvent;
+            OpenChildForm(form);
         }
 
         private void notificationsBtn_Click(object sender, EventArgs e)

@@ -35,7 +35,7 @@
     AttendanceDetailsForm
     NotificationDetailsForm
     ✅CustomizeAccountForm
-    ChangePasswordForm
+    ✅ChangePasswordForm
     AddEmployeeForm
 
 ### Controls to develop

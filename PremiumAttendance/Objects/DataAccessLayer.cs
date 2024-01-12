@@ -20,9 +20,11 @@ namespace PremiumAttendance.Objects
         #region RETRIEVE
         private const string LOGIN = "select * from Employee where [Login]=@login and [Password]=@password";
         private const string GET_CURRENT_USER = "select Employee.ID, Employee.RFID_Tag, Employee_Role.Role_name, Employee.Login, Employee.Name, Employee.Surname, Employee.Photo, Employee.Email, Employee.Phone from Employee inner join Employee_Role on Employee.Employee_Role_ID = Employee_Role.ID where Login=@login";
+        private const string GET_PASSWORD = "select Employee.Password from Employee where Employee.ID = @employeeID";
         #endregion
         #region UPDATE
-        private const string UPDATE_USER = "update [Employee] set RFID_Tag = @rfidTag, Name = @name, Surname = @surname, Photo = @photo, Email = @email, Phone = @phone where [Employee].ID = @userID";
+        private const string UPDATE_USER = "update [Employee] set RFID_Tag = @rfidTag, Name = @name, Surname = @surname, Photo = @photo, Email = @email, Phone = @phone where [Employee].ID = @employeeID";
+        private const string UPDATE_PASSWORD = "update [Employee] set Password = @newPassword where ID = @employeeID";
         #endregion
         #region DELETE
         #endregion
@@ -34,13 +36,10 @@ namespace PremiumAttendance.Objects
         #region RETRIEVE
         public bool Login(string login, string password)
         {
-
-
             if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
             {
                 DatabaseConnection.GetConnection().Open();
             }
-
             try
             {
                 using (SqlCommand cmd = new SqlCommand(LOGIN, DatabaseConnection.GetConnection()))
@@ -55,7 +54,9 @@ namespace PremiumAttendance.Objects
 
                     if (!reader.HasRows)
                     {
-                        return false;
+                        DatabaseConnection.GetConnection().Close();
+                        reader.Close();
+                        throw new Exception("Wrong login or password");
                     }
                 }
                 DatabaseConnection.GetConnection().Close();
@@ -124,7 +125,7 @@ namespace PremiumAttendance.Objects
             {
                 using (SqlCommand cmd = new SqlCommand(UPDATE_USER, DatabaseConnection.GetConnection()))
                 {
-                    cmd.Parameters.AddWithValue("@userID", userInstance.Id);
+                    cmd.Parameters.AddWithValue("@employeeID", userInstance.Id);
 
                     if (String.IsNullOrEmpty(userInstance.Rfid_tag))
                     {
@@ -162,6 +163,55 @@ namespace PremiumAttendance.Objects
                     {
                         cmd.Parameters.AddWithValue("@phone", userInstance.Phone);
                     }
+
+
+                    cmd.ExecuteNonQuery();
+                }
+
+                DatabaseConnection.GetConnection().Close();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DatabaseConnection.GetConnection().Close();
+                throw ex;
+            }
+        }
+
+        public bool UpdatePassword(int employeeID, string oldPassword, string newPassword)
+        {
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
+
+            try
+            {
+
+                using (SqlCommand cmd = new SqlCommand(GET_PASSWORD, DatabaseConnection.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@employeeID", employeeID);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    reader.Read();
+
+                    //check for old password
+                    if (Program.ComputeSHA256(oldPassword) != (string)reader[0])
+                    {
+                        reader.Close();
+                        DatabaseConnection.GetConnection().Close();
+                        throw new Exception("Old password is incorrect");
+                        
+                        
+                    }
+                    reader.Close();
+                }
+
+                using (SqlCommand cmd = new SqlCommand(UPDATE_PASSWORD, DatabaseConnection.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@employeeID", employeeID);
+                    cmd.Parameters.AddWithValue("@newPassword", Program.ComputeSHA256(newPassword));
 
 
                     cmd.ExecuteNonQuery();

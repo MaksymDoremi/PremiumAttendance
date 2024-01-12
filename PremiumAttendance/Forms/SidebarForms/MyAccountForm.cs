@@ -17,6 +17,8 @@ namespace PremiumAttendance.Forms.SidebarForms
         private Employee currentUser;
         private DashBoardForm dashboardForm;
         private BusinessLogicLayer bll;
+
+        public EventHandler updateChangesEventHandler;
         public MyAccountForm(DashBoardForm dashboardForm, ref Employee currentUser)
         {
             InitializeComponent();
@@ -63,10 +65,10 @@ namespace PremiumAttendance.Forms.SidebarForms
             //BusinessLogicLayer bll = new BusinessLogicLayer();
             //currentUser = bll.GetCurrentUser(currentUser.Login);
             InitItems();
-            //if (updateChanges != null)
-            //{
-            //    updateChanges.Invoke(this, e);
-            //}
+            if (updateChangesEventHandler != null)
+            {
+                updateChangesEventHandler.Invoke(this, e);
+            }
 
         }
         private void changeAccountInfoBtn_Click(object sender, EventArgs e)
@@ -79,7 +81,8 @@ namespace PremiumAttendance.Forms.SidebarForms
 
         private void changePasswordBtn_Click(object sender, EventArgs e)
         {
-
+            ChangePasswordForm form = new ChangePasswordForm(currentUser.Id);
+            this.dashboardForm.OpenChildFormOverChildForm(form);
         }
     }
 }

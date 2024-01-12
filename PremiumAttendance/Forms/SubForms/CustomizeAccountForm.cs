@@ -35,6 +35,11 @@ namespace PremiumAttendance.Forms.SubForms
 
             }
 
+            if(currentUser.Role == "Employee")
+            {
+                this.changeRfidTagTextBox.Enabled = false;
+            }
+
         }
         private void closeBtn_Click(object sender, EventArgs e)
         {

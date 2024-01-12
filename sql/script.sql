@@ -112,3 +112,6 @@ go
 commit transaction;
 
 -- select Employee.ID, Employee.RFID_Tag, Employee_Role.Role_name, Employee.Login, Employee.Name, Employee.Surname, Employee.Photo, Employee.Email, Employee.Phone from Employee inner join Employee_Role on Employee.Employee_Role_ID = Employee_Role.ID where Login='admin'
+update Employee
+set RFID_Tag='ABCDEFG'
+where ID = 2

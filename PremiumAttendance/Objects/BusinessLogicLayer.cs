@@ -56,6 +56,20 @@ namespace PremiumAttendance.Objects
             }
 
         }
+
+        public bool UpdatePassword(int empmloyeeID, string oldPassword, string newPassword)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                return dal.UpdatePassword(empmloyeeID, oldPassword, newPassword);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
         #endregion
         #region DELETES
         #endregion

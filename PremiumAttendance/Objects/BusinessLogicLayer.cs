@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
@@ -39,6 +40,21 @@ namespace PremiumAttendance.Objects
                 MessageBox.Show(ex.Message);
                 return null;
             }
+        }
+
+        public DataTable GetNotifications(int employeeID)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                return dal.GetNotifications(employeeID);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+            
         }
         #endregion
         #region UPDATE

@@ -1,4 +1,5 @@
-﻿using PremiumAttendance.Objects;
+﻿using PremiumAttendance.Controls;
+using PremiumAttendance.Objects;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,20 +17,57 @@ namespace PremiumAttendance.Forms.SidebarForms
 
         private Employee currentUser;
         private DashBoardForm dashboardForm;
+        private List<Notification> notificationList;
+        private BusinessLogicLayer bll;
         public NotificationForm(DashBoardForm dashboardForm, ref Employee currentUser)
         {
             InitializeComponent();
             this.dashboardForm = dashboardForm;
             this.currentUser = currentUser;
+            this.notificationList = new List<Notification>();
+            this.bll = new BusinessLogicLayer();
 
-            InitItems();
+            InitNotificationList();
+            InitControls();
         }
+        public void InitEventHandler(object sender, EventArgs e)
+        {
+            InitNotificationList();
+            InitControls();
+        }
+        public void InitNotificationList()
+        {
+            this.notificationList.Clear();
+            DataTable dt = bll.GetNotifications(currentUser.Id);
 
-        public void InitItems()
+            foreach (DataRow dr in dt.Rows)
+            {
+                this.notificationList.Add(new Notification(
+                    (int)dr["Message_ID"],
+                    (int)dr["Have_read_ID"],
+                    (bool)dr["Is_Read"],
+                    (string)dr["Author_name"], 
+                    (string)dr["Title"], 
+                    (string)dr["Content"], 
+                    (DateTime)dr["Date_of_delivery"]));
+            }
+        }
+        public void InitControls()
         {
             this.notificationsFloatLayoutPanel.Controls.Clear();
 
-            Notification
+            //Notification[] notifications = notificationList.ToArray();
+
+            foreach (Notification notification in notificationList)
+            {
+                NotificationControl control = new NotificationControl(notification, dashboardForm);
+                this.notificationsFloatLayoutPanel.Controls.Add(control);
+            }
+        }
+
+        private void sendNotificationBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

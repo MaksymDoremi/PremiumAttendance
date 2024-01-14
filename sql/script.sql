@@ -71,7 +71,7 @@ create table System_Message
 	Author_Employee_ID int foreign key references Employee(ID) on delete cascade not null,
 	Title varchar(64) not null,
 	Content varchar(600) not null,
-	Date_of_delivery date not null
+	Date_of_delivery datetime not null
 );
 
 create table Have_Read
@@ -111,7 +111,26 @@ go
 
 commit transaction;
 
--- select Employee.ID, Employee.RFID_Tag, Employee_Role.Role_name, Employee.Login, Employee.Name, Employee.Surname, Employee.Photo, Employee.Email, Employee.Phone from Employee inner join Employee_Role on Employee.Employee_Role_ID = Employee_Role.ID where Login='admin'
-update Employee
-set RFID_Tag='ABCDEFG'
-where ID = 2
+select Employee.ID, Employee.RFID_Tag, Employee_Role.Role_name, Employee.Login, Employee.Name, Employee.Surname, Employee.Photo, Employee.Email, Employee.Phone from Employee inner join Employee_Role on Employee.Employee_Role_ID = Employee_Role.ID where Login='admin'
+
+
+insert into System_Message(Author_Employee_ID,Title, Content, Date_of_delivery)
+values(1,'Message3','some lorem ipsum', CURRENT_TIMESTAMP());
+
+insert into Employee(Employee_Role_ID,[Name],[Surname], [Login], [Password])
+-- password = 123
+values(2,'Employee','Number 3','employee3', '6A2DAF302F70D5F0E24F699FA7F09F408514BE8186F49328BFFF36AEEDB2B5C1');
+
+select * from Have_Read;
+select * from System_Message;
+
+select mes.ID as 'Message_ID', hr.ID as 'Have_read_ID', hr.Is_Read, CONCAT(emp.Name,' ',emp.Surname) as 'Author_name', mes.Title, mes.Content, mes.Date_of_delivery
+from Employee emp join System_Message mes on emp.ID = mes.Author_Employee_ID
+join Have_Read hr on hr.System_Message_ID = mes.ID where hr.Employee_ID = 1;
+
+update Have_Read
+set Is_Read = 1
+where ID = 12;
+
+ALTER TABLE System_Message
+ALTER COLUMN Date_of_delivery datetime;

@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\NotificationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\NotificationControl.Designer.cs">
+      <DependentUpon>NotificationControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="DB\DatabaseConnection.cs" />
     <Compile Include="Forms\DashBoardForm.cs">
       <SubType>Form</SubType>
@@ -113,12 +119,22 @@
     <Compile Include="Forms\SubForms\CustomizeAccountForm.Designer.cs">
       <DependentUpon>CustomizeAccountForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SubForms\NotificationDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubForms\NotificationDetailsForm.Designer.cs">
+      <DependentUpon>NotificationDetailsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Objects\BusinessLogicLayer.cs" />
     <Compile Include="Objects\DataAccessLayer.cs" />
     <Compile Include="Objects\Employee.cs" />
+    <Compile Include="Objects\Notification.cs" />
     <Compile Include="Objects\RFID.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\NotificationControl.resx">
+      <DependentUpon>NotificationControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DashBoardForm.resx">
       <DependentUpon>DashBoardForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,7 +192,6 @@
     <None Include="Resources\Untitled design.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controls\" />
     <Folder Include="tests\" />
   </ItemGroup>
   <ItemGroup>

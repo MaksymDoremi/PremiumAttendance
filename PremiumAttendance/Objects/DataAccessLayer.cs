@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlTypes;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace PremiumAttendance.Objects
 {
@@ -21,6 +22,7 @@ namespace PremiumAttendance.Objects
         private const string LOGIN = "select * from Employee where [Login]=@login and [Password]=@password";
         private const string GET_CURRENT_USER = "select Employee.ID, Employee.RFID_Tag, Employee_Role.Role_name, Employee.Login, Employee.Name, Employee.Surname, Employee.Photo, Employee.Email, Employee.Phone from Employee inner join Employee_Role on Employee.Employee_Role_ID = Employee_Role.ID where Login=@login";
         private const string GET_PASSWORD = "select Employee.Password from Employee where Employee.ID = @employeeID";
+        private const string GET_NOTIFICATIONS = "select mes.ID as 'Message_ID', hr.ID as 'Have_read_ID', hr.Is_Read, CONCAT(emp.Name,' ',emp.Surname) as 'Author_name', mes.Title, mes.Content, mes.Date_of_delivery\r\nfrom Employee emp join System_Message mes on emp.ID = mes.Author_Employee_ID\r\njoin Have_Read hr on hr.System_Message_ID = mes.ID where hr.Employee_ID = @employeeID";
         #endregion
         #region UPDATE
         private const string UPDATE_USER = "update [Employee] set RFID_Tag = @rfidTag, Name = @name, Surname = @surname, Photo = @photo, Email = @email, Phone = @phone where [Employee].ID = @employeeID";
@@ -105,6 +107,38 @@ namespace PremiumAttendance.Objects
 
                 }
 
+            }
+            catch (Exception ex)
+            {
+                DatabaseConnection.GetConnection().Close();
+                throw ex;
+            }
+        }
+
+        public DataTable GetNotifications(int employeeID)
+        {
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
+
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(GET_NOTIFICATIONS, DatabaseConnection.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@employeeID", employeeID);
+
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+
+                        sda.Fill(dt);
+                        DatabaseConnection.GetConnection().Close();
+
+                        return dt;
+
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -202,8 +236,8 @@ namespace PremiumAttendance.Objects
                         reader.Close();
                         DatabaseConnection.GetConnection().Close();
                         throw new Exception("Old password is incorrect");
-                        
-                        
+
+
                     }
                     reader.Close();
                 }

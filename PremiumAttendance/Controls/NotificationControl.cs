@@ -1,4 +1,5 @@
 ﻿using PremiumAttendance.Forms;
+using PremiumAttendance.Forms.SubForms;
 using PremiumAttendance.Objects;
 using System;
 using System.Collections.Generic;
@@ -36,7 +37,7 @@ namespace PremiumAttendance.Controls
         {
             this.author_nameLabel.Text = this.notification.AuthorName;
             this.titleLabel.Text = this.notification.Title;
-            this.dateTimeLabel.Text = this.notification.DateOfDelivery.ToString("dddd, dd MMMM yyyy");
+            this.dateTimeLabel.Text = this.notification.DateOfDelivery.ToString();
         }
 
         private void NotificationControl_MouseEnter(object sender, EventArgs e)
@@ -47,6 +48,12 @@ namespace PremiumAttendance.Controls
         private void NotificationControl_MouseLeave(object sender, EventArgs e)
         {
             this.BackColor = this.currentColor;
+        }
+
+        private void NotificationControl_Click(object sender, EventArgs e)
+        {
+            NotificationDetailsForm form = new NotificationDetailsForm(notification);
+            this.dashboardForm.OpenChildFormOverChildForm(form);
         }
     }
 }

@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             this.notificationsFloatLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.sendNotificationBtn = new System.Windows.Forms.Button();
-            this.contentTextBox = new System.Windows.Forms.RichTextBox();
             this.filterBtn = new System.Windows.Forms.Button();
+            this.adminPanel = new System.Windows.Forms.Panel();
             this.titleTextBox = new System.Windows.Forms.TextBox();
+            this.contentTextBox = new System.Windows.Forms.RichTextBox();
+            this.sendNotificationBtn = new System.Windows.Forms.Button();
+            this.adminPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // notificationsFloatLayoutPanel
@@ -44,27 +46,6 @@
             this.notificationsFloatLayoutPanel.Size = new System.Drawing.Size(1245, 520);
             this.notificationsFloatLayoutPanel.TabIndex = 0;
             // 
-            // sendNotificationBtn
-            // 
-            this.sendNotificationBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.sendNotificationBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.sendNotificationBtn.Location = new System.Drawing.Point(437, 50);
-            this.sendNotificationBtn.Name = "sendNotificationBtn";
-            this.sendNotificationBtn.Size = new System.Drawing.Size(175, 63);
-            this.sendNotificationBtn.TabIndex = 33;
-            this.sendNotificationBtn.Text = "Send Notification";
-            this.sendNotificationBtn.UseVisualStyleBackColor = true;
-            this.sendNotificationBtn.Click += new System.EventHandler(this.sendNotificationBtn_Click);
-            // 
-            // contentTextBox
-            // 
-            this.contentTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.contentTextBox.Location = new System.Drawing.Point(12, 50);
-            this.contentTextBox.Name = "contentTextBox";
-            this.contentTextBox.Size = new System.Drawing.Size(380, 94);
-            this.contentTextBox.TabIndex = 34;
-            this.contentTextBox.Text = "";
-            // 
             // filterBtn
             // 
             this.filterBtn.Image = global::PremiumAttendance.Properties.Resources.tune_FILL0_wght400_GRAD0_opsz24;
@@ -74,13 +55,44 @@
             this.filterBtn.TabIndex = 35;
             this.filterBtn.UseVisualStyleBackColor = true;
             // 
+            // adminPanel
+            // 
+            this.adminPanel.Controls.Add(this.titleTextBox);
+            this.adminPanel.Controls.Add(this.contentTextBox);
+            this.adminPanel.Controls.Add(this.sendNotificationBtn);
+            this.adminPanel.Location = new System.Drawing.Point(12, 12);
+            this.adminPanel.Name = "adminPanel";
+            this.adminPanel.Size = new System.Drawing.Size(623, 146);
+            this.adminPanel.TabIndex = 36;
+            // 
             // titleTextBox
             // 
             this.titleTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.titleTextBox.Location = new System.Drawing.Point(12, 13);
+            this.titleTextBox.Location = new System.Drawing.Point(3, 1);
             this.titleTextBox.Name = "titleTextBox";
             this.titleTextBox.Size = new System.Drawing.Size(137, 27);
-            this.titleTextBox.TabIndex = 36;
+            this.titleTextBox.TabIndex = 39;
+            this.titleTextBox.Text = "Title";
+            // 
+            // contentTextBox
+            // 
+            this.contentTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.contentTextBox.Location = new System.Drawing.Point(3, 38);
+            this.contentTextBox.Name = "contentTextBox";
+            this.contentTextBox.Size = new System.Drawing.Size(380, 94);
+            this.contentTextBox.TabIndex = 38;
+            this.contentTextBox.Text = "Content";
+            // 
+            // sendNotificationBtn
+            // 
+            this.sendNotificationBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.sendNotificationBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sendNotificationBtn.Location = new System.Drawing.Point(428, 38);
+            this.sendNotificationBtn.Name = "sendNotificationBtn";
+            this.sendNotificationBtn.Size = new System.Drawing.Size(175, 63);
+            this.sendNotificationBtn.TabIndex = 37;
+            this.sendNotificationBtn.Text = "Send Notification";
+            this.sendNotificationBtn.UseVisualStyleBackColor = true;
             // 
             // NotificationForm
             // 
@@ -88,24 +100,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1269, 703);
-            this.Controls.Add(this.titleTextBox);
+            this.Controls.Add(this.adminPanel);
             this.Controls.Add(this.filterBtn);
-            this.Controls.Add(this.contentTextBox);
-            this.Controls.Add(this.sendNotificationBtn);
             this.Controls.Add(this.notificationsFloatLayoutPanel);
             this.Name = "NotificationForm";
             this.Text = "NotificationForm";
+            this.adminPanel.ResumeLayout(false);
+            this.adminPanel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel notificationsFloatLayoutPanel;
-        private System.Windows.Forms.Button sendNotificationBtn;
-        private System.Windows.Forms.RichTextBox contentTextBox;
         private System.Windows.Forms.Button filterBtn;
+        private System.Windows.Forms.Panel adminPanel;
         private System.Windows.Forms.TextBox titleTextBox;
+        private System.Windows.Forms.RichTextBox contentTextBox;
+        private System.Windows.Forms.Button sendNotificationBtn;
     }
 }

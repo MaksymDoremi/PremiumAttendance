@@ -27,6 +27,10 @@ namespace PremiumAttendance.Forms.SidebarForms
             this.notificationList = new List<Notification>();
             this.bll = new BusinessLogicLayer();
 
+            if (currentUser.Role == "Employee")
+            {
+                this.adminPanel.Visible = false;
+            }
             InitNotificationList();
             InitControls();
         }
@@ -46,9 +50,9 @@ namespace PremiumAttendance.Forms.SidebarForms
                     (int)dr["Message_ID"],
                     (int)dr["Have_read_ID"],
                     (bool)dr["Is_Read"],
-                    (string)dr["Author_name"], 
-                    (string)dr["Title"], 
-                    (string)dr["Content"], 
+                    (string)dr["Author_name"],
+                    (string)dr["Title"],
+                    (string)dr["Content"],
                     (DateTime)dr["Date_of_delivery"]));
             }
         }

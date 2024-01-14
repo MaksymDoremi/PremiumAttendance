@@ -86,6 +86,20 @@ namespace PremiumAttendance.Objects
                 return false;
             }
         }
+
+        public bool MarkAsRead(int haveReadID)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                return dal.MarkAsRead(haveReadID);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
         #endregion
         #region DELETES
         #endregion

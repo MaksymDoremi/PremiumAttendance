@@ -130,7 +130,7 @@ join Have_Read hr on hr.System_Message_ID = mes.ID where hr.Employee_ID = 1;
 
 update Have_Read
 set Is_Read = 1
-where ID = 12;
+where ID = 1;
 
 ALTER TABLE System_Message
 ALTER COLUMN Date_of_delivery datetime;

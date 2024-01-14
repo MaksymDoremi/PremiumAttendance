@@ -75,6 +75,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "NotificationControl";
             this.Size = new System.Drawing.Size(1198, 77);
+            this.Click += new System.EventHandler(this.NotificationControl_Click);
             this.MouseEnter += new System.EventHandler(this.NotificationControl_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.NotificationControl_MouseLeave);
             this.ResumeLayout(false);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PremiumAttendance.Objects;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,32 @@ namespace PremiumAttendance.Forms.SubForms
 {
     public partial class NotificationDetailsForm : Form
     {
-        public NotificationDetailsForm()
+        private Notification notification;
+        private BusinessLogicLayer bll;
+        public NotificationDetailsForm(Notification notification)
         {
             InitializeComponent();
+            this.notification = notification;
+            bll = new BusinessLogicLayer();
+            InitItems();
+        }
+
+        public void InitItems()
+        {
+            this.titleLabel.Text = notification.Title;
+            this.authorNameLabel.Text = notification.AuthorName;
+            this.dateOfDeliveryLabel.Text = notification.DateOfDelivery.ToString();
+            this.contentLabel.Text = notification.Content;
+        }
+
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void markAsReadBtn_Click(object sender, EventArgs e)
+        {
+            bll.MarkAsRead(notification.Have_read_id);
         }
     }
 }

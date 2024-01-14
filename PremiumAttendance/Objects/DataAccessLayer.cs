@@ -27,6 +27,7 @@ namespace PremiumAttendance.Objects
         #region UPDATE
         private const string UPDATE_USER = "update [Employee] set RFID_Tag = @rfidTag, Name = @name, Surname = @surname, Photo = @photo, Email = @email, Phone = @phone where [Employee].ID = @employeeID";
         private const string UPDATE_PASSWORD = "update [Employee] set Password = @newPassword where ID = @employeeID";
+        private const string MARK_AS_READ = "update Have_Read\r\nset Is_Read = 1\r\nwhere ID = @haveReadID";
         #endregion
         #region DELETE
         #endregion
@@ -247,6 +248,34 @@ namespace PremiumAttendance.Objects
                     cmd.Parameters.AddWithValue("@employeeID", employeeID);
                     cmd.Parameters.AddWithValue("@newPassword", Program.ComputeSHA256(newPassword));
 
+
+                    cmd.ExecuteNonQuery();
+                }
+
+                DatabaseConnection.GetConnection().Close();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DatabaseConnection.GetConnection().Close();
+                throw ex;
+            }
+        }
+
+        public bool MarkAsRead(int haveReadID)
+        {
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
+
+            try
+            {
+
+                using (SqlCommand cmd = new SqlCommand(MARK_AS_READ, DatabaseConnection.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@haveReadID", haveReadID);
 
                     cmd.ExecuteNonQuery();
                 }

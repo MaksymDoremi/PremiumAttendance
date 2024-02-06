@@ -31,7 +31,7 @@
 ### Subforms to develop
     MyDayForm
     AttendanceDetailsForm
-    ⚠️NotificationDetailsForm
+    ✅NotificationDetailsForm
     ✅CustomizeAccountForm
     ✅ChangePasswordForm
     AddEmployeeForm

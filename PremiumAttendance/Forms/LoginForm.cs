@@ -115,16 +115,18 @@ namespace PremiumAttendance
             {
 
                 BusinessLogicLayer bll = new BusinessLogicLayer();
-                
-                if (bll.Login(username, Program.ComputeSHA256(password)))
+                try
                 {
+                    bll.Login(username, Program.ComputeSHA256(password));
                     currentEmployee = bll.GetCurrentUser(username);
                     DashBoardForm form = new DashBoardForm(this, ref currentEmployee, ref rfidThread);
                     form.Show();
                     this.Hide();
                 }
-
-
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

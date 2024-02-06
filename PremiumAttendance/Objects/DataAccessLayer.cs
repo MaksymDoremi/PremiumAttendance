@@ -10,31 +10,40 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlTypes;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Runtime.InteropServices;
 
 namespace PremiumAttendance.Objects
 {
     public class DataAccessLayer
     {
-        #region SQL commands
         #region CREATE
-        #endregion
-        #region RETRIEVE
-        private const string LOGIN = "select * from Employee where [Login]=@login and [Password]=@password";
-        private const string GET_CURRENT_USER = "select Employee.ID, Employee.RFID_Tag, Employee_Role.Role_name, Employee.Login, Employee.Name, Employee.Surname, Employee.Photo, Employee.Email, Employee.Phone from Employee inner join Employee_Role on Employee.Employee_Role_ID = Employee_Role.ID where Login=@login";
-        private const string GET_PASSWORD = "select Employee.Password from Employee where Employee.ID = @employeeID";
-        private const string GET_NOTIFICATIONS = "select mes.ID as 'Message_ID', hr.ID as 'Have_read_ID', hr.Is_Read, CONCAT(emp.Name,' ',emp.Surname) as 'Author_name', mes.Title, mes.Content, mes.Date_of_delivery\r\nfrom Employee emp join System_Message mes on emp.ID = mes.Author_Employee_ID\r\njoin Have_Read hr on hr.System_Message_ID = mes.ID where hr.Employee_ID = @employeeID";
-        #endregion
-        #region UPDATE
-        private const string UPDATE_USER = "update [Employee] set RFID_Tag = @rfidTag, Name = @name, Surname = @surname, Photo = @photo, Email = @email, Phone = @phone where [Employee].ID = @employeeID";
-        private const string UPDATE_PASSWORD = "update [Employee] set Password = @newPassword where ID = @employeeID";
-        private const string MARK_AS_READ = "update Have_Read\r\nset Is_Read = 1\r\nwhere ID = @haveReadID";
-        #endregion
-        #region DELETE
-        #endregion
-        #endregion
+        public bool SendNotification(int employeeID, string title, string content)
+        {
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
+            try
+            {
+                string query = "insert into System_Message(Author_Employee_ID,Title, Content, Date_of_delivery)\r\nvalues(@employeeID,@title,@content, CURRENT_TIMESTAMP)";
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@employeeID", employeeID);
+                    cmd.Parameters.AddWithValue("@title", title);
+                    cmd.Parameters.AddWithValue("@content", content);
 
+                    cmd.ExecuteNonQuery();
+                }
+                DatabaseConnection.GetConnection().Close();
 
-        #region CREATE
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DatabaseConnection.GetConnection().Close();
+                throw ex;
+            }
+        }
         #endregion
         #region RETRIEVE
         public bool Login(string login, string password)
@@ -45,7 +54,8 @@ namespace PremiumAttendance.Objects
             }
             try
             {
-                using (SqlCommand cmd = new SqlCommand(LOGIN, DatabaseConnection.GetConnection()))
+                string query = "select * from Employee where [Login]=@login and [Password]=@password";
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
                 {
                     cmd.Parameters.AddWithValue("@login", login);
                     cmd.Parameters.AddWithValue("@password", password);
@@ -59,7 +69,7 @@ namespace PremiumAttendance.Objects
                     {
                         DatabaseConnection.GetConnection().Close();
                         reader.Close();
-                        throw new Exception("Wrong login or password");
+                        throw new Exception("Wrong login or password.\nTry again.");
                     }
                 }
                 DatabaseConnection.GetConnection().Close();
@@ -82,7 +92,8 @@ namespace PremiumAttendance.Objects
 
             try
             {
-                using (SqlCommand cmd = new SqlCommand(GET_CURRENT_USER, DatabaseConnection.GetConnection()))
+                string query = "select Employee.ID, Employee.RFID_Tag, Employee_Role.Role_name, Employee.Login, Employee.Name, Employee.Surname, Employee.Photo, Employee.Email, Employee.Phone from Employee inner join Employee_Role on Employee.Employee_Role_ID = Employee_Role.ID where Login=@login";
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
                 {
                     cmd.Parameters.AddWithValue("@login", login);
 
@@ -125,7 +136,8 @@ namespace PremiumAttendance.Objects
 
             try
             {
-                using (SqlCommand cmd = new SqlCommand(GET_NOTIFICATIONS, DatabaseConnection.GetConnection()))
+                string query = "select mes.ID as 'Message_ID', hr.ID as 'Have_read_ID', hr.Is_Read, CONCAT(emp.Name,' ',emp.Surname) as 'Author_name', mes.Title, mes.Content, mes.Date_of_delivery\r\nfrom Employee emp join System_Message mes on emp.ID = mes.Author_Employee_ID\r\njoin Have_Read hr on hr.System_Message_ID = mes.ID where hr.Employee_ID = @employeeID";
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
                 {
                     cmd.Parameters.AddWithValue("@employeeID", employeeID);
 
@@ -158,7 +170,8 @@ namespace PremiumAttendance.Objects
 
             try
             {
-                using (SqlCommand cmd = new SqlCommand(UPDATE_USER, DatabaseConnection.GetConnection()))
+                string query = "update [Employee] set RFID_Tag = @rfidTag, Name = @name, Surname = @surname, Photo = @photo, Email = @email, Phone = @phone where [Employee].ID = @employeeID";
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
                 {
                     cmd.Parameters.AddWithValue("@employeeID", userInstance.Id);
 
@@ -223,8 +236,8 @@ namespace PremiumAttendance.Objects
 
             try
             {
-
-                using (SqlCommand cmd = new SqlCommand(GET_PASSWORD, DatabaseConnection.GetConnection()))
+                string query = "select Employee.Password from Employee where Employee.ID = @employeeID";
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
                 {
                     cmd.Parameters.AddWithValue("@employeeID", employeeID);
 
@@ -243,7 +256,8 @@ namespace PremiumAttendance.Objects
                     reader.Close();
                 }
 
-                using (SqlCommand cmd = new SqlCommand(UPDATE_PASSWORD, DatabaseConnection.GetConnection()))
+                query = "update [Employee] set Password = @newPassword where ID = @employeeID";
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
                 {
                     cmd.Parameters.AddWithValue("@employeeID", employeeID);
                     cmd.Parameters.AddWithValue("@newPassword", Program.ComputeSHA256(newPassword));
@@ -272,8 +286,8 @@ namespace PremiumAttendance.Objects
 
             try
             {
-
-                using (SqlCommand cmd = new SqlCommand(MARK_AS_READ, DatabaseConnection.GetConnection()))
+                string query = "update Have_Read\r\nset Is_Read = 1\r\nwhere ID = @haveReadID";
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
                 {
                     cmd.Parameters.AddWithValue("@haveReadID", haveReadID);
 

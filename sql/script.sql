@@ -115,7 +115,7 @@ select Employee.ID, Employee.RFID_Tag, Employee_Role.Role_name, Employee.Login, 
 
 
 insert into System_Message(Author_Employee_ID,Title, Content, Date_of_delivery)
-values(1,'Message3','some lorem ipsum', CURRENT_TIMESTAMP());
+values(1,'Message3','some lorem ipsum', CURRENT_TIMESTAMP);
 
 insert into Employee(Employee_Role_ID,[Name],[Surname], [Login], [Password])
 -- password = 123

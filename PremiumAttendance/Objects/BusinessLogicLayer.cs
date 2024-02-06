@@ -12,6 +12,19 @@ namespace PremiumAttendance.Objects
     public class BusinessLogicLayer
     {
         #region CREATE
+        public bool SendNotification(int employeeID, string title, string content)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                return dal.SendNotification(employeeID, title, content);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         #endregion
         #region RETRIEV
         public bool Login(string login, string password)
@@ -23,8 +36,7 @@ namespace PremiumAttendance.Objects
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                return false;
+                throw ex;
             }
         }
 
@@ -37,8 +49,7 @@ namespace PremiumAttendance.Objects
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                return null;
+                throw ex;
             }
         }
 
@@ -51,10 +62,9 @@ namespace PremiumAttendance.Objects
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                return null;
+               throw ex;
             }
-            
+
         }
         #endregion
         #region UPDATE
@@ -67,8 +77,7 @@ namespace PremiumAttendance.Objects
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                return false;
+                throw ex;
             }
 
         }
@@ -82,8 +91,7 @@ namespace PremiumAttendance.Objects
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                return false;
+                throw ex;
             }
         }
 
@@ -96,8 +104,7 @@ namespace PremiumAttendance.Objects
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                return false;
+                throw ex;
             }
         }
         #endregion

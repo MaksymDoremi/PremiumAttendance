@@ -35,7 +35,7 @@ namespace PremiumAttendance.Forms.SubForms
 
             }
 
-            if(currentUser.Role == "Employee")
+            if (currentUser.Role == "Employee")
             {
                 this.changeRfidTagTextBox.Enabled = false;
             }
@@ -71,8 +71,10 @@ namespace PremiumAttendance.Forms.SubForms
         {
             Employee emp = new Employee(currentUser.Id, this.changeRfidTagTextBox.Text, currentUser.Role, currentUser.Login, this.changeNameTextBox.Text, this.changeSurnameTextBox.Text, Program.ImageToByteArray(this.changeImageBox.Image), this.changeEmailTextBox.Text, this.changePhoneTextBox.Text);
             BusinessLogicLayer bll = new BusinessLogicLayer();
-            if (bll.UpdateEmployee(emp))
+            try
             {
+                bll.UpdateEmployee(emp);
+
                 MessageBox.Show("Changes applied");
 
                 this.currentUser.Name = emp.Name;
@@ -89,10 +91,11 @@ namespace PremiumAttendance.Forms.SubForms
 
                 this.Close();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Something went wrong");
+                MessageBox.Show(ex.Message);
             }
+
         }
     }
 }

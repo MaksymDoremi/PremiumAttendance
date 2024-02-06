@@ -29,10 +29,16 @@ namespace PremiumAttendance.Forms.SubForms
             }
 
             BusinessLogicLayer bll = new BusinessLogicLayer();
-            if (bll.UpdatePassword(employeeID, this.oldPasswordTextBox.Text, this.newPasswordTextBox.Text))
+            try
             {
+                bll.UpdatePassword(employeeID, this.oldPasswordTextBox.Text, this.newPasswordTextBox.Text);
+
                 MessageBox.Show("Password changed successfully");
                 this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

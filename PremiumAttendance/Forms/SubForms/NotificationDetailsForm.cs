@@ -38,7 +38,16 @@ namespace PremiumAttendance.Forms.SubForms
 
         private void markAsReadBtn_Click(object sender, EventArgs e)
         {
-            bll.MarkAsRead(notification.Have_read_id);
+            try
+            {
+
+
+                bll.MarkAsRead(notification.Have_read_id);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

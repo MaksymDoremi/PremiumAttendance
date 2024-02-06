@@ -42,6 +42,7 @@
             this.author_nameLabel.TabIndex = 0;
             this.author_nameLabel.Text = "author name";
             this.author_nameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.author_nameLabel.Click += new System.EventHandler(this.NotificationControl_Click);
             // 
             // titleLabel
             // 
@@ -52,6 +53,7 @@
             this.titleLabel.TabIndex = 1;
             this.titleLabel.Text = "Title";
             this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.titleLabel.Click += new System.EventHandler(this.NotificationControl_Click);
             // 
             // dateTimeLabel
             // 
@@ -62,6 +64,7 @@
             this.dateTimeLabel.Size = new System.Drawing.Size(94, 25);
             this.dateTimeLabel.TabIndex = 2;
             this.dateTimeLabel.Text = "Date time";
+            this.dateTimeLabel.Click += new System.EventHandler(this.NotificationControl_Click);
             // 
             // NotificationControl
             // 

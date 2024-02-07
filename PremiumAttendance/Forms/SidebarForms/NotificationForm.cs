@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PremiumAttendance.Forms.SubForms;
 
 namespace PremiumAttendance.Forms.SidebarForms
 {
@@ -29,15 +30,15 @@ namespace PremiumAttendance.Forms.SidebarForms
 
             if (currentUser.Role == "Employee")
             {
-                this.adminPanel.Visible = false;
+                this.sendNotificationBtn.Visible = false;
             }
-            InitNotificationList();
-            InitControls();
+            InitItems();
         }
-        public void InitEventHandler(object sender, EventArgs e)
+        public void InitItems()
         {
             InitNotificationList();
             InitControls();
+
         }
         public void InitNotificationList()
         {
@@ -75,24 +76,14 @@ namespace PremiumAttendance.Forms.SidebarForms
             {
                 NotificationControl control = new NotificationControl(notification, dashboardForm);
                 this.notificationsFloatLayoutPanel.Controls.Add(control);
+
             }
         }
 
-        private void sendNotificationBtn_Click(object sender, EventArgs e)
+        private void sendNotificationBtn_Click_1(object sender, EventArgs e)
         {
-
-            try
-            {
-                bll.SendNotification(currentUser.Id, this.titleTextBox.Text, this.contentTextBox.Text);
-                InitEventHandler(sender, e);
-                this.titleTextBox.Text = "Title";
-                this.contentTextBox.Text = "Content";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
+            SendNotificationForm form = new SendNotificationForm(this, currentUser);
+            form.ShowDialog();
         }
     }
 }

@@ -25,19 +25,26 @@ namespace PremiumAttendance.Controls
             this.dashboardForm = dashboardForm;
             InitItems();
 
-            if (notification.Is_read)
-            {
-                this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-                
-            }
-            this.currentColor = this.BackColor;
+            
         }
 
         public void InitItems()
         {
+            if (notification.Is_read)
+            {
+                this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+
+            }
+            this.currentColor = this.BackColor;
             this.author_nameLabel.Text = this.notification.AuthorName;
             this.titleLabel.Text = this.notification.Title;
             this.dateTimeLabel.Text = this.notification.DateOfDelivery.ToString();
+        }
+
+        public void InitItemsEvent(object sender, EventArgs e)
+        {
+            notification.Is_read = true;
+            InitItems();
         }
 
         private void NotificationControl_MouseEnter(object sender, EventArgs e)
@@ -54,6 +61,7 @@ namespace PremiumAttendance.Controls
         {
             NotificationDetailsForm form = new NotificationDetailsForm(notification);
             this.dashboardForm.OpenChildFormOverChildForm(form);
+            form.markAsReadEvent += InitItemsEvent;
         }
     }
 }

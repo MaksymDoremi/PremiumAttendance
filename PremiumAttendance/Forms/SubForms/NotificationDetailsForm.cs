@@ -15,6 +15,8 @@ namespace PremiumAttendance.Forms.SubForms
     {
         private Notification notification;
         private BusinessLogicLayer bll;
+
+        public EventHandler markAsReadEvent;
         public NotificationDetailsForm(Notification notification)
         {
             InitializeComponent();
@@ -40,9 +42,13 @@ namespace PremiumAttendance.Forms.SubForms
         {
             try
             {
-
-
                 bll.MarkAsRead(notification.Have_read_id);
+
+                if(markAsReadEvent != null)
+                {
+                    markAsReadEvent.Invoke(this, e);
+                }
+
             }
             catch (Exception ex)
             {

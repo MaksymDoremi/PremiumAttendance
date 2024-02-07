@@ -125,6 +125,12 @@
     <Compile Include="Forms\SubForms\NotificationDetailsForm.Designer.cs">
       <DependentUpon>NotificationDetailsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SubForms\SendNotificationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubForms\SendNotificationForm.Designer.cs">
+      <DependentUpon>SendNotificationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Objects\BusinessLogicLayer.cs" />
     <Compile Include="Objects\DataAccessLayer.cs" />
     <Compile Include="Objects\Employee.cs" />
@@ -167,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SubForms\NotificationDetailsForm.resx">
       <DependentUpon>NotificationDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SubForms\SendNotificationForm.resx">
+      <DependentUpon>SendNotificationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

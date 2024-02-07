@@ -34,11 +34,12 @@
     ✅NotificationDetailsForm
     ✅CustomizeAccountForm
     ✅ChangePasswordForm
+    ✅SendNotificationForm
     AddEmployeeForm
 
 ### Controls to develop
     EmployeeStatusControl
-    ⚠️NotificationControl
+    ✅NotificationControl
     ColleagueControl
     EmployeeControl
     DayControl

@@ -30,15 +30,17 @@
         {
             this.closeBtn = new System.Windows.Forms.Button();
             this.messagePanel = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.dateOfDeliveryLabel = new System.Windows.Forms.Label();
             this.authorNameLabel = new System.Windows.Forms.Label();
-            this.contentLabel = new System.Windows.Forms.Label();
             this.titleLabel = new System.Windows.Forms.Label();
             this.markAsReadBtn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.contentPanel = new System.Windows.Forms.Panel();
+            this.contentLabel = new System.Windows.Forms.Label();
             this.messagePanel.SuspendLayout();
+            this.contentPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // closeBtn
@@ -56,17 +58,47 @@
             // 
             this.messagePanel.BackColor = System.Drawing.SystemColors.ControlLight;
             this.messagePanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.messagePanel.Controls.Add(this.contentPanel);
             this.messagePanel.Controls.Add(this.label3);
             this.messagePanel.Controls.Add(this.label2);
             this.messagePanel.Controls.Add(this.label1);
             this.messagePanel.Controls.Add(this.dateOfDeliveryLabel);
             this.messagePanel.Controls.Add(this.authorNameLabel);
-            this.messagePanel.Controls.Add(this.contentLabel);
             this.messagePanel.Controls.Add(this.titleLabel);
             this.messagePanel.Location = new System.Drawing.Point(12, 92);
             this.messagePanel.Name = "messagePanel";
             this.messagePanel.Size = new System.Drawing.Size(1245, 486);
             this.messagePanel.TabIndex = 44;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(818, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(94, 25);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Delivered";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(417, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 25);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Author";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(16, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 25);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Title";
             // 
             // dateOfDeliveryLabel
             // 
@@ -86,15 +118,6 @@
             this.authorNameLabel.Size = new System.Drawing.Size(395, 80);
             this.authorNameLabel.TabIndex = 2;
             this.authorNameLabel.Text = "Author Name";
-            // 
-            // contentLabel
-            // 
-            this.contentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.contentLabel.Location = new System.Drawing.Point(13, 128);
-            this.contentLabel.Name = "contentLabel";
-            this.contentLabel.Size = new System.Drawing.Size(1209, 335);
-            this.contentLabel.TabIndex = 1;
-            this.contentLabel.Text = "Content";
             // 
             // titleLabel
             // 
@@ -116,35 +139,25 @@
             this.markAsReadBtn.UseVisualStyleBackColor = true;
             this.markAsReadBtn.Click += new System.EventHandler(this.markAsReadBtn_Click);
             // 
-            // label1
+            // contentPanel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(16, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 25);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Title";
+            this.contentPanel.AutoScroll = true;
+            this.contentPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.contentPanel.Controls.Add(this.contentLabel);
+            this.contentPanel.Location = new System.Drawing.Point(3, 136);
+            this.contentPanel.Name = "contentPanel";
+            this.contentPanel.Size = new System.Drawing.Size(1235, 348);
+            this.contentPanel.TabIndex = 7;
             // 
-            // label2
+            // contentLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(417, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 25);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Author";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(818, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 25);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Delivered";
+            this.contentLabel.AutoSize = true;
+            this.contentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.contentLabel.Location = new System.Drawing.Point(3, 10);
+            this.contentLabel.Name = "contentLabel";
+            this.contentLabel.Size = new System.Drawing.Size(114, 32);
+            this.contentLabel.TabIndex = 2;
+            this.contentLabel.Text = "Content";
             // 
             // NotificationDetailsForm
             // 
@@ -158,6 +171,8 @@
             this.Text = "NotificationDetailsForm";
             this.messagePanel.ResumeLayout(false);
             this.messagePanel.PerformLayout();
+            this.contentPanel.ResumeLayout(false);
+            this.contentPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -166,7 +181,6 @@
 
         private System.Windows.Forms.Button closeBtn;
         private System.Windows.Forms.Panel messagePanel;
-        private System.Windows.Forms.Label contentLabel;
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Label authorNameLabel;
         private System.Windows.Forms.Label dateOfDeliveryLabel;
@@ -174,5 +188,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel contentPanel;
+        private System.Windows.Forms.Label contentLabel;
     }
 }

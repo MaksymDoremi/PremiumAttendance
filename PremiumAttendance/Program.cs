@@ -22,6 +22,12 @@ namespace PremiumAttendance
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());
         }
+
+        /// <summary>
+        /// Computes sha256 and applies salt to it
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
         public static string ComputeSHA256(string s)
         {
             string hash = String.Empty;
@@ -65,6 +71,7 @@ namespace PremiumAttendance
             }
 
         }
+
         /// <summary>
         /// Takes byte[] and converts to Image
         /// </summary>

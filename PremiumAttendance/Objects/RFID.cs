@@ -14,19 +14,20 @@ namespace PremiumAttendance.Objects
 {
     internal class RFID
     {
-        public static SerialPort serialPort;
-
+        public SerialPort serialPort;
 
         private BusinessLogicLayer bll;
         public RFID()
         {
-
+            bll = new BusinessLogicLayer();
             serialPort = new SerialPort(AutodetectArduinoPort(), 9600);
             OpenSerialPort();
-
-
         }
-        public static void CloseSerialPort()
+
+        /// <summary>
+        /// Closes serial port
+        /// </summary>
+        public void CloseSerialPort()
         {
             try
             {
@@ -39,11 +40,15 @@ namespace PremiumAttendance.Objects
             catch (Exception ex)
             {
                 Console.WriteLine("CloseSerialPort failed");
+                Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
             }
 
         }
 
-        public static void OpenSerialPort()
+        /// <summary>
+        /// Opens serial port
+        /// </summary>
+        public void OpenSerialPort()
         {
             try
             {
@@ -55,10 +60,14 @@ namespace PremiumAttendance.Objects
             catch (Exception ex)
             {
                 Console.WriteLine("OpenSerialPort failed");
+                Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
             }
 
         }
 
+        /// <summary>
+        /// Show RFID tag in message box
+        /// </summary>
         public void ReturnTag()
         {
             string rfid = "";
@@ -77,16 +86,17 @@ namespace PremiumAttendance.Objects
                         MessageBox.Show("RFID tag: " + rfid);
                     }
                 }
-                catch 
+                catch (Exception ex)
                 {
                     Console.WriteLine("ReturnTag failed");
+                    Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
                 }
-
             }
-
-
-
         }
+
+        /// <summary>
+        /// Reads tag and inserts attendance to database
+        /// </summary>
         public void ReadTag()
         {
             string rfid = "";
@@ -104,19 +114,21 @@ namespace PremiumAttendance.Objects
                         Console.WriteLine(rfid);
 
                         //bll.InsertAttendance(rfid);
-
-
                     }
-
-
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("ReadTag failed");
+                    Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
                 }
 
             }
         }
+
+        /// <summary>
+        /// Finds the COM port where the Arduino is connected
+        /// </summary>
+        /// <returns></returns>
         private string AutodetectArduinoPort()
         {
             ManagementScope connectionScope = new ManagementScope();
@@ -136,12 +148,13 @@ namespace PremiumAttendance.Objects
                     }
                 }
             }
-            catch (ManagementException e)
+            catch (Exception ex)
             {
                 Console.WriteLine("AutodetectArduinoPort failed");
+                Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
             }
 
-            return null;
+            return "";
         }
     }
 }

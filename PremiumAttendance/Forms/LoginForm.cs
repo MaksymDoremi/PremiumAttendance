@@ -36,12 +36,13 @@ namespace PremiumAttendance
             {
                 //ignore error
                 //MessageBox.Show("RFID can't be opened");
+                Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
             }
 
         }
 
         /// <summary>
-        /// 
+        /// Method to erase placeholder
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -55,7 +56,7 @@ namespace PremiumAttendance
         }
 
         /// <summary>
-        /// 
+        /// Method to restore placeholder in case there is no text inside
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -70,7 +71,7 @@ namespace PremiumAttendance
         }
 
         /// <summary>
-        /// 
+        /// Method to erase placeholder
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -85,7 +86,7 @@ namespace PremiumAttendance
         }
 
         /// <summary>
-        /// 
+        /// Method to restore placeholder in case there is no text inside
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -100,7 +101,7 @@ namespace PremiumAttendance
         }
 
         /// <summary>
-        /// Login into system
+        /// Logs into system
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -130,11 +131,21 @@ namespace PremiumAttendance
             }
         }
 
+        /// <summary>
+        /// Event to prevent from typing spaces into password
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void passwordTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = (e.KeyChar == (char)Keys.Space);
         }
 
+        /// <summary>
+        /// Event to prevent from typing spaces into login
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void loginTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = (e.KeyChar == (char)Keys.Space);

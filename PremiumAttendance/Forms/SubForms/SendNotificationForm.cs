@@ -24,6 +24,11 @@ namespace PremiumAttendance.Forms.SubForms
             this.currentUser = currentUser;
         }
 
+        /// <summary>
+        /// Send notification to the database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void sendNotificationBtn_Click(object sender, EventArgs e)
         {
 

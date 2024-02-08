@@ -17,7 +17,14 @@ namespace PremiumAttendance.Objects
     public class DataAccessLayer
     {
         #region CREATE
-        public bool SendNotification(int employeeID, string title, string content)
+        /// <summary>
+        /// Sends notification to all employees
+        /// </summary>
+        /// <param name="authorEmployeeID"></param>
+        /// <param name="title"></param>
+        /// <param name="content"></param>
+        /// <returns>True if success</returns>
+        public bool SendNotification(int authorEmployeeID, string title, string content)
         {
             if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
             {
@@ -28,7 +35,7 @@ namespace PremiumAttendance.Objects
                 string query = "insert into System_Message(Author_Employee_ID,Title, Content, Date_of_delivery)\r\nvalues(@employeeID,@title,@content, CURRENT_TIMESTAMP)";
                 using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
                 {
-                    cmd.Parameters.AddWithValue("@employeeID", employeeID);
+                    cmd.Parameters.AddWithValue("@employeeID", authorEmployeeID);
                     cmd.Parameters.AddWithValue("@title", title);
                     cmd.Parameters.AddWithValue("@content", content);
 
@@ -46,6 +53,12 @@ namespace PremiumAttendance.Objects
         }
         #endregion
         #region RETRIEVE
+        /// <summary>
+        /// Looks for login and password combination in database
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="password"></param>
+        /// <returns>True if login and password matches</returns>
         public bool Login(string login, string password)
         {
             if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
@@ -83,6 +96,11 @@ namespace PremiumAttendance.Objects
             }
         }
 
+        /// <summary>
+        /// Gets user by login from database
+        /// </summary>
+        /// <param name="login"></param>
+        /// <returns>An instance of <see cref="PremiumAttendance.Objects.Employee"/> class</returns>
         public Employee GetCurrentUser(string login)
         {
             if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
@@ -127,6 +145,11 @@ namespace PremiumAttendance.Objects
             }
         }
 
+        /// <summary>
+        /// Reads notifications for current employee
+        /// </summary>
+        /// <param name="employeeID"></param>
+        /// <returns><see cref="System.Data.DataTable"/> of <see cref="PremiumAttendance.Objects.Notification"/> instances</returns>
         public DataTable GetNotifications(int employeeID)
         {
             if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
@@ -161,6 +184,11 @@ namespace PremiumAttendance.Objects
         }
         #endregion
         #region UPDATE
+        /// <summary>
+        /// Update <see cref="PremiumAttendance.Objects.Employee"/> attributes
+        /// </summary>
+        /// <param name="userInstance"></param>
+        /// <returns>True if success</returns>
         public bool UpdateEmployee(Employee userInstance)
         {
             if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
@@ -227,6 +255,13 @@ namespace PremiumAttendance.Objects
             }
         }
 
+        /// <summary>
+        /// Updates old password. Checks for old password correctness
+        /// </summary>
+        /// <param name="employeeID"></param>
+        /// <param name="oldPassword"></param>
+        /// <param name="newPassword"></param>
+        /// <returns>True if success</returns>
         public bool UpdatePassword(int employeeID, string oldPassword, string newPassword)
         {
             if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
@@ -277,6 +312,11 @@ namespace PremiumAttendance.Objects
             }
         }
 
+        /// <summary>
+        /// Mark message as read
+        /// </summary>
+        /// <param name="haveReadID"></param>
+        /// <returns>True if success</returns>
         public bool MarkAsRead(int haveReadID)
         {
             if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)

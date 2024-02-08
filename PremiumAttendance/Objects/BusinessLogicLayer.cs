@@ -12,6 +12,13 @@ namespace PremiumAttendance.Objects
     public class BusinessLogicLayer
     {
         #region CREATE
+        /// <summary>
+        /// Sends notification to all employees
+        /// </summary>
+        /// <param name="authorEmployeeID"></param>
+        /// <param name="title"></param>
+        /// <param name="content"></param>
+        /// <returns>True if success</returns>
         public bool SendNotification(int employeeID, string title, string content)
         {
             try
@@ -26,7 +33,13 @@ namespace PremiumAttendance.Objects
             }
         }
         #endregion
-        #region RETRIEV
+        #region RETRIEVE
+        /// <summary>
+        /// Looks for login and password combination in database
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="password"></param>
+        /// <returns>True if login and password matches</returns>
         public bool Login(string login, string password)
         {
             try
@@ -40,6 +53,11 @@ namespace PremiumAttendance.Objects
             }
         }
 
+        /// <summary>
+        /// Gets user by login from database
+        /// </summary>
+        /// <param name="login"></param>
+        /// <returns>An instance of <see cref="PremiumAttendance.Objects.Employee"/> class</returns>
         public Employee GetCurrentUser(string login)
         {
             try
@@ -53,6 +71,11 @@ namespace PremiumAttendance.Objects
             }
         }
 
+        /// <summary>
+        /// Reads notifications for current employee
+        /// </summary>
+        /// <param name="employeeID"></param>
+        /// <returns><see cref="System.Data.DataTable"/> of <see cref="PremiumAttendance.Objects.Notification"/> instances</returns>
         public DataTable GetNotifications(int employeeID)
         {
             try
@@ -62,12 +85,18 @@ namespace PremiumAttendance.Objects
             }
             catch (Exception ex)
             {
-               throw ex;
+                throw ex;
             }
 
         }
         #endregion
         #region UPDATE
+
+        /// <summary>
+        /// Update <see cref="PremiumAttendance.Objects.Employee"/> attributes
+        /// </summary>
+        /// <param name="userInstance"></param>
+        /// <returns>True if success</returns>
         public bool UpdateEmployee(Employee userInstance)
         {
             try
@@ -82,6 +111,13 @@ namespace PremiumAttendance.Objects
 
         }
 
+        /// <summary>
+        /// Updates old password. Checks for old password correctness
+        /// </summary>
+        /// <param name="employeeID"></param>
+        /// <param name="oldPassword"></param>
+        /// <param name="newPassword"></param>
+        /// <returns>True if success</returns>
         public bool UpdatePassword(int empmloyeeID, string oldPassword, string newPassword)
         {
             try
@@ -95,6 +131,11 @@ namespace PremiumAttendance.Objects
             }
         }
 
+        /// <summary>
+        /// Mark message as read
+        /// </summary>
+        /// <param name="haveReadID"></param>
+        /// <returns>True if success</returns>
         public bool MarkAsRead(int haveReadID)
         {
             try
@@ -108,7 +149,7 @@ namespace PremiumAttendance.Objects
             }
         }
         #endregion
-        #region DELETES
+        #region DELETE
         #endregion
     }
 }

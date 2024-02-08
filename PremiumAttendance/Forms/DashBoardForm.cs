@@ -40,6 +40,9 @@ namespace PremiumAttendance.Forms
             this.timer.Start();
         }
 
+        /// <summary>
+        /// Init dashboard buttons accroding to Administrator and Employee role
+        /// </summary>
         private void InitItems()
         {
             List<Button> administratorBtns = new List<Button>() { homepageBtn, myAccountBtn, notificationsBtn, employeesBtn, attendanceBtn };
@@ -78,6 +81,11 @@ namespace PremiumAttendance.Forms
             this.dashboardEmployeeNameLabel.Text = currentUser.Name + " " + currentUser.Surname;
         }
 
+        /// <summary>
+        /// Event for updatnig photo change and name change after user changes it
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void InitItemsEvent(object sender, EventArgs e)
         {
             //photo
@@ -87,12 +95,20 @@ namespace PremiumAttendance.Forms
             this.dashboardEmployeeNameLabel.Text = currentUser.Name + " " + currentUser.Surname;
         }
 
+        /// <summary>
+        /// Struct with colors for buttons
+        /// </summary>
         private struct RGBColors
         {
             public static Color activeColor = Color.FromArgb(171, 171, 171);
             public static Color disabledColor = Color.SlateGray;
         }
 
+        /// <summary>
+        /// Method to highlight button with active color
+        /// </summary>
+        /// <param name="senderBtn"></param>
+        /// <param name="color"></param>
         private void ActivateButton(object senderBtn, Color color)
         {
             if (senderBtn != null)
@@ -108,6 +124,10 @@ namespace PremiumAttendance.Forms
             }
         }
 
+        /// <summary>
+        /// Method to disable button and change its color to disabled, basic
+        /// </summary>
+        /// <param name="color"></param>
         private void DisableButton(Color color)
         {
             if (currentBtn != null)
@@ -119,6 +139,10 @@ namespace PremiumAttendance.Forms
             }
         }
 
+        /// <summary>
+        /// Opens child form in childFormPanel
+        /// </summary>
+        /// <param name="childForm"></param>
         public void OpenChildForm(Form childForm)
         {
             if (currentChildForm != null)
@@ -136,6 +160,10 @@ namespace PremiumAttendance.Forms
             childForm.Show();
         }
 
+        /// <summary>
+        /// Opens another form over childForm, works like like layer, so you still have main child form opened but under it
+        /// </summary>
+        /// <param name="childForm"></param>
         public void OpenChildFormOverChildForm(Form childForm)
         {
             childForm.TopLevel = false;
@@ -146,15 +174,23 @@ namespace PremiumAttendance.Forms
             childForm.BringToFront();
             childForm.Show();
         }
+
         private void DashBoardForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// As timer ticks it changes the time label
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timer_Tick(object sender, EventArgs e)
         {
             this.dateTimeLabel.Text = System.DateTime.Now.ToString();
         }
+
+        #region Subforms
 
         private void logoutBtn_Click(object sender, EventArgs e)
         {
@@ -199,5 +235,7 @@ namespace PremiumAttendance.Forms
             ActivateButton(sender, RGBColors.activeColor);
             OpenChildForm(new HomepageForm());
         }
+
+        #endregion
     }
 }

@@ -1,0 +1,28 @@
+﻿ERROR [07.02.2024 14:27:49]: Value cannot be null.
+Parameter name: PortName
+   at System.IO.Ports.SerialPort.set_PortName(String value)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate)
+   at PremiumAttendance.Objects.RFID..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 24
+   at PremiumAttendance.LoginForm..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\LoginForm.cs:line 30
+ERROR [07.02.2024 14:38:16]: Value cannot be null.
+Parameter name: PortName
+   at System.IO.Ports.SerialPort.set_PortName(String value)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate)
+   at PremiumAttendance.Objects.RFID..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 24
+   at PremiumAttendance.LoginForm..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\LoginForm.cs:line 30
+ERROR [07.02.2024 14:38:56]: Value cannot be null.
+Parameter name: PortName
+   at System.IO.Ports.SerialPort.set_PortName(String value)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate)
+   at PremiumAttendance.Objects.RFID..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 24
+   at PremiumAttendance.LoginForm..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\LoginForm.cs:line 30
+ERROR [07.02.2024 14:40:19]: The PortName cannot be empty.
+Parameter name: PortName
+   at System.IO.Ports.SerialPort.set_PortName(String value)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate)
+   at PremiumAttendance.Objects.RFID..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 24
+   at PremiumAttendance.LoginForm..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\LoginForm.cs:line 30

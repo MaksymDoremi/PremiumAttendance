@@ -14,6 +14,11 @@ namespace PremiumAttendance.DB
 
         private static SqlConnection _connection = null;
         private static readonly object _lock = new object();
+
+        /// <summary>
+        /// Static method, returns current singleton connection
+        /// </summary>
+        /// <returns></returns>
         public static SqlConnection GetConnection()
         {
             if (_connection == null)

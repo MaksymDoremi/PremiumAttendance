@@ -19,6 +19,7 @@ namespace PremiumAttendance.Forms.SidebarForms
         private BusinessLogicLayer bll;
 
         public EventHandler updateChangesEventHandler;
+
         public MyAccountForm(DashBoardForm dashboardForm, ref Employee currentUser)
         {
             InitializeComponent();
@@ -29,6 +30,9 @@ namespace PremiumAttendance.Forms.SidebarForms
             InitItems();
         }
 
+        /// <summary>
+        /// Init user attributes
+        /// </summary>
         private void InitItems()
         {
 
@@ -51,7 +55,7 @@ namespace PremiumAttendance.Forms.SidebarForms
                 this.bigAvatarPicture.Visible = true;
                 this.bigAvatarPicture.Image = Program.ConvertByteArrayToImage(currentUser.Photo);
             }
-            
+
 
             //LOAD EMAIL
             this.actualEmailFromDB.Text = currentUser.Email;
@@ -60,10 +64,14 @@ namespace PremiumAttendance.Forms.SidebarForms
             this.actualPhoneFromDB.Text = currentUser.Phone;
 
         }
+
+        /// <summary>
+        /// Event that updates current attributes and invokes even to the <see cref="PremiumAttendance.Forms.DashBoardForm"/>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void InitItemsEvent(object sender, EventArgs e)
         {
-            //BusinessLogicLayer bll = new BusinessLogicLayer();
-            //currentUser = bll.GetCurrentUser(currentUser.Login);
             InitItems();
             if (updateChangesEventHandler != null)
             {
@@ -71,14 +79,25 @@ namespace PremiumAttendance.Forms.SidebarForms
             }
 
         }
+
+        /// <summary>
+        /// Opens <see cref="PremiumAttendance.Forms.SubForms.CustomizeAccountForm"/> for account customization
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void changeAccountInfoBtn_Click(object sender, EventArgs e)
         {
             CustomizeAccountForm form = new CustomizeAccountForm(ref currentUser);
             form.submitChangeEventHandler += InitItemsEvent;
-            
+
             this.dashboardForm.OpenChildFormOverChildForm(form);
         }
 
+        /// <summary>
+        /// Opens <see cref="PremiumAttendance.Forms.SubForms.ChangePasswordForm"/> to change password
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void changePasswordBtn_Click(object sender, EventArgs e)
         {
             ChangePasswordForm form = new ChangePasswordForm(currentUser.Id);

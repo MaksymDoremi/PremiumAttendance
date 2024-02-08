@@ -20,6 +20,11 @@ namespace PremiumAttendance.Forms.SubForms
             this.employeeID = employeeID;
         }
 
+        /// <summary>
+        /// Applies password change to database, checks if password confirmed is correct
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void applyChangesAccountInfoBtn_Click(object sender, EventArgs e)
         {
             if (this.newPasswordTextBox.Text != this.confirmNewPasswordTextBox.Text)
@@ -42,6 +47,11 @@ namespace PremiumAttendance.Forms.SubForms
             }
         }
 
+        /// <summary>
+        /// Prevents from typing spaces to password textBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void passwordTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = (e.KeyChar == (char)Keys.Space);

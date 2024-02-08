@@ -49,7 +49,7 @@
             this.sendNotificationBtn.TabIndex = 36;
             this.sendNotificationBtn.Text = "Send Notification";
             this.sendNotificationBtn.UseVisualStyleBackColor = true;
-            this.sendNotificationBtn.Click += new System.EventHandler(this.sendNotificationBtn_Click_1);
+            this.sendNotificationBtn.Click += new System.EventHandler(this.sendNotificationBtn_Click);
             // 
             // NotificationForm
             // 

@@ -21,6 +21,10 @@ namespace PremiumAttendance.Forms.SubForms
             this.currentUser = currentUser;
             InitItems();
         }
+
+        /// <summary>
+        /// Init user attributes
+        /// </summary>
         public void InitItems()
         {
             this.changeNameTextBox.Text = currentUser.Name;
@@ -41,11 +45,17 @@ namespace PremiumAttendance.Forms.SubForms
             }
 
         }
+
         private void closeBtn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Opens file explorer to browse for image files
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void browseImagesBtn_Click(object sender, EventArgs e)
         {
             string imageLocation = "";
@@ -67,6 +77,12 @@ namespace PremiumAttendance.Forms.SubForms
             }
         }
 
+        /// <summary>
+        /// Applies changes to database and updates currentUser.
+        /// Invokes event to updates attributes at <see cref="PremiumAttendance.Forms.SidebarForms.MyAccountForm"/>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void applyChangesAccountInfoBtn_Click(object sender, EventArgs e)
         {
             Employee emp = new Employee(currentUser.Id, this.changeRfidTagTextBox.Text, currentUser.Role, currentUser.Login, this.changeNameTextBox.Text, this.changeSurnameTextBox.Text, Program.ImageToByteArray(this.changeImageBox.Image), this.changeEmailTextBox.Text, this.changePhoneTextBox.Text);

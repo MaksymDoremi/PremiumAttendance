@@ -34,12 +34,19 @@ namespace PremiumAttendance.Forms.SidebarForms
             }
             InitItems();
         }
+
+        /// <summary>
+        /// Init notifications
+        /// </summary>
         public void InitItems()
         {
             InitNotificationList();
             InitControls();
-
         }
+
+        /// <summary>
+        /// Init notification list, gets <see cref="System.Data.DataTable"/> of <see cref="PremiumAttendance.Objects.Notification"/>
+        /// </summary>
         public void InitNotificationList()
         {
             this.notificationList.Clear();
@@ -66,6 +73,10 @@ namespace PremiumAttendance.Forms.SidebarForms
             }
 
         }
+
+        /// <summary>
+        /// Init notification controls from notification list
+        /// </summary>
         public void InitControls()
         {
             this.notificationsFloatLayoutPanel.Controls.Clear();
@@ -80,7 +91,12 @@ namespace PremiumAttendance.Forms.SidebarForms
             }
         }
 
-        private void sendNotificationBtn_Click_1(object sender, EventArgs e)
+        /// <summary>
+        /// Admin button, only admin can send notifications. Opens <see cref="PremiumAttendance.Forms.SubForms.SendNotificationForm"/>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void sendNotificationBtn_Click(object sender, EventArgs e)
         {
             SendNotificationForm form = new SendNotificationForm(this, currentUser);
             form.ShowDialog();

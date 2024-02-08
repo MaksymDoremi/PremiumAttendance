@@ -25,6 +25,9 @@ namespace PremiumAttendance.Forms.SubForms
             InitItems();
         }
 
+        /// <summary>
+        /// Init notification attributes from given instance
+        /// </summary>
         public void InitItems()
         {
             this.titleLabel.Text = notification.Title;
@@ -33,18 +36,28 @@ namespace PremiumAttendance.Forms.SubForms
             this.contentLabel.Text = notification.Content;
         }
 
+        /// <summary>
+        /// Closes current child form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void closeBtn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Marks as read in database and invokes event to the <see cref="PremiumAttendance.Forms.SidebarForms.NotificationForm"/> which marks that control to marked color
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void markAsReadBtn_Click(object sender, EventArgs e)
         {
             try
             {
                 bll.MarkAsRead(notification.Have_read_id);
 
-                if(markAsReadEvent != null)
+                if (markAsReadEvent != null)
                 {
                     markAsReadEvent.Invoke(this, e);
                 }

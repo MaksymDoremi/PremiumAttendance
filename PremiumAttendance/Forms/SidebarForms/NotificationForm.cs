@@ -40,6 +40,8 @@ namespace PremiumAttendance.Forms.SidebarForms
         /// </summary>
         public void InitItems()
         {
+            this.newestRadionBtn.Checked = true;
+            this.oldestRadionBtn.Checked = false;
             InitNotificationList();
             InitControls();
         }
@@ -81,14 +83,40 @@ namespace PremiumAttendance.Forms.SidebarForms
         {
             this.notificationsFloatLayoutPanel.Controls.Clear();
 
-            //Notification[] notifications = notificationList.ToArray();
-
-            foreach (Notification notification in notificationList)
+            if (this.newestRadionBtn.Checked)
             {
-                NotificationControl control = new NotificationControl(notification, dashboardForm);
-                this.notificationsFloatLayoutPanel.Controls.Add(control);
+                var newList =
+                    from notification in notificationList
+                    where (String.IsNullOrEmpty(this.fromTextBox.Text) || notification.AuthorName.ToLower().Contains(this.fromTextBox.Text.ToLower()))
+                    && (String.IsNullOrEmpty(this.subjectTextBox.Text) || notification.Title.ToLower().Contains(this.subjectTextBox.Text.ToLower()))
+                    orderby notification.DateOfDelivery descending
+                    select notification;
+
+                foreach (Notification notification in newList)
+                {
+                    NotificationControl control = new NotificationControl(notification, dashboardForm);
+                    this.notificationsFloatLayoutPanel.Controls.Add(control);
+
+                }
 
             }
+            else if (this.oldestRadionBtn.Checked)
+            {
+                var newList =
+                    from notification in notificationList
+                    where (String.IsNullOrEmpty(this.fromTextBox.Text) || notification.AuthorName.ToLower().Contains(this.fromTextBox.Text.ToLower()))
+                    && (String.IsNullOrEmpty(this.subjectTextBox.Text) || notification.Title.ToLower().Contains(this.subjectTextBox.Text.ToLower()))
+                    orderby notification.DateOfDelivery
+                    select notification;
+
+                foreach (Notification notification in newList)
+                {
+                    NotificationControl control = new NotificationControl(notification, dashboardForm);
+                    this.notificationsFloatLayoutPanel.Controls.Add(control);
+
+                }
+            }
+
         }
 
         /// <summary>
@@ -100,6 +128,16 @@ namespace PremiumAttendance.Forms.SidebarForms
         {
             SendNotificationForm form = new SendNotificationForm(this, currentUser);
             form.ShowDialog();
+        }
+
+        /// <summary>
+        /// Apply new filer settings
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void filterBtn_Click(object sender, EventArgs e)
+        {
+            InitControls();
         }
     }
 }

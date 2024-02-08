@@ -64,7 +64,7 @@
             this.sidebarPanel.Controls.Add(this.homepageBtn);
             this.sidebarPanel.Location = new System.Drawing.Point(0, 0);
             this.sidebarPanel.Name = "sidebarPanel";
-            this.sidebarPanel.Size = new System.Drawing.Size(290, 850);
+            this.sidebarPanel.Size = new System.Drawing.Size(290, 858);
             this.sidebarPanel.TabIndex = 0;
             // 
             // pictureBox1
@@ -138,7 +138,7 @@
             this.logoutBtn.FlatAppearance.BorderSize = 0;
             this.logoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logoutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.logoutBtn.Location = new System.Drawing.Point(0, 783);
+            this.logoutBtn.Location = new System.Drawing.Point(0, 788);
             this.logoutBtn.Name = "logoutBtn";
             this.logoutBtn.Size = new System.Drawing.Size(290, 63);
             this.logoutBtn.TabIndex = 3;
@@ -247,7 +247,7 @@
             this.childFormPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.childFormPanel.Location = new System.Drawing.Point(290, 100);
             this.childFormPanel.Name = "childFormPanel";
-            this.childFormPanel.Size = new System.Drawing.Size(1192, 750);
+            this.childFormPanel.Size = new System.Drawing.Size(1192, 758);
             this.childFormPanel.TabIndex = 2;
             // 
             // DashBoardForm

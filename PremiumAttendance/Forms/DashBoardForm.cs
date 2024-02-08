@@ -221,7 +221,7 @@ namespace PremiumAttendance.Forms
         private void employeesBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.activeColor);
-            OpenChildForm(new EmployeesForm());
+            OpenChildForm(new EmployeesForm(this));
         }
 
         private void attendanceBtn_Click(object sender, EventArgs e)

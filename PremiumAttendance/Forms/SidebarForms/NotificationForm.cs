@@ -32,6 +32,9 @@ namespace PremiumAttendance.Forms.SidebarForms
             {
                 this.sendNotificationBtn.Visible = false;
             }
+
+            this.newestRadionBtn.Checked = true;
+            this.oldestRadionBtn.Checked = false;
             InitItems();
         }
 
@@ -39,9 +42,7 @@ namespace PremiumAttendance.Forms.SidebarForms
         /// Init notifications
         /// </summary>
         public void InitItems()
-        {
-            this.newestRadionBtn.Checked = true;
-            this.oldestRadionBtn.Checked = false;
+        { 
             InitNotificationList();
             InitControls();
         }

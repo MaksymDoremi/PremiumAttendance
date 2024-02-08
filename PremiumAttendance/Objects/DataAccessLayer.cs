@@ -41,14 +41,16 @@ namespace PremiumAttendance.Objects
 
                     cmd.ExecuteNonQuery();
                 }
-                DatabaseConnection.GetConnection().Close();
-
                 return true;
             }
             catch (Exception ex)
             {
-                DatabaseConnection.GetConnection().Close();
+
                 throw ex;
+            }
+            finally
+            {
+                DatabaseConnection.GetConnection().Close();
             }
         }
         #endregion
@@ -85,14 +87,17 @@ namespace PremiumAttendance.Objects
                         throw new Exception("Wrong login or password.\nTry again.");
                     }
                 }
-                DatabaseConnection.GetConnection().Close();
+
 
                 return true;
             }
             catch (Exception ex)
             {
-                DatabaseConnection.GetConnection().Close();
                 throw ex;
+            }
+            finally
+            {
+                DatabaseConnection.GetConnection().Close();
             }
         }
 
@@ -131,7 +136,7 @@ namespace PremiumAttendance.Objects
                         reader[7] == DBNull.Value ? "" : (string)reader[7],
                         reader[8] == DBNull.Value ? "" : (string)reader[8]);
 
-                    DatabaseConnection.GetConnection().Close();
+
 
                     return user;
 
@@ -140,8 +145,11 @@ namespace PremiumAttendance.Objects
             }
             catch (Exception ex)
             {
-                DatabaseConnection.GetConnection().Close();
                 throw ex;
+            }
+            finally
+            {
+                DatabaseConnection.GetConnection().Close();
             }
         }
 
@@ -169,7 +177,7 @@ namespace PremiumAttendance.Objects
                         DataTable dt = new DataTable();
 
                         sda.Fill(dt);
-                        DatabaseConnection.GetConnection().Close();
+
 
                         return dt;
 
@@ -178,8 +186,50 @@ namespace PremiumAttendance.Objects
             }
             catch (Exception ex)
             {
-                DatabaseConnection.GetConnection().Close();
                 throw ex;
+            }
+            finally
+            {
+                DatabaseConnection.GetConnection().Close();
+            }
+        }
+
+        /// <summary>
+        /// Gets datatable of employees 
+        /// </summary>
+        /// <param name="currentEmployeeLogin"></param>
+        /// <returns></returns>
+        public DataTable GetEmployee(string currentEmployeeLogin)
+        {
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
+
+            try
+            {
+                string query = "select Name, Surname, Employee_Role.Role_name, Login, Photo, Email, Phone from Employee join Employee_Role on Employee.Employee_Role_ID = Employee_Role.ID where Login != @currentEmployeeLogin";
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@currentEmployeeLogin", currentEmployeeLogin);
+
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+
+                        sda.Fill(dt);
+
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                DatabaseConnection.GetConnection().Close();
             }
         }
         #endregion
@@ -244,14 +294,15 @@ namespace PremiumAttendance.Objects
                     cmd.ExecuteNonQuery();
                 }
 
-                DatabaseConnection.GetConnection().Close();
-
                 return true;
             }
             catch (Exception ex)
             {
-                DatabaseConnection.GetConnection().Close();
                 throw ex;
+            }
+            finally
+            {
+                DatabaseConnection.GetConnection().Close();
             }
         }
 
@@ -283,10 +334,8 @@ namespace PremiumAttendance.Objects
                     if (Program.ComputeSHA256(oldPassword) != (string)reader[0])
                     {
                         reader.Close();
-                        DatabaseConnection.GetConnection().Close();
+
                         throw new Exception("Old password is incorrect");
-
-
                     }
                     reader.Close();
                 }
@@ -297,18 +346,17 @@ namespace PremiumAttendance.Objects
                     cmd.Parameters.AddWithValue("@employeeID", employeeID);
                     cmd.Parameters.AddWithValue("@newPassword", Program.ComputeSHA256(newPassword));
 
-
                     cmd.ExecuteNonQuery();
                 }
-
-                DatabaseConnection.GetConnection().Close();
-
                 return true;
             }
             catch (Exception ex)
             {
-                DatabaseConnection.GetConnection().Close();
                 throw ex;
+            }
+            finally
+            {
+                DatabaseConnection.GetConnection().Close();
             }
         }
 
@@ -334,14 +382,15 @@ namespace PremiumAttendance.Objects
                     cmd.ExecuteNonQuery();
                 }
 
-                DatabaseConnection.GetConnection().Close();
-
                 return true;
             }
             catch (Exception ex)
             {
-                DatabaseConnection.GetConnection().Close();
                 throw ex;
+            }
+            finally
+            {
+                DatabaseConnection.GetConnection().Close();
             }
         }
         #endregion

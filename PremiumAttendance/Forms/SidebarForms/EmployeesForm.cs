@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PremiumAttendance.Forms.SubForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,27 @@ namespace PremiumAttendance.Forms.SidebarForms
 {
     public partial class EmployeesForm : Form
     {
-        public EmployeesForm()
+        private DashBoardForm dashboardForm;
+        public EmployeesForm(DashBoardForm dashboardForm)
         {
             InitializeComponent();
+            this.dashboardForm = dashboardForm;
+        }
+
+        public void InitItems()
+        {
+
+        }
+
+        private void addEmployeeBtn_Click(object sender, EventArgs e)
+        {
+            AddEmployeeForm form =  new AddEmployeeForm();
+            this.dashboardForm.OpenChildFormOverChildForm(form);
+        }
+
+        private void filterBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

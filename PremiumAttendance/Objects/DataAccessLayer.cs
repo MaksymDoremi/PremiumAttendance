@@ -195,11 +195,12 @@ namespace PremiumAttendance.Objects
         }
 
         /// <summary>
-        /// Gets datatable of employees 
+        /// <para>Gets <see cref="System.Data.DataTable"/> of <see cref="PremiumAttendance.Objects.Employee"/> in format</para> 
+        /// ID, Name, Surname, RFID_Tag, Role_name, Login, Photo, Email, Phone
         /// </summary>
         /// <param name="currentEmployeeLogin"></param>
-        /// <returns></returns>
-        public DataTable GetEmployee(string currentEmployeeLogin)
+        /// <returns><see cref="System.Data.DataTable"/> of <see cref="PremiumAttendance.Objects.Employee"/>'s</returns>
+        public DataTable GetEmployees(string currentEmployeeLogin)
         {
             if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
             {
@@ -208,7 +209,7 @@ namespace PremiumAttendance.Objects
 
             try
             {
-                string query = "select Name, Surname, Employee_Role.Role_name, Login, Photo, Email, Phone from Employee join Employee_Role on Employee.Employee_Role_ID = Employee_Role.ID where Login != @currentEmployeeLogin";
+                string query = "select Employee.ID, Employee.RFID_Tag, Employee.Name, Employee.Surname, Employee_Role.Role_name, Employee.Login, Employee.Password, Employee.Photo, Employee.Email, Employee.Phone from Employee join Employee_Role on Employee.Employee_Role_ID = Employee_Role.ID where Login != @currentEmployeeLogin";
                 using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
                 {
                     cmd.Parameters.AddWithValue("@currentEmployeeLogin", currentEmployeeLogin);

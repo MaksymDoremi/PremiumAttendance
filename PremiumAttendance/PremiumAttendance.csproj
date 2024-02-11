@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\EmployeeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\EmployeeControl.Designer.cs">
+      <DependentUpon>EmployeeControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\NotificationControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -125,6 +131,12 @@
     <Compile Include="Forms\SubForms\CustomizeAccountForm.Designer.cs">
       <DependentUpon>CustomizeAccountForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SubForms\EmployeeAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubForms\EmployeeAccount.Designer.cs">
+      <DependentUpon>EmployeeAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\SubForms\NotificationDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +157,9 @@
     <Compile Include="Objects\RFID.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\EmployeeControl.resx">
+      <DependentUpon>EmployeeControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\NotificationControl.resx">
       <DependentUpon>NotificationControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SubForms\CustomizeAccountForm.resx">
       <DependentUpon>CustomizeAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SubForms\EmployeeAccount.resx">
+      <DependentUpon>EmployeeAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SubForms\NotificationDetailsForm.resx">
       <DependentUpon>NotificationDetailsForm.cs</DependentUpon>

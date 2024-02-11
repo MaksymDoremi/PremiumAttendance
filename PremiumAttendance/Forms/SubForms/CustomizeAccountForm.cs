@@ -15,10 +15,20 @@ namespace PremiumAttendance.Forms.SubForms
     {
         private Employee currentUser;
         public event EventHandler submitChangeEventHandler;
+        private bool adminMode;
+
         public CustomizeAccountForm(ref Employee currentUser)
         {
             InitializeComponent();
             this.currentUser = currentUser;
+            InitItems();
+        }
+
+        public CustomizeAccountForm(ref Employee currentUser, bool adminMode)
+        {
+            InitializeComponent();
+            this.currentUser = currentUser;
+            this.adminMode = adminMode;
             InitItems();
         }
 
@@ -39,7 +49,7 @@ namespace PremiumAttendance.Forms.SubForms
 
             }
 
-            if (currentUser.Role == "Employee")
+            if (currentUser.Role == "Employee" && !adminMode)
             {
                 this.changeRfidTagTextBox.Enabled = false;
             }
@@ -109,6 +119,7 @@ namespace PremiumAttendance.Forms.SubForms
             }
             catch (Exception ex)
             {
+                Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
                 MessageBox.Show(ex.Message);
             }
 

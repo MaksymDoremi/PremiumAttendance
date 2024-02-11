@@ -90,7 +90,25 @@ namespace PremiumAttendance.Objects
 
         }
 
-        
+        /// <summary>
+        /// <para>Gets <see cref="System.Data.DataTable"/> of <see cref="PremiumAttendance.Objects.Employee"/> in format</para> 
+        /// ID, Name, Surname, RFID_Tag, Role_name, Login, Photo, Email, Phone
+        /// </summary>
+        /// <param name="currentEmployeeLogin"></param>
+        /// <returns><see cref="System.Data.DataTable"/> of <see cref="PremiumAttendance.Objects.Employee"/>'s</returns>
+        public DataTable GetEmployees(string currentEmployeeLogin)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                return dal.GetEmployees(currentEmployeeLogin);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         #endregion
         #region UPDATE
 

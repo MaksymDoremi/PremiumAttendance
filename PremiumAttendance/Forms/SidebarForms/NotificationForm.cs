@@ -72,6 +72,7 @@ namespace PremiumAttendance.Forms.SidebarForms
             }
             catch (Exception ex)
             {
+                Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
                 MessageBox.Show(ex.Message);
             }
 

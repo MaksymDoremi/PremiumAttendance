@@ -57,14 +57,12 @@ namespace PremiumAttendance.Forms.SubForms
             {
                 bll.MarkAsRead(notification.Have_read_id);
 
-                if (markAsReadEvent != null)
-                {
-                    markAsReadEvent.Invoke(this, e);
-                }
+                markAsReadEvent?.Invoke(this, e);
 
             }
             catch (Exception ex)
             {
+                Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
                 MessageBox.Show(ex.Message);
             }
         }

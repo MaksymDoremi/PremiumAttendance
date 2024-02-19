@@ -29,7 +29,7 @@ create table Employee
 	[Photo] varbinary(MAX),
 	[Email] varchar(100) check(Email like '%@%.%'),
 	[Phone] varchar(16) CHECK(
-        [Phone] LIKE '+420[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]' OR
+        [Phone] LIKE '+420[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]' OR
         [Phone] LIKE '+420 [0-9][0-9][0-9] [0-9][0-9][0-9] [0-9][0-9][0-9]' OR
         [Phone] LIKE '[0-9][0-9][0-9] [0-9][0-9][0-9] [0-9][0-9][0-9]' OR
         [Phone] LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]' or [Phone] is null

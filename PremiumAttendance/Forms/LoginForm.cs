@@ -38,7 +38,6 @@ namespace PremiumAttendance
                 //MessageBox.Show("RFID can't be opened");
                 Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
             }
-
         }
 
         /// <summary>

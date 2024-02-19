@@ -34,9 +34,9 @@ namespace PremiumAttendance.Forms
 
 
             this.currentUser = currentUser;
-            InitItems();
             this.loginForm = (LoginForm)loginForm;
             this.rfidThread = rfidThread;
+            InitItems();
             this.timer.Start();
         }
 
@@ -79,6 +79,17 @@ namespace PremiumAttendance.Forms
 
             //homepage label with user's name
             this.dashboardEmployeeNameLabel.Text = currentUser.Name + " " + currentUser.Surname;
+
+            if (this.rfidThread != null)
+            {
+                this.rfidStatusLabel.Text = "Running";
+                this.rfidStatusLabel.ForeColor = System.Drawing.Color.Green;
+            }
+            else
+            {
+                this.rfidStatusLabel.Text = "Stopped";
+                this.rfidStatusLabel.ForeColor = System.Drawing.Color.Red;
+            }
         }
 
         /// <summary>
@@ -188,6 +199,7 @@ namespace PremiumAttendance.Forms
         private void timer_Tick(object sender, EventArgs e)
         {
             this.dateTimeLabel.Text = System.DateTime.Now.ToString();
+            
         }
 
         #region Subforms

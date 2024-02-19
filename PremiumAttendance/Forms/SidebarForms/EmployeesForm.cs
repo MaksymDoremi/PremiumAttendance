@@ -85,7 +85,7 @@ namespace PremiumAttendance.Forms.SidebarForms
             {
                 EmployeeControl control = new EmployeeControl(emoployee, dashboardForm);
                 this.employeeFlowLayoutPanel.Controls.Add(control);
-
+                
             }
         }
 

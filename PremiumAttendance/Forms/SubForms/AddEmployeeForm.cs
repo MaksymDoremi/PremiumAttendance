@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PremiumAttendance.Objects;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,54 @@ namespace PremiumAttendance.Forms.SubForms
 {
     public partial class AddEmployeeForm : Form
     {
+        private BusinessLogicLayer bll;
         public AddEmployeeForm()
         {
             InitializeComponent();
+            bll = new BusinessLogicLayer();
         }
 
         private void closeBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void addEmployeeBtn_Click(object sender, EventArgs e)
+        {
+            Employee employee = new Employee(this.rfidTagTextBox.Text, this.roleComboBox.Text, this.loginTextBox.Text, Program.ComputeSHA256(this.passwordTextBox.Text), this.nameTextBox.Text, this.surnameTextBox.Text, Program.ImageToByteArray(this.imageBox.Image), this.emailTextBox.Text, this.phoneTextBox.Text);
+            try
+            {
+                bll.CreateEmployee(employee);
+                MessageBox.Show("Employee created successfully");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void browseImagesBtn_Click(object sender, EventArgs e)
+        {
+            string imageLocation = "";
+            try
+            {
+                OpenFileDialog dialog = new OpenFileDialog();
+                dialog.Filter = "jpg files(*.jpg)|*.jpg| PNG files(*.png)|*.png";
+
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    imageLocation = dialog.FileName;
+                    imageBox.ImageLocation = imageLocation;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

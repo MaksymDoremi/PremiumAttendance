@@ -32,6 +32,20 @@ namespace PremiumAttendance.Objects
                 throw ex;
             }
         }
+
+        public bool CreateEmployee(Employee employee)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                return dal.CreateEmployee(employee);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         #endregion
         #region RETRIEVE
         /// <summary>
@@ -170,6 +184,17 @@ namespace PremiumAttendance.Objects
         }
         #endregion
         #region DELETE
+        public bool DeleteEmployee(int employeeID)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                return dal.DeleteEmployee(employeeID);
+            }catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
         #endregion
     }
 }

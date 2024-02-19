@@ -42,6 +42,7 @@
             this.surnameLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
             this.closeBtn = new System.Windows.Forms.Button();
+            this.deleteEmployeeBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bigAvatarPicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -181,11 +182,24 @@
             this.closeBtn.UseVisualStyleBackColor = true;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
+            // deleteEmployeeBtn
+            // 
+            this.deleteEmployeeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.deleteEmployeeBtn.ForeColor = System.Drawing.Color.Red;
+            this.deleteEmployeeBtn.Location = new System.Drawing.Point(299, 576);
+            this.deleteEmployeeBtn.Name = "deleteEmployeeBtn";
+            this.deleteEmployeeBtn.Size = new System.Drawing.Size(165, 77);
+            this.deleteEmployeeBtn.TabIndex = 41;
+            this.deleteEmployeeBtn.Text = "Delete Employee";
+            this.deleteEmployeeBtn.UseVisualStyleBackColor = true;
+            this.deleteEmployeeBtn.Click += new System.EventHandler(this.deleteEmployeeBtn_Click);
+            // 
             // EmployeeAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1174, 703);
+            this.Controls.Add(this.deleteEmployeeBtn);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.bigAvatarPicture);
             this.Controls.Add(this.photoNotSetLabel);
@@ -224,5 +238,6 @@
         private System.Windows.Forms.Label surnameLabel;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Button closeBtn;
+        private System.Windows.Forms.Button deleteEmployeeBtn;
     }
 }

@@ -60,6 +60,14 @@ namespace PremiumAttendance.Controls
         {
             EmployeeAccount form = new EmployeeAccount(employee, dashboardForm);
             this.dashboardForm.OpenChildFormOverChildForm(form);
+
+            form.deleteEvent += HideControl;
         }
+
+        private void HideControl(object sender, EventArgs e)
+        {
+            this.Visible = false;
+        }
+
     }
 }

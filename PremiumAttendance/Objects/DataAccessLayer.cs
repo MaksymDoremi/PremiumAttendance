@@ -26,10 +26,8 @@ namespace PremiumAttendance.Objects
         /// <returns>True if success</returns>
         public bool SendNotification(int authorEmployeeID, string title, string content)
         {
-            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
-            {
-                DatabaseConnection.GetConnection().Open();
-            }
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed) { DatabaseConnection.GetConnection().Open(); }
+
             try
             {
                 string query = "insert into System_Message(Author_Employee_ID,Title, Content, Date_of_delivery)\r\nvalues(@employeeID,@title,@content, CURRENT_TIMESTAMP)";
@@ -43,15 +41,35 @@ namespace PremiumAttendance.Objects
                 }
                 return true;
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) { throw ex; }
+            finally { DatabaseConnection.GetConnection().Close(); }
+        }
 
-                throw ex;
-            }
-            finally
+        public bool CreateEmployee(Employee employee)
+        {
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed) { DatabaseConnection.GetConnection().Open(); }
+
+            try
             {
-                DatabaseConnection.GetConnection().Close();
+                string query = "insert into Employee(RFID_Tag, Employee_Role_ID, Login, Password, Name, Surname, Email, Phone, Photo) values(@rfid_tag, @role_id, @login, @password, @name, @surname, @email, @phone, @photo)";
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@rfid_tag", employee.Rfid_tag);
+                    cmd.Parameters.AddWithValue("@role_id", employee.RoleID);
+                    cmd.Parameters.AddWithValue("@login", employee.Login);
+                    cmd.Parameters.AddWithValue("@password", employee.Password);
+                    cmd.Parameters.AddWithValue("@name", employee.Name);
+                    cmd.Parameters.AddWithValue("@surname", employee.Surname);
+                    cmd.Parameters.AddWithValue("@email", employee.Email);
+                    cmd.Parameters.AddWithValue("@phone", employee.Phone);
+                    cmd.Parameters.AddWithValue("@photo", employee.Photo);
+                    cmd.ExecuteNonQuery();
+                }
+
+                return true;
             }
+            catch (Exception ex) { throw ex; }
+            finally { DatabaseConnection.GetConnection().Close(); }
         }
         #endregion
         #region RETRIEVE
@@ -63,10 +81,8 @@ namespace PremiumAttendance.Objects
         /// <returns>True if login and password matches</returns>
         public bool Login(string login, string password)
         {
-            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
-            {
-                DatabaseConnection.GetConnection().Open();
-            }
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed) { DatabaseConnection.GetConnection().Open(); }
+
             try
             {
                 string query = "select * from Employee where [Login]=@login and [Password]=@password";
@@ -88,17 +104,10 @@ namespace PremiumAttendance.Objects
                     }
                 }
 
-
                 return true;
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                DatabaseConnection.GetConnection().Close();
-            }
+            catch (Exception ex) { throw ex; }
+            finally { DatabaseConnection.GetConnection().Close(); }
         }
 
         /// <summary>
@@ -108,10 +117,7 @@ namespace PremiumAttendance.Objects
         /// <returns>An instance of <see cref="PremiumAttendance.Objects.Employee"/> class</returns>
         public Employee GetCurrentUser(string login)
         {
-            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
-            {
-                DatabaseConnection.GetConnection().Open();
-            }
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed) { DatabaseConnection.GetConnection().Open(); }
 
             try
             {
@@ -126,31 +132,11 @@ namespace PremiumAttendance.Objects
 
                     if (!reader.HasRows) return null;
 
-                    Employee user = new Employee((int)reader[0],
-                        reader[1] == DBNull.Value ? "" : (string)reader[1],
-                        (string)reader[2],
-                        (string)reader[3],
-                        (string)reader[4],
-                        (string)reader[5],
-                        reader[6] == DBNull.Value ? null : (byte[])reader[6],
-                        reader[7] == DBNull.Value ? "" : (string)reader[7],
-                        reader[8] == DBNull.Value ? "" : (string)reader[8]);
-
-
-
-                    return user;
-
+                    return new Employee((int)reader[0], reader[1] == DBNull.Value ? "" : (string)reader[1], (string)reader[2], (string)reader[3], (string)reader[4], (string)reader[5], reader[6] == DBNull.Value ? null : (byte[])reader[6], reader[7] == DBNull.Value ? "" : (string)reader[7], reader[8] == DBNull.Value ? "" : (string)reader[8]);
                 }
-
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                DatabaseConnection.GetConnection().Close();
-            }
+            catch (Exception ex) { throw ex; }
+            finally { DatabaseConnection.GetConnection().Close(); }
         }
 
         /// <summary>
@@ -160,10 +146,7 @@ namespace PremiumAttendance.Objects
         /// <returns><see cref="System.Data.DataTable"/> of <see cref="PremiumAttendance.Objects.Notification"/> instances</returns>
         public DataTable GetNotifications(int employeeID)
         {
-            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
-            {
-                DatabaseConnection.GetConnection().Open();
-            }
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed) { DatabaseConnection.GetConnection().Open(); }
 
             try
             {
@@ -178,20 +161,12 @@ namespace PremiumAttendance.Objects
 
                         sda.Fill(dt);
 
-
                         return dt;
-
                     }
                 }
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                DatabaseConnection.GetConnection().Close();
-            }
+            catch (Exception ex) { throw ex; }
+            finally { DatabaseConnection.GetConnection().Close(); }
         }
 
         /// <summary>
@@ -202,10 +177,7 @@ namespace PremiumAttendance.Objects
         /// <returns><see cref="System.Data.DataTable"/> of <see cref="PremiumAttendance.Objects.Employee"/>'s</returns>
         public DataTable GetEmployees(string currentEmployeeLogin)
         {
-            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
-            {
-                DatabaseConnection.GetConnection().Open();
-            }
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed) { DatabaseConnection.GetConnection().Open(); }
 
             try
             {
@@ -224,14 +196,8 @@ namespace PremiumAttendance.Objects
                     }
                 }
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                DatabaseConnection.GetConnection().Close();
-            }
+            catch (Exception ex) { throw ex; }
+            finally { DatabaseConnection.GetConnection().Close(); }
         }
         #endregion
         #region UPDATE
@@ -242,10 +208,7 @@ namespace PremiumAttendance.Objects
         /// <returns>True if success</returns>
         public bool UpdateEmployee(Employee userInstance)
         {
-            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
-            {
-                DatabaseConnection.GetConnection().Open();
-            }
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed) { DatabaseConnection.GetConnection().Open(); }
 
             try
             {
@@ -254,57 +217,25 @@ namespace PremiumAttendance.Objects
                 {
                     cmd.Parameters.AddWithValue("@employeeID", userInstance.Id);
 
-                    if (String.IsNullOrEmpty(userInstance.Rfid_tag))
-                    {
-                        cmd.Parameters.AddWithValue("@rfidTag", DBNull.Value);
-                    }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@rfidTag", userInstance.Rfid_tag);
-                    }
+                    cmd.Parameters.AddWithValue("@rfidTag", String.IsNullOrEmpty(userInstance.Rfid_tag) ? DBNull.Value : (object)userInstance.Rfid_tag);
+
                     cmd.Parameters.AddWithValue("@name", userInstance.Name);
+
                     cmd.Parameters.AddWithValue("@surname", userInstance.Surname);
-                    if (userInstance.Photo == null)
-                    {
-                        cmd.Parameters.AddWithValue("@photo", SqlBinary.Null);
-                    }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@photo", userInstance.Photo);
-                    }
 
-                    if (String.IsNullOrEmpty(userInstance.Email))
-                    {
-                        cmd.Parameters.AddWithValue("@email", DBNull.Value);
-                    }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@email", userInstance.Email);
-                    }
+                    cmd.Parameters.AddWithValue("@photo", userInstance.Photo == null ? SqlBinary.Null : userInstance.Photo);
 
-                    if (String.IsNullOrEmpty(userInstance.Phone))
-                    {
-                        cmd.Parameters.AddWithValue("@phone", DBNull.Value);
-                    }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@phone", userInstance.Phone);
-                    }
+                    cmd.Parameters.AddWithValue("@email", String.IsNullOrEmpty(userInstance.Email) ? DBNull.Value : (object)userInstance.Email);
 
+                    cmd.Parameters.AddWithValue("@phone", String.IsNullOrEmpty(userInstance.Phone) ? DBNull.Value : (object)userInstance.Phone);
 
                     cmd.ExecuteNonQuery();
                 }
 
                 return true;
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                DatabaseConnection.GetConnection().Close();
-            }
+            catch (Exception ex) { throw ex; }
+            finally { DatabaseConnection.GetConnection().Close(); }
         }
 
         /// <summary>
@@ -316,10 +247,7 @@ namespace PremiumAttendance.Objects
         /// <returns>True if success</returns>
         public bool UpdatePassword(int employeeID, string oldPassword, string newPassword)
         {
-            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
-            {
-                DatabaseConnection.GetConnection().Open();
-            }
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed) { DatabaseConnection.GetConnection().Open(); }
 
             try
             {
@@ -351,14 +279,8 @@ namespace PremiumAttendance.Objects
                 }
                 return true;
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                DatabaseConnection.GetConnection().Close();
-            }
+            catch (Exception ex) { throw ex; }
+            finally { DatabaseConnection.GetConnection().Close(); }
         }
 
         /// <summary>
@@ -368,10 +290,7 @@ namespace PremiumAttendance.Objects
         /// <returns>True if success</returns>
         public bool MarkAsRead(int haveReadID)
         {
-            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
-            {
-                DatabaseConnection.GetConnection().Open();
-            }
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed) { DatabaseConnection.GetConnection().Open(); }
 
             try
             {
@@ -385,17 +304,36 @@ namespace PremiumAttendance.Objects
 
                 return true;
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                DatabaseConnection.GetConnection().Close();
-            }
+            catch (Exception ex) { throw ex; }
+            finally { DatabaseConnection.GetConnection().Close(); }
         }
         #endregion
         #region DELETE
+        /// <summary>
+        /// Deletes <see cref="PremiumAttendance.Objects.Employee"/> from database using its ID
+        /// </summary>
+        /// <param name="employeeId"></param>
+        /// <returns></returns>
+        public bool DeleteEmployee(int employeeId)
+        {
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed) { DatabaseConnection.GetConnection().Open(); }
+
+            try
+            {
+                string query = "delete from Employee where ID = @employeeId";
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@employeeId", employeeId);
+
+                    cmd.ExecuteNonQuery();
+                }
+
+                return true;
+
+            }
+            catch (Exception ex) { throw ex; }
+            finally { DatabaseConnection.GetConnection().Close(); }
+        }
         #endregion
     }
 }

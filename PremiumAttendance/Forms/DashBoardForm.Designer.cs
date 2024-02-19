@@ -45,6 +45,8 @@
             this.dateTimeLabel = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.childFormPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.rfidStatusLabel = new System.Windows.Forms.Label();
             this.sidebarPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.upperPanel.SuspendLayout();
@@ -54,6 +56,8 @@
             // sidebarPanel
             // 
             this.sidebarPanel.BackColor = System.Drawing.Color.SlateGray;
+            this.sidebarPanel.Controls.Add(this.rfidStatusLabel);
+            this.sidebarPanel.Controls.Add(this.label1);
             this.sidebarPanel.Controls.Add(this.pictureBox1);
             this.sidebarPanel.Controls.Add(this.attendanceBtn);
             this.sidebarPanel.Controls.Add(this.employeesBtn);
@@ -250,6 +254,26 @@
             this.childFormPanel.Size = new System.Drawing.Size(1192, 758);
             this.childFormPanel.TabIndex = 2;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(12, 648);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 20);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "RFID Status:";
+            // 
+            // rfidStatusLabel
+            // 
+            this.rfidStatusLabel.AutoSize = true;
+            this.rfidStatusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rfidStatusLabel.Location = new System.Drawing.Point(143, 648);
+            this.rfidStatusLabel.Name = "rfidStatusLabel";
+            this.rfidStatusLabel.Size = new System.Drawing.Size(55, 20);
+            this.rfidStatusLabel.TabIndex = 9;
+            this.rfidStatusLabel.Text = "status";
+            // 
             // DashBoardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -266,6 +290,7 @@
             this.Text = "Premium Attendance";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DashBoardForm_FormClosed);
             this.sidebarPanel.ResumeLayout(false);
+            this.sidebarPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.upperPanel.ResumeLayout(false);
             this.upperPanel.PerformLayout();
@@ -291,5 +316,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox dashboardEmployeeAvatar;
         private System.Windows.Forms.Label dashboardEmployeeNameLabel;
+        private System.Windows.Forms.Label rfidStatusLabel;
+        private System.Windows.Forms.Label label1;
     }
 }

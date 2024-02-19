@@ -25,7 +25,7 @@
     MyDashboardForm
     ✅NotificationForm
     ✅MyAccountForm
-    ⚠️EmployeesForm
+    ✅EmployeesForm
     AttendanceForm
 
 ### Subforms to develop
@@ -35,13 +35,14 @@
     ✅CustomizeAccountForm
     ✅ChangePasswordForm
     ✅SendNotificationForm
-    ⚠️AddEmployeeForm
+    ✅AddEmployeeForm
+    ✅EmployeeAccount
 
 ### Controls to develop
     EmployeeStatusControl
     ✅NotificationControl
     ColleagueControl
-    EmployeeControl
+    ✅EmployeeControl
     DayControl
     AttendanceControl
 

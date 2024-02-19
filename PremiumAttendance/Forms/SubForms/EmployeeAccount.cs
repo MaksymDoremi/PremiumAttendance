@@ -15,11 +15,15 @@ namespace PremiumAttendance.Forms.SubForms
     {
         private Employee employee;
         private DashBoardForm dashboardForm;
+        private BusinessLogicLayer bll;
+
+        public EventHandler deleteEvent;
         public EmployeeAccount(Employee employee, DashBoardForm dashboardForm)
         {
             InitializeComponent();
             this.employee = employee;
             this.dashboardForm = dashboardForm;
+            bll = new BusinessLogicLayer();
 
             InitItems();
         }
@@ -55,7 +59,7 @@ namespace PremiumAttendance.Forms.SubForms
 
             //LOAD PHONE
             this.actualPhoneFromDB.Text = employee.Phone;
-        }   
+        }
 
         private void closeBtn_Click(object sender, EventArgs e)
         {
@@ -66,6 +70,28 @@ namespace PremiumAttendance.Forms.SubForms
         {
             CustomizeAccountForm form = new CustomizeAccountForm(ref employee, true);
             this.dashboardForm.OpenChildFormOverChildForm(form);
+        }
+
+        private void deleteEmployeeBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bll.DeleteEmployee(this.employee.Id);
+                MessageBox.Show("Employee deleted successfully");
+
+                //event that hides control from view
+                if (deleteEvent != null)
+                {
+                    deleteEvent.Invoke(sender, e);
+                }
+
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

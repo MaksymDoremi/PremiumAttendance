@@ -27,10 +27,7 @@ namespace PremiumAttendance.Objects
                 return dal.SendNotification(employeeID, title, content);
 
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            catch { throw; }
         }
 
         public bool CreateEmployee(Employee employee)
@@ -41,9 +38,23 @@ namespace PremiumAttendance.Objects
                 return dal.CreateEmployee(employee);
 
             }
-            catch (Exception ex)
+            catch
             {
-                throw ex;
+                throw;
+            }
+        }
+
+        public void InsertAttendance(string rfidTag)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                dal.InsertAttendance(rfidTag);
+
+            }
+            catch 
+            {
+                throw;
             }
         }
         #endregion
@@ -61,10 +72,7 @@ namespace PremiumAttendance.Objects
                 DataAccessLayer dal = new DataAccessLayer();
                 return dal.Login(login, password);
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            catch { throw; }
         }
 
         /// <summary>
@@ -79,10 +87,7 @@ namespace PremiumAttendance.Objects
                 DataAccessLayer dal = new DataAccessLayer();
                 return dal.GetCurrentUser(login);
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            catch { throw; }
         }
 
         /// <summary>
@@ -97,10 +102,7 @@ namespace PremiumAttendance.Objects
                 DataAccessLayer dal = new DataAccessLayer();
                 return dal.GetNotifications(employeeID);
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            catch { throw; }
 
         }
 
@@ -117,10 +119,7 @@ namespace PremiumAttendance.Objects
                 DataAccessLayer dal = new DataAccessLayer();
                 return dal.GetEmployees(currentEmployeeLogin);
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            catch { throw; }
         }
 
         #endregion
@@ -138,10 +137,7 @@ namespace PremiumAttendance.Objects
                 DataAccessLayer dal = new DataAccessLayer();
                 return dal.UpdateEmployee(userInstance);
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            catch { throw; }
 
         }
 
@@ -159,10 +155,7 @@ namespace PremiumAttendance.Objects
                 DataAccessLayer dal = new DataAccessLayer();
                 return dal.UpdatePassword(empmloyeeID, oldPassword, newPassword);
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            catch { throw; }
         }
 
         /// <summary>
@@ -190,10 +183,7 @@ namespace PremiumAttendance.Objects
             {
                 DataAccessLayer dal = new DataAccessLayer();
                 return dal.DeleteEmployee(employeeID);
-            }catch(Exception ex)
-            {
-                throw ex;
-            }
+            }catch{ throw; }
         }
         #endregion
     }

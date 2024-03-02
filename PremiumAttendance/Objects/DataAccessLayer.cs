@@ -71,6 +71,41 @@ namespace PremiumAttendance.Objects
             catch (Exception ex) { throw ex; }
             finally { DatabaseConnection.GetConnection().Close(); }
         }
+
+        public void InsertAttendance(string rfidTag)
+        {
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed) { DatabaseConnection.GetConnection().Open(); }
+
+            try
+            {
+                string insertAttendanceQuery = "insert into Attendance(Employee_ID, Datetime_of_entry, Type_of_entry) values((select Employee.ID from Employee where Employee.RFID_Tag = @rfidTag),CURRENT_TIMESTAMP,@type)";
+                string getAttendanceType = "select top 1 Attendance.Type_of_entry from Attendance where Attendance.Employee_ID = (select Employee.ID from Employee where Employee.RFID_Tag = @rfidTag) order by Attendance.Datetime_of_entry desc";
+                using (SqlCommand cmd = new SqlCommand(insertAttendanceQuery, DatabaseConnection.GetConnection()))
+                {
+                    // 0 check out, 1 check in
+                    int type = 0;
+                    using (SqlCommand subSelect = new SqlCommand(getAttendanceType, DatabaseConnection.GetConnection()))
+                    {
+                        subSelect.Parameters.AddWithValue("@rfidTag", rfidTag);
+                        SqlDataReader reader = subSelect.ExecuteReader();
+                        reader.Read();
+
+                        if (reader.HasRows)
+                        {
+
+                            type = Convert.ToInt32(reader[0]);
+                        }
+
+                        reader.Close();
+                    }
+                    cmd.Parameters.AddWithValue("@rfidTag", rfidTag);
+                    cmd.Parameters.AddWithValue("@type", type == 0 ? 1 : 0);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex) { throw ex; }
+            finally { DatabaseConnection.GetConnection().Close(); }
+        }
         #endregion
         #region RETRIEVE
         /// <summary>

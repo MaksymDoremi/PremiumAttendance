@@ -104,7 +104,7 @@ namespace PremiumAttendance.Objects
             while (true)
             {
                 rfid = null;
-                System.Threading.Thread.Sleep(10);
+                
                 try
                 {
                     rfid = serialPort.ReadLine().Trim();
@@ -113,7 +113,7 @@ namespace PremiumAttendance.Objects
                     {
                         Console.WriteLine(rfid);
 
-                        //bll.InsertAttendance(rfid);
+                        bll.InsertAttendance(rfid);
                     }
                 }
                 catch (Exception ex)
@@ -121,6 +121,7 @@ namespace PremiumAttendance.Objects
                     Console.WriteLine("ReadTag failed");
                     Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
                 }
+                System.Threading.Thread.Sleep(3);
 
             }
         }

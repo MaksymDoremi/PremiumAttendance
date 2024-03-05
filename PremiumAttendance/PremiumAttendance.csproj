@@ -156,11 +156,14 @@
       <DependentUpon>SendNotificationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Objects\BusinessLogicLayer.cs" />
-    <Compile Include="Objects\DataAccessLayer.cs" />
+    <Compile Include="Objects\DataAccessLayer\CreateDataAccessLayer.cs" />
+    <Compile Include="Objects\DataAccessLayer\DeleteDataAccessLayer.cs" />
     <Compile Include="Objects\Employee.cs" />
     <Compile Include="Objects\Logger.cs" />
     <Compile Include="Objects\Notification.cs" />
+    <Compile Include="Objects\DataAccessLayer\RetrieveDataAccessLayer.cs" />
     <Compile Include="Objects\RFID.cs" />
+    <Compile Include="Objects\DataAccessLayer\UpdateDataAccessLayer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\EmployeeControl.resx">

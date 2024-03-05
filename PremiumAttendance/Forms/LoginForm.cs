@@ -22,7 +22,6 @@ namespace PremiumAttendance
         private Thread rfidThread;
         public LoginForm()
         {
-
             InitializeComponent();
             //start rfid thread
             try

@@ -245,7 +245,7 @@ namespace PremiumAttendance.Forms
         private void homepageBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.activeColor);
-            OpenChildForm(new HomepageForm());
+            OpenChildForm(new HomepageForm(this, ref this.currentUser));
         }
 
         #endregion

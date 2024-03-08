@@ -93,6 +93,16 @@ namespace PremiumAttendance.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap greenMark {
+            get {
+                object obj = ResourceManager.GetObject("greenMark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap groups_FILL0_wght400_GRAD0_opsz24 {
             get {
                 object obj = ResourceManager.GetObject("groups_FILL0_wght400_GRAD0_opsz24", resourceCulture);
@@ -133,6 +143,16 @@ namespace PremiumAttendance.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap redMark {
+            get {
+                object obj = ResourceManager.GetObject("redMark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap today_FILL0_wght400_GRAD0_opsz24 {
             get {
                 object obj = ResourceManager.GetObject("today_FILL0_wght400_GRAD0_opsz24", resourceCulture);
@@ -156,6 +176,16 @@ namespace PremiumAttendance.Properties {
         internal static System.Drawing.Bitmap Untitled_design {
             get {
                 object obj = ResourceManager.GetObject("Untitled design", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap yellowMark {
+            get {
+                object obj = ResourceManager.GetObject("yellowMark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -273,6 +273,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="errorLogs\log.txt" />
+    <None Include="Resources\yellowMark.png" />
+    <None Include="Resources\redMark.png" />
+    <None Include="Resources\greenMark.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

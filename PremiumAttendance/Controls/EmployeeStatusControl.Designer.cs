@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.employeeNameSurname = new System.Windows.Forms.Label();
+            this.employeeNameSurnameLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lastRecordLabel = new System.Windows.Forms.Label();
             this.employeeStatusImage = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.employeeStatusImage)).BeginInit();
             this.SuspendLayout();
@@ -46,14 +46,14 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Name:";
             // 
-            // employeeNameSurname
+            // employeeNameSurnameLabel
             // 
-            this.employeeNameSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.employeeNameSurname.Location = new System.Drawing.Point(229, 12);
-            this.employeeNameSurname.Name = "employeeNameSurname";
-            this.employeeNameSurname.Size = new System.Drawing.Size(165, 49);
-            this.employeeNameSurname.TabIndex = 7;
-            this.employeeNameSurname.Text = "label1";
+            this.employeeNameSurnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.employeeNameSurnameLabel.Location = new System.Drawing.Point(229, 12);
+            this.employeeNameSurnameLabel.Name = "employeeNameSurnameLabel";
+            this.employeeNameSurnameLabel.Size = new System.Drawing.Size(165, 49);
+            this.employeeNameSurnameLabel.TabIndex = 7;
+            this.employeeNameSurnameLabel.Text = "label1";
             // 
             // label2
             // 
@@ -65,15 +65,15 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Last record";
             // 
-            // label3
+            // lastRecordLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(132, 88);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(166, 25);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "string HH:MM:SS";
+            this.lastRecordLabel.AutoSize = true;
+            this.lastRecordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lastRecordLabel.Location = new System.Drawing.Point(132, 88);
+            this.lastRecordLabel.Name = "lastRecordLabel";
+            this.lastRecordLabel.Size = new System.Drawing.Size(166, 25);
+            this.lastRecordLabel.TabIndex = 12;
+            this.lastRecordLabel.Text = "string HH:MM:SS";
             // 
             // employeeStatusImage
             // 
@@ -88,13 +88,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.employeeStatusImage);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lastRecordLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.employeeNameSurname);
+            this.Controls.Add(this.employeeNameSurnameLabel);
             this.Name = "EmployeeStatusControl";
-            this.Size = new System.Drawing.Size(409, 124);
+            this.Size = new System.Drawing.Size(407, 122);
             ((System.ComponentModel.ISupportInitialize)(this.employeeStatusImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -104,9 +105,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label employeeNameSurname;
+        private System.Windows.Forms.Label employeeNameSurnameLabel;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lastRecordLabel;
         private System.Windows.Forms.PictureBox employeeStatusImage;
     }
 }

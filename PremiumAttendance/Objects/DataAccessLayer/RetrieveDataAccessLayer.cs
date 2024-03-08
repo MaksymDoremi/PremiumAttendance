@@ -89,7 +89,7 @@ namespace PremiumAttendance.Objects
 
             try
             {
-                string query = "select mes.ID as 'Message_ID', hr.ID as 'Have_read_ID', hr.Is_Read, CONCAT(emp.Name,' ',emp.Surname) as 'Author_name', mes.Title, mes.Content, mes.Date_of_delivery\r\nfrom Employee emp join System_Message mes on emp.ID = mes.Author_Employee_ID\r\njoin Have_Read hr on hr.System_Message_ID = mes.ID where hr.Employee_ID = @employeeID";
+                string query = "select mes.ID as 'Message_ID', hr.ID as 'Have_read_ID', hr.Is_Read, CONCAT(emp.Name,' ',emp.Surname) as 'Author_name', mes.Title, mes.Content, mes.Date_of_delivery from Employee emp join System_Message mes on emp.ID = mes.Author_Employee_ID join Have_Read hr on hr.System_Message_ID = mes.ID where hr.Employee_ID = @employeeID";
                 using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
                 {
                     cmd.Parameters.AddWithValue("@employeeID", employeeID);
@@ -139,13 +139,18 @@ namespace PremiumAttendance.Objects
             finally { DatabaseConnection.GetConnection().Close(); }
         }
 
+        /// <summary>
+        /// Returns Employee status in format ID, Name, Surname, Type_of_entry, Datetime_of_entry      
+        /// </summary>
+        /// <param name="currentEmployeeLogin"></param>
+        /// <returns><see cref="System.Data.DataTable"></returns>
         public DataTable GetEmployeeStatus(string currentEmployeeLogin)
         {
             if (DatabaseConnection.GetConnection().State == ConnectionState.Closed) { DatabaseConnection.GetConnection().Open(); }
 
             try
             {
-                string query = "select SELECT a.Type_of_entry, a.Datetime_of_entry, e.Name, e.Surname \r\n\tFROM Attendance a \r\n\tJOIN (   \r\n\t\tSELECT Attendance.Employee_ID, MAX(Attendance.Datetime_of_entry) AS max_datetime   \r\n\t\tFROM Attendance GROUP BY Attendance.Employee_ID \r\n\t) \r\n\tb ON a.Employee_ID = b.Employee_ID AND a.Datetime_of_entry = b.max_datetime \r\n\tJOIN Employee e ON a.Employee_ID = e.ID where e.Login != @currentEmployeeLogin";
+                string query = "SELECT e.ID, e.Name, e.Surname, a.Type_of_entry, a.Datetime_of_entry FROM Employee e LEFT JOIN ( SELECT a.Employee_ID, a.Type_of_entry, a.Datetime_of_entry FROM Attendance a JOIN ( SELECT Attendance.Employee_ID, MAX(Attendance.Datetime_of_entry) AS max_datetime FROM Attendance GROUP BY Attendance.Employee_ID ) b ON a.Employee_ID = b.Employee_ID AND a.Datetime_of_entry = b.max_datetime WHERE CAST(a.Datetime_of_entry AS DATE) = CAST(GETDATE() AS DATE) ) a ON e.ID = a.Employee_ID WHERE e.Login != @currentEmployeeLogin";
                 using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
                 {
                     cmd.Parameters.AddWithValue("@currentEmployeeLogin", currentEmployeeLogin);

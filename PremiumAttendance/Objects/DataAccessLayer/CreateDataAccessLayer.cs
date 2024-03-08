@@ -72,6 +72,10 @@ namespace PremiumAttendance.Objects
             finally { DatabaseConnection.GetConnection().Close(); }
         }
 
+        /// <summary>
+        /// Inserts new attendance record into database
+        /// </summary>
+        /// <param name="rfidTag"></param>
         public void InsertAttendance(string rfidTag)
         {
             if (DatabaseConnection.GetConnection().State == ConnectionState.Closed) { DatabaseConnection.GetConnection().Open(); }

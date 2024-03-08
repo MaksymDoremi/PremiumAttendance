@@ -17829,3 +17829,51 @@ Parameter name: PortName
    at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate)
    at PremiumAttendance.Objects.RFID..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 23
    at PremiumAttendance.LoginForm..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\LoginForm.cs:line 29
+ERROR [07.03.2024 12:57:18]: The PortName cannot be empty.
+Parameter name: PortName
+   at System.IO.Ports.SerialPort.set_PortName(String value)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate)
+   at PremiumAttendance.Objects.RFID..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 23
+   at PremiumAttendance.LoginForm..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\LoginForm.cs:line 29
+ERROR [08.03.2024 23:38:58]: The PortName cannot be empty.
+Parameter name: PortName
+   at System.IO.Ports.SerialPort.set_PortName(String value)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate)
+   at PremiumAttendance.Objects.RFID..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 23
+   at PremiumAttendance.LoginForm..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\LoginForm.cs:line 29
+ERROR [08.03.2024 23:39:25]: The PortName cannot be empty.
+Parameter name: PortName
+   at System.IO.Ports.SerialPort.set_PortName(String value)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate)
+   at PremiumAttendance.Objects.RFID..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 23
+   at PremiumAttendance.LoginForm..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\LoginForm.cs:line 29
+ERROR [08.03.2024 23:39:27]: Specified cast is not valid.
+   at PremiumAttendance.Forms.SidebarForms.HomepageForm.InitControls() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\SidebarForms\HomepageForm.cs:line 38
+ERROR [08.03.2024 23:48:11]: The PortName cannot be empty.
+Parameter name: PortName
+   at System.IO.Ports.SerialPort.set_PortName(String value)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate)
+   at PremiumAttendance.Objects.RFID..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 23
+   at PremiumAttendance.LoginForm..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\LoginForm.cs:line 29
+ERROR [08.03.2024 23:48:14]: Specified cast is not valid.
+   at PremiumAttendance.Forms.SidebarForms.HomepageForm.InitControls() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\SidebarForms\HomepageForm.cs:line 38
+ERROR [08.03.2024 23:48:18]: Specified cast is not valid.
+   at PremiumAttendance.Forms.SidebarForms.HomepageForm.InitControls() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\SidebarForms\HomepageForm.cs:line 38
+ERROR [08.03.2024 23:49:37]: The PortName cannot be empty.
+Parameter name: PortName
+   at System.IO.Ports.SerialPort.set_PortName(String value)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate)
+   at PremiumAttendance.Objects.RFID..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 23
+   at PremiumAttendance.LoginForm..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\LoginForm.cs:line 29
+ERROR [08.03.2024 23:50:02]: The PortName cannot be empty.
+Parameter name: PortName
+   at System.IO.Ports.SerialPort.set_PortName(String value)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate)
+   at PremiumAttendance.Objects.RFID..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 23
+   at PremiumAttendance.LoginForm..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\LoginForm.cs:line 29

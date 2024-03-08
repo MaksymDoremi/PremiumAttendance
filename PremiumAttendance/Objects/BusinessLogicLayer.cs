@@ -52,7 +52,7 @@ namespace PremiumAttendance.Objects
                 dal.InsertAttendance(rfidTag);
 
             }
-            catch 
+            catch
             {
                 throw;
             }
@@ -104,6 +104,21 @@ namespace PremiumAttendance.Objects
             }
             catch { throw; }
 
+        }
+
+        /// <summary>
+        /// Returns Employee status in format Type_of_entry, Datetime_of_entry, Name, Surname       
+        /// </summary>
+        /// <param name="currentEmployeeLogin"></param>
+        /// <returns><see cref="System.Data.DataTable"></returns>
+        public DataTable GetEmployeeStatus(string currentEmployeeLogin)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                return dal.GetEmployeeStatus(currentEmployeeLogin);
+            }
+            catch { throw; }
         }
 
         /// <summary>
@@ -184,7 +199,8 @@ namespace PremiumAttendance.Objects
             {
                 DataAccessLayer dal = new DataAccessLayer();
                 return dal.DeleteEmployee(employeeID);
-            }catch{ throw; }
+            }
+            catch { throw; }
         }
         #endregion
     }

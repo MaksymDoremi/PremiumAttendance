@@ -27,7 +27,10 @@ namespace PremiumAttendance.Objects
                 return dal.SendNotification(employeeID, title, content);
 
             }
-            catch { throw; }
+            catch
+            {
+                throw;
+            }
         }
 
         public bool CreateEmployee(Employee employee)
@@ -72,7 +75,10 @@ namespace PremiumAttendance.Objects
                 DataAccessLayer dal = new DataAccessLayer();
                 return dal.Login(login, password);
             }
-            catch { throw; }
+            catch
+            {
+                throw;
+            }
         }
 
         /// <summary>
@@ -87,7 +93,10 @@ namespace PremiumAttendance.Objects
                 DataAccessLayer dal = new DataAccessLayer();
                 return dal.GetCurrentUser(login);
             }
-            catch { throw; }
+            catch
+            {
+                throw;
+            }
         }
 
         /// <summary>
@@ -102,7 +111,10 @@ namespace PremiumAttendance.Objects
                 DataAccessLayer dal = new DataAccessLayer();
                 return dal.GetNotifications(employeeID);
             }
-            catch { throw; }
+            catch
+            {
+                throw;
+            }
 
         }
 
@@ -118,7 +130,10 @@ namespace PremiumAttendance.Objects
                 DataAccessLayer dal = new DataAccessLayer();
                 return dal.GetEmployeeStatus(currentEmployeeLogin);
             }
-            catch { throw; }
+            catch
+            {
+                throw;
+            }
         }
 
         /// <summary>
@@ -134,7 +149,10 @@ namespace PremiumAttendance.Objects
                 DataAccessLayer dal = new DataAccessLayer();
                 return dal.GetEmployees(currentEmployeeLogin);
             }
-            catch { throw; }
+            catch
+            {
+                throw;
+            }
         }
 
 
@@ -153,7 +171,10 @@ namespace PremiumAttendance.Objects
                 DataAccessLayer dal = new DataAccessLayer();
                 return dal.UpdateEmployee(userInstance);
             }
-            catch { throw; }
+            catch
+            {
+                throw;
+            }
 
         }
 
@@ -171,7 +192,10 @@ namespace PremiumAttendance.Objects
                 DataAccessLayer dal = new DataAccessLayer();
                 return dal.UpdatePassword(empmloyeeID, oldPassword, newPassword);
             }
-            catch { throw; }
+            catch
+            {
+                throw;
+            }
         }
 
         /// <summary>
@@ -193,6 +217,11 @@ namespace PremiumAttendance.Objects
         }
         #endregion
         #region DELETE
+        /// <summary>
+        /// Method for deleting <see cref="PremiumAttendance.Objects.Employee">
+        /// </summary>
+        /// <param name="employeeID">Id of the use to delete</param>
+        /// <returns></returns>
         public bool DeleteEmployee(int employeeID)
         {
             try
@@ -200,7 +229,10 @@ namespace PremiumAttendance.Objects
                 DataAccessLayer dal = new DataAccessLayer();
                 return dal.DeleteEmployee(employeeID);
             }
-            catch { throw; }
+            catch
+            {
+                throw;
+            }
         }
         #endregion
     }

@@ -51,7 +51,7 @@
             this.employeeNameSurnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.employeeNameSurnameLabel.Location = new System.Drawing.Point(229, 12);
             this.employeeNameSurnameLabel.Name = "employeeNameSurnameLabel";
-            this.employeeNameSurnameLabel.Size = new System.Drawing.Size(165, 49);
+            this.employeeNameSurnameLabel.Size = new System.Drawing.Size(157, 49);
             this.employeeNameSurnameLabel.TabIndex = 7;
             this.employeeNameSurnameLabel.Text = "label1";
             // 
@@ -95,7 +95,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.employeeNameSurnameLabel);
             this.Name = "EmployeeStatusControl";
-            this.Size = new System.Drawing.Size(407, 122);
+            this.Size = new System.Drawing.Size(400, 122);
             ((System.ComponentModel.ISupportInitialize)(this.employeeStatusImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

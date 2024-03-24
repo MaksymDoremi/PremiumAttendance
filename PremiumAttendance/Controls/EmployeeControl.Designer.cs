@@ -110,7 +110,7 @@
             this.Controls.Add(this.employeeImage);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "EmployeeControl";
-            this.Size = new System.Drawing.Size(409, 124);
+            this.Size = new System.Drawing.Size(400, 124);
             this.Click += new System.EventHandler(this.EmployeeControl_Click);
             this.MouseEnter += new System.EventHandler(this.EmployeeControl_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.EmployeeControl_MouseLeave);

@@ -38,7 +38,7 @@ namespace PremiumAttendance.Controls
 
             if (this.employee.Photo is null)
             {
-                this.employeeImage.Image = global::PremiumAttendance.Properties.Resources.account_circle_FILL0_wght400_GRAD0_opsz24;
+                this.employeeImage.Image = global::PremiumAttendance.Properties.Resources.unknownPhoto;
             }
             else
             {

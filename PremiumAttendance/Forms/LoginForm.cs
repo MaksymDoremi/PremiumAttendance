@@ -149,6 +149,11 @@ namespace PremiumAttendance
             e.Handled = (e.KeyChar == (char)Keys.Space);
         }
 
+        /// <summary>
+        /// While closing the app it kills the processs
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();

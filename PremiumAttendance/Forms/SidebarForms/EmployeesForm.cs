@@ -38,11 +38,17 @@ namespace PremiumAttendance.Forms.SidebarForms
             InitControls();
         }
 
+        public void InitItemsEvent(object sender, EventArgs e)
+        {
+            InitItems();
+        }
+
         /// <summary>
         /// Get <see cref="System.Data.DataTable"/> from database and initialize list of <see cref="PremiumAttendance.Objects.Employee"/>
         /// </summary>
         public void InitEmployeeList()
         {
+            this.employeeList.Clear();
             try
             {
                 DataTable dt = bll.GetEmployees(this.currentUser.Login);
@@ -93,6 +99,7 @@ namespace PremiumAttendance.Forms.SidebarForms
         {
             AddEmployeeForm form = new AddEmployeeForm();
             this.dashboardForm.OpenChildFormOverChildForm(form);
+            form.newEmployeeAddedEvent += InitItemsEvent;
         }
 
         /// <summary>

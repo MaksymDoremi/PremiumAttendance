@@ -273,6 +273,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="errorLogs\log.txt" />
+    <None Include="Resources\unknownPhoto.png" />
     <None Include="Resources\yellowMark.png" />
     <None Include="Resources\redMark.png" />
     <None Include="Resources\greenMark.png" />

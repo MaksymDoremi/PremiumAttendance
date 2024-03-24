@@ -20,7 +20,10 @@ namespace PremiumAttendance.Objects
         /// <returns>True if login and password matches</returns>
         public bool Login(string login, string password)
         {
-            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed) { DatabaseConnection.GetConnection().Open(); }
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
 
             try
             {
@@ -45,8 +48,14 @@ namespace PremiumAttendance.Objects
 
                 return true;
             }
-            catch (Exception ex) { throw ex; }
-            finally { DatabaseConnection.GetConnection().Close(); }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                DatabaseConnection.GetConnection().Close();
+            }
         }
 
         /// <summary>
@@ -56,7 +65,10 @@ namespace PremiumAttendance.Objects
         /// <returns>An instance of <see cref="PremiumAttendance.Objects.Employee"/> class</returns>
         public Employee GetCurrentUser(string login)
         {
-            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed) { DatabaseConnection.GetConnection().Open(); }
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
 
             try
             {
@@ -71,11 +83,26 @@ namespace PremiumAttendance.Objects
 
                     if (!reader.HasRows) return null;
 
-                    return new Employee((int)reader[0], reader[1] == DBNull.Value ? "" : (string)reader[1], (string)reader[2], (string)reader[3], (string)reader[4], (string)reader[5], reader[6] == DBNull.Value ? null : (byte[])reader[6], reader[7] == DBNull.Value ? "" : (string)reader[7], reader[8] == DBNull.Value ? "" : (string)reader[8]);
+                    return new Employee(
+                        (int)reader[0], 
+                        reader[1] == DBNull.Value ? "" : (string)reader[1], 
+                        (string)reader[2], 
+                        (string)reader[3], 
+                        (string)reader[4], 
+                        (string)reader[5], 
+                        reader[6] == DBNull.Value ? null : (byte[])reader[6], 
+                        reader[7] == DBNull.Value ? "" : (string)reader[7], 
+                        reader[8] == DBNull.Value ? "" : (string)reader[8]);
                 }
             }
-            catch (Exception ex) { throw ex; }
-            finally { DatabaseConnection.GetConnection().Close(); }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                DatabaseConnection.GetConnection().Close();
+            }
         }
 
         /// <summary>
@@ -85,7 +112,10 @@ namespace PremiumAttendance.Objects
         /// <returns><see cref="System.Data.DataTable"/> of <see cref="PremiumAttendance.Objects.Notification"/> instances</returns>
         public DataTable GetNotifications(int employeeID)
         {
-            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed) { DatabaseConnection.GetConnection().Open(); }
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
 
             try
             {
@@ -104,8 +134,14 @@ namespace PremiumAttendance.Objects
                     }
                 }
             }
-            catch (Exception ex) { throw ex; }
-            finally { DatabaseConnection.GetConnection().Close(); }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                DatabaseConnection.GetConnection().Close();
+            }
         }
 
         /// <summary>
@@ -116,7 +152,10 @@ namespace PremiumAttendance.Objects
         /// <returns><see cref="System.Data.DataTable"/> of <see cref="PremiumAttendance.Objects.Employee"/>'s</returns>
         public DataTable GetEmployees(string currentEmployeeLogin)
         {
-            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed) { DatabaseConnection.GetConnection().Open(); }
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
 
             try
             {
@@ -135,8 +174,14 @@ namespace PremiumAttendance.Objects
                     }
                 }
             }
-            catch (Exception ex) { throw ex; }
-            finally { DatabaseConnection.GetConnection().Close(); }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                DatabaseConnection.GetConnection().Close();
+            }
         }
 
         /// <summary>
@@ -146,7 +191,10 @@ namespace PremiumAttendance.Objects
         /// <returns><see cref="System.Data.DataTable"></returns>
         public DataTable GetEmployeeStatus(string currentEmployeeLogin)
         {
-            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed) { DatabaseConnection.GetConnection().Open(); }
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
 
             try
             {
@@ -165,8 +213,14 @@ namespace PremiumAttendance.Objects
                     }
                 }
             }
-            catch (Exception ex) { throw ex; }
-            finally { DatabaseConnection.GetConnection().Close(); }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                DatabaseConnection.GetConnection().Close();
+            }
         }
         #endregion
     }

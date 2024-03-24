@@ -14,6 +14,7 @@ namespace PremiumAttendance.Forms.SubForms
     public partial class AddEmployeeForm : Form
     {
         private BusinessLogicLayer bll;
+        public event EventHandler newEmployeeAddedEvent;
         public AddEmployeeForm()
         {
             InitializeComponent();
@@ -32,6 +33,10 @@ namespace PremiumAttendance.Forms.SubForms
             {
                 bll.CreateEmployee(employee);
                 MessageBox.Show("Employee created successfully");
+                if (newEmployeeAddedEvent != null)
+                {
+                    newEmployeeAddedEvent.Invoke(this, e);
+                }
                 this.Close();
             }
             catch (Exception ex)

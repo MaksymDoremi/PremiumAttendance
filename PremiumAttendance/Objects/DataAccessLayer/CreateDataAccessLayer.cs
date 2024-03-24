@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlTypes;
 
 namespace PremiumAttendance.Objects
 {
@@ -21,7 +22,10 @@ namespace PremiumAttendance.Objects
         /// <returns>True if success</returns>
         public bool SendNotification(int authorEmployeeID, string title, string content)
         {
-            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed) { DatabaseConnection.GetConnection().Open(); }
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
 
             try
             {
@@ -36,8 +40,14 @@ namespace PremiumAttendance.Objects
                 }
                 return true;
             }
-            catch (Exception ex) { throw ex; }
-            finally { DatabaseConnection.GetConnection().Close(); }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                DatabaseConnection.GetConnection().Close();
+            }
         }
 
         /// <summary>
@@ -47,7 +57,10 @@ namespace PremiumAttendance.Objects
         /// <returns></returns>
         public bool CreateEmployee(Employee employee)
         {
-            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed) { DatabaseConnection.GetConnection().Open(); }
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
 
             try
             {
@@ -62,14 +75,28 @@ namespace PremiumAttendance.Objects
                     cmd.Parameters.AddWithValue("@surname", employee.Surname);
                     cmd.Parameters.AddWithValue("@email", employee.Email);
                     cmd.Parameters.AddWithValue("@phone", employee.Phone);
-                    cmd.Parameters.AddWithValue("@photo", employee.Photo);
+                    if(employee.Photo is null)
+                    {
+                        cmd.Parameters.AddWithValue("@photo", SqlBinary.Null);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@photo", employee.Photo);
+                    }
+                    
                     cmd.ExecuteNonQuery();
                 }
 
                 return true;
             }
-            catch (Exception ex) { throw ex; }
-            finally { DatabaseConnection.GetConnection().Close(); }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                DatabaseConnection.GetConnection().Close();
+            }
         }
 
         /// <summary>
@@ -78,7 +105,10 @@ namespace PremiumAttendance.Objects
         /// <param name="rfidTag"></param>
         public void InsertAttendance(string rfidTag)
         {
-            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed) { DatabaseConnection.GetConnection().Open(); }
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
 
             try
             {
@@ -107,8 +137,14 @@ namespace PremiumAttendance.Objects
                     cmd.ExecuteNonQuery();
                 }
             }
-            catch (Exception ex) { throw ex; }
-            finally { DatabaseConnection.GetConnection().Close(); }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                DatabaseConnection.GetConnection().Close();
+            }
         }
         #endregion
 

@@ -19,7 +19,10 @@ namespace PremiumAttendance.Objects
         /// <returns></returns>
         public bool DeleteEmployee(int employeeId)
         {
-            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed) { DatabaseConnection.GetConnection().Open(); }
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed) 
+            { 
+                DatabaseConnection.GetConnection().Open(); 
+            }
 
             try
             {
@@ -34,8 +37,14 @@ namespace PremiumAttendance.Objects
                 return true;
 
             }
-            catch (Exception ex) { throw ex; }
-            finally { DatabaseConnection.GetConnection().Close(); }
+            catch (Exception ex) 
+            { 
+                throw ex; 
+            }
+            finally 
+            { 
+                DatabaseConnection.GetConnection().Close(); 
+            }
         }
         #endregion
     }

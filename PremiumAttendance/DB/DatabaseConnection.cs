@@ -27,7 +27,7 @@ namespace PremiumAttendance.DB
                 {
                     if (_connection == null)
                     {
-                        _connection = new SqlConnection(ConfigurationManager.ConnectionStrings["databaseConnection"].ConnectionString);
+                        _connection = new SqlConnection(ConfigurationManager.ConnectionStrings["remoteConnection"].ConnectionString);
                     }
                 }
             }

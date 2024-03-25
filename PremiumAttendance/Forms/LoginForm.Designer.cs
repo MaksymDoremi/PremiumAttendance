@@ -75,16 +75,16 @@ namespace PremiumAttendance
             // singInBtn
             // 
             this.singInBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.singInBtn.Location = new System.Drawing.Point(292, 357);
+            this.singInBtn.Location = new System.Drawing.Point(279, 368);
             this.singInBtn.Name = "singInBtn";
             this.singInBtn.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.singInBtn.Size = new System.Drawing.Size(200, 53);
+            this.singInBtn.Size = new System.Drawing.Size(224, 58);
             this.singInBtn.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.singInBtn.StateCommon.Border.Rounding = 10;
+            this.singInBtn.StateCommon.Border.Rounding = 20;
             this.singInBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.singInBtn.StatePressed.Back.Color1 = System.Drawing.Color.Silver;
             this.singInBtn.StatePressed.Back.Color2 = System.Drawing.Color.Silver;

@@ -30,6 +30,7 @@ namespace PremiumAttendance
             {
                 rfidModule = new RFID();
                 rfidThread = new Thread(rfidModule.ReadTag);
+                rfidThread.IsBackground = true;
                 rfidThread.Start();
             }
             catch (Exception ex)
@@ -159,5 +160,6 @@ namespace PremiumAttendance
         {
             Application.Exit();
         }
+
     }
 }

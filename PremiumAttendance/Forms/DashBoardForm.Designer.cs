@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoardForm));
             this.sidebarPanel = new System.Windows.Forms.Panel();
+            this.rfidStatusLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.attendanceBtn = new System.Windows.Forms.Button();
             this.employeesBtn = new System.Windows.Forms.Button();
@@ -45,8 +47,6 @@
             this.dateTimeLabel = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.childFormPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.rfidStatusLabel = new System.Windows.Forms.Label();
             this.sidebarPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.upperPanel.SuspendLayout();
@@ -70,6 +70,26 @@
             this.sidebarPanel.Name = "sidebarPanel";
             this.sidebarPanel.Size = new System.Drawing.Size(290, 858);
             this.sidebarPanel.TabIndex = 0;
+            // 
+            // rfidStatusLabel
+            // 
+            this.rfidStatusLabel.AutoSize = true;
+            this.rfidStatusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rfidStatusLabel.Location = new System.Drawing.Point(143, 648);
+            this.rfidStatusLabel.Name = "rfidStatusLabel";
+            this.rfidStatusLabel.Size = new System.Drawing.Size(55, 20);
+            this.rfidStatusLabel.TabIndex = 9;
+            this.rfidStatusLabel.Text = "status";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(12, 648);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 20);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "RFID Status:";
             // 
             // pictureBox1
             // 
@@ -142,7 +162,7 @@
             this.logoutBtn.FlatAppearance.BorderSize = 0;
             this.logoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logoutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.logoutBtn.Location = new System.Drawing.Point(0, 788);
+            this.logoutBtn.Location = new System.Drawing.Point(0, 790);
             this.logoutBtn.Name = "logoutBtn";
             this.logoutBtn.Size = new System.Drawing.Size(290, 63);
             this.logoutBtn.TabIndex = 3;
@@ -253,26 +273,6 @@
             this.childFormPanel.Name = "childFormPanel";
             this.childFormPanel.Size = new System.Drawing.Size(1192, 758);
             this.childFormPanel.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(12, 648);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 20);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "RFID Status:";
-            // 
-            // rfidStatusLabel
-            // 
-            this.rfidStatusLabel.AutoSize = true;
-            this.rfidStatusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.rfidStatusLabel.Location = new System.Drawing.Point(143, 648);
-            this.rfidStatusLabel.Name = "rfidStatusLabel";
-            this.rfidStatusLabel.Size = new System.Drawing.Size(55, 20);
-            this.rfidStatusLabel.TabIndex = 9;
-            this.rfidStatusLabel.Text = "status";
             // 
             // DashBoardForm
             // 

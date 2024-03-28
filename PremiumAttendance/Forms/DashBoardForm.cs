@@ -202,7 +202,35 @@ namespace PremiumAttendance.Forms
         private void timer_Tick(object sender, EventArgs e)
         {
             this.dateTimeLabel.Text = System.DateTime.Now.ToString();
-            
+            /*
+            if (this.rfidThread != null && rfidThread.ThreadState == ThreadState.WaitSleepJoin)
+            {
+                this.rfidStatusLabel.Text = "Running";
+                this.rfidStatusLabel.ForeColor = System.Drawing.Color.Green;
+                Console.WriteLine(rfidThread.ThreadState.ToString());
+            }
+            else
+            {
+                
+                this.rfidStatusLabel.Text = "Stopped";
+                this.rfidStatusLabel.ForeColor = System.Drawing.Color.Red;
+
+                try
+                {
+                    rfidModule = new RFID();
+                    rfidThread = new Thread(rfidModule.ReadTag);
+                    rfidThread.Start();
+                    Console.WriteLine(rfidThread.ThreadState.ToString());
+                }
+                catch (Exception ex)
+                {
+                    //ignore error
+                    //MessageBox.Show("RFID can't be opened");
+                    Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
+                }
+            }
+            */
+
         }
 
         #region Subforms
@@ -216,7 +244,7 @@ namespace PremiumAttendance.Forms
         private void myDashboardBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.activeColor);
-            OpenChildForm(new MyDashboardForm());
+            OpenChildForm(new MyDashboardForm(this.currentUser.Login));
         }
 
         private void myAccountBtn_Click(object sender, EventArgs e)

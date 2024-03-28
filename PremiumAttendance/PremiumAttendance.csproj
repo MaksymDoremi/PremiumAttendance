@@ -68,6 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\ColleagueControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ColleagueControl.Designer.cs">
+      <DependentUpon>ColleagueControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\EmployeeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -182,6 +188,9 @@
     <Compile Include="Objects\DataAccessLayer\UpdateDataAccessLayer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\ColleagueControl.resx">
+      <DependentUpon>ColleagueControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\EmployeeControl.resx">
       <DependentUpon>EmployeeControl.cs</DependentUpon>
     </EmbeddedResource>

@@ -32,6 +32,7 @@ namespace PremiumAttendance.Forms.SubForms
             try
             {
                 this.rfidThread = new Thread(rfidModule.ReturnTag);
+                rfidThread.IsBackground = true;
                 rfidThread.Start();
             }
             catch (Exception ex)
@@ -54,6 +55,7 @@ namespace PremiumAttendance.Forms.SubForms
             try
             {
                 this.rfidThread = new Thread(rfidModule.ReturnTag);
+                rfidThread.IsBackground = true;
                 rfidThread.Start();
             }
             catch (Exception ex)

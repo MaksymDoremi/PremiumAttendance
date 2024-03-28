@@ -84,14 +84,14 @@ namespace PremiumAttendance.Objects
                     if (!reader.HasRows) return null;
 
                     return new Employee(
-                        (int)reader[0], 
-                        reader[1] == DBNull.Value ? "" : (string)reader[1], 
-                        (string)reader[2], 
-                        (string)reader[3], 
-                        (string)reader[4], 
-                        (string)reader[5], 
-                        reader[6] == DBNull.Value ? null : (byte[])reader[6], 
-                        reader[7] == DBNull.Value ? "" : (string)reader[7], 
+                        (int)reader[0],
+                        reader[1] == DBNull.Value ? "" : (string)reader[1],
+                        (string)reader[2],
+                        (string)reader[3],
+                        (string)reader[4],
+                        (string)reader[5],
+                        reader[6] == DBNull.Value ? null : (byte[])reader[6],
+                        reader[7] == DBNull.Value ? "" : (string)reader[7],
                         reader[8] == DBNull.Value ? "" : (string)reader[8]);
                 }
             }
@@ -221,6 +221,45 @@ namespace PremiumAttendance.Objects
             {
                 DatabaseConnection.GetConnection().Close();
             }
+        }
+
+        /// <summary>
+        /// Returns <see cref="DataTable"> of employees who are momentally at work
+        /// </summary>
+        /// <param name="currentEmployeeLogin"></param>
+        /// <returns></returns>
+        public DataTable GetColleguesAtWork(string currentEmployeeLogin)
+        {
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
+            try
+            {
+                string query = "SELECT \r\n    e.Name,\r\n    e.Surname,\r\n\te.Photo\r\nFROM \r\n    Employee e\r\nLEFT JOIN (\r\n    SELECT \r\n        a.Employee_ID,\r\n        a.Type_of_entry,\r\n        a.Datetime_of_entry\r\n    FROM \r\n        Attendance a \r\n    JOIN (\r\n        SELECT \r\n            Attendance.Employee_ID,\r\n            MAX(Attendance.Datetime_of_entry) AS max_datetime \r\n        FROM \r\n            Attendance \r\n        GROUP BY \r\n            Attendance.Employee_ID\r\n    ) b ON a.Employee_ID = b.Employee_ID AND a.Datetime_of_entry = b.max_datetime\r\n    WHERE \r\n        CAST(a.Datetime_of_entry AS DATE) = CAST(GETDATE() AS DATE)\r\n) a ON e.ID = a.Employee_ID\r\nwhere a.Type_of_entry = 1 and e.Login != @currentEmployeeLogin";
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@currentEmployeeLogin", currentEmployeeLogin);
+
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+
+                        sda.Fill(dt);
+
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                DatabaseConnection.GetConnection().Close();
+            }
+
         }
         #endregion
     }

@@ -155,7 +155,23 @@ namespace PremiumAttendance.Objects
             }
         }
 
-
+        /// <summary>
+        /// Returns <see cref="DataTable"> of employees who are momentally at work
+        /// </summary>
+        /// <param name="currentEmployeeLogin"></param>
+        /// <returns></returns>
+        public DataTable GetColleguesAtWork(string currentEmployeeLogin)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                return dal.GetColleguesAtWork(currentEmployeeLogin);
+            }
+            catch
+            {
+                throw;
+            }
+        }
         #endregion
         #region UPDATE
 

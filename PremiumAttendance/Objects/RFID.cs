@@ -162,7 +162,10 @@ namespace PremiumAttendance.Objects
             bll = new BusinessLogicLayer();
             while (true)
             {
-
+                if (!this.serialPort.IsOpen)
+                {
+                    break;
+                }
                 //in case ReturnTag works it will wait here until it gets singal
                 Console.WriteLine("before INSERT TAG");
                 manualResetEvent.WaitOne();

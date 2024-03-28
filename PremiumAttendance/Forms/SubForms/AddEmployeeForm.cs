@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,14 +16,35 @@ namespace PremiumAttendance.Forms.SubForms
     {
         private BusinessLogicLayer bll;
         public event EventHandler newEmployeeAddedEvent;
-        public AddEmployeeForm()
+
+        private Thread rfidThread;
+
+        private RFID rfidModule;
+        public AddEmployeeForm(ref RFID rfidModule)
         {
             InitializeComponent();
             bll = new BusinessLogicLayer();
+            this.rfidModule = rfidModule;
+
+            try
+            {
+                this.rfidThread = new Thread(rfidModule.ReturnTag);
+                rfidThread.Start();
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
+                //MessageBox.Show(ex.Message);
+            }
         }
 
         private void closeBtn_Click(object sender, EventArgs e)
         {
+            if (this.rfidModule != null)
+            {
+                this.rfidModule.SetEndgameToken();
+                rfidModule.SetEventWaitHandle(sender, e);
+            }
             this.Close();
         }
 
@@ -36,6 +58,12 @@ namespace PremiumAttendance.Forms.SubForms
                 if (newEmployeeAddedEvent != null)
                 {
                     newEmployeeAddedEvent.Invoke(this, e);
+                }
+
+                if (this.rfidModule != null)
+                {
+                    this.rfidModule.SetEndgameToken();
+                    rfidModule.SetEventWaitHandle(sender, e);
                 }
                 this.Close();
             }

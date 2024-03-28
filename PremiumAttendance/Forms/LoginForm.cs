@@ -20,15 +20,16 @@ namespace PremiumAttendance
     {
         private Employee currentEmployee;
         private Thread rfidThread;
+        private RFID rfidModule;
         public LoginForm()
         {
             InitializeComponent();
             //start rfid thread
+            
             try
             {
-                RFID r = new RFID();
-
-                rfidThread = new Thread(r.ReadTag);
+                rfidModule = new RFID();
+                rfidThread = new Thread(rfidModule.ReadTag);
                 rfidThread.Start();
             }
             catch (Exception ex)
@@ -118,7 +119,7 @@ namespace PremiumAttendance
                 {
                     bll.Login(username, Program.ComputeSHA256(password));
                     currentEmployee = bll.GetCurrentUser(username);
-                    DashBoardForm form = new DashBoardForm(this, ref currentEmployee, ref rfidThread);
+                    DashBoardForm form = new DashBoardForm(this, ref currentEmployee, ref rfidThread, ref rfidModule);
                     form.Show();
                     this.Hide();
                 }

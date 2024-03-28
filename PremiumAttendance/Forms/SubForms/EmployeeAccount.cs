@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,12 +18,17 @@ namespace PremiumAttendance.Forms.SubForms
         private DashBoardForm dashboardForm;
         private BusinessLogicLayer bll;
 
+        private RFID rfidModule;
+       
+
         public EventHandler deleteEvent;
-        public EmployeeAccount(Employee employee, DashBoardForm dashboardForm)
+        public EmployeeAccount(Employee employee, DashBoardForm dashboardForm, ref RFID rfidModule)
         {
             InitializeComponent();
             this.employee = employee;
             this.dashboardForm = dashboardForm;
+            this.rfidModule = rfidModule;
+
             bll = new BusinessLogicLayer();
 
             InitItems();
@@ -68,7 +74,15 @@ namespace PremiumAttendance.Forms.SubForms
 
         private void changeAccountInfoBtn_Click(object sender, EventArgs e)
         {
-            CustomizeAccountForm form = new CustomizeAccountForm(ref employee, true);
+            CustomizeAccountForm form = new CustomizeAccountForm(ref employee, true, ref this.rfidModule);
+            if (this.rfidModule != null)
+            {
+                //form.FormClosed += rfidModule.SetEventWaitHandle;
+                rfidModule.ResetEventWaitHandle(sender, e);
+                rfidModule.ResetEndgameToken();
+
+            }
+
             this.dashboardForm.OpenChildFormOverChildForm(form);
         }
 

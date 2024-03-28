@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace PremiumAttendance.Forms.SidebarForms
 {
@@ -20,13 +21,17 @@ namespace PremiumAttendance.Forms.SidebarForms
 
         public EventHandler updateChangesEventHandler;
 
-        public MyAccountForm(DashBoardForm dashboardForm, ref Employee currentUser)
+        private RFID rfidModule;
+
+        public MyAccountForm(DashBoardForm dashboardForm, ref Employee currentUser, ref RFID rfidModule)
         {
             InitializeComponent();
             bll = new BusinessLogicLayer();
 
             this.currentUser = currentUser;
             this.dashboardForm = dashboardForm;
+            this.rfidModule = rfidModule;
+      
             InitItems();
         }
 
@@ -87,8 +92,16 @@ namespace PremiumAttendance.Forms.SidebarForms
         /// <param name="e"></param>
         private void changeAccountInfoBtn_Click(object sender, EventArgs e)
         {
-            CustomizeAccountForm form = new CustomizeAccountForm(ref currentUser);
+            CustomizeAccountForm form = new CustomizeAccountForm(ref currentUser, ref rfidModule);
             form.submitChangeEventHandler += InitItemsEvent;
+            if (this.rfidModule != null)
+            {
+                //form.FormClosed += rfidModule.SetEventWaitHandle;
+                rfidModule.ResetEventWaitHandle(sender, e);
+                rfidModule.ResetEndgameToken();
+                
+            }
+
 
             this.dashboardForm.OpenChildFormOverChildForm(form);
         }

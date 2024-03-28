@@ -26,7 +26,9 @@ namespace PremiumAttendance.Forms
         private BusinessLogicLayer bll;
 
         private Thread rfidThread;
-        public DashBoardForm(Form loginForm, ref Employee currentUser, ref Thread rfidThread)
+
+        private RFID rfidModule;
+        public DashBoardForm(Form loginForm, ref Employee currentUser, ref Thread rfidThread, ref RFID rfidModule)
         {
             InitializeComponent();
 
@@ -36,6 +38,7 @@ namespace PremiumAttendance.Forms
             this.currentUser = currentUser;
             this.loginForm = (LoginForm)loginForm;
             this.rfidThread = rfidThread;
+            this.rfidModule = rfidModule;
             InitItems();
             this.timer.Start();
         }
@@ -219,7 +222,7 @@ namespace PremiumAttendance.Forms
         private void myAccountBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.activeColor);
-            MyAccountForm form = new MyAccountForm(this, ref currentUser);
+            MyAccountForm form = new MyAccountForm(this, ref currentUser, ref rfidModule);
             form.updateChangesEventHandler += InitItemsEvent;
             OpenChildForm(form);
         }
@@ -233,7 +236,7 @@ namespace PremiumAttendance.Forms
         private void employeesBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.activeColor);
-            OpenChildForm(new EmployeesForm(this, ref this.currentUser));
+            OpenChildForm(new EmployeesForm(this, ref this.currentUser, ref rfidModule));
         }
 
         private void attendanceBtn_Click(object sender, EventArgs e)

@@ -244,7 +244,7 @@ namespace PremiumAttendance.Forms
         private void myDashboardBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.activeColor);
-            OpenChildForm(new MyDashboardForm(this.currentUser.Login));
+            OpenChildForm(new MyDashboardForm(this.currentUser));
         }
 
         private void myAccountBtn_Click(object sender, EventArgs e)

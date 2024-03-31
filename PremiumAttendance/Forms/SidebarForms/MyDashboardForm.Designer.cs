@@ -30,6 +30,12 @@
         {
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.colleaguesAtWorkFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.welcomeMessagePanel = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.apiResponseHolidayLabel = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.apiResponseNameLabel = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.welcomeMessageLabel = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            ((System.ComponentModel.ISupportInitialize)(this.welcomeMessagePanel)).BeginInit();
+            this.welcomeMessagePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // kryptonLabel1
@@ -44,10 +50,52 @@
             // colleaguesAtWorkFlowLayoutPanel
             // 
             this.colleaguesAtWorkFlowLayoutPanel.AutoScroll = true;
+            this.colleaguesAtWorkFlowLayoutPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.colleaguesAtWorkFlowLayoutPanel.Location = new System.Drawing.Point(12, 408);
             this.colleaguesAtWorkFlowLayoutPanel.Name = "colleaguesAtWorkFlowLayoutPanel";
             this.colleaguesAtWorkFlowLayoutPanel.Size = new System.Drawing.Size(1245, 283);
             this.colleaguesAtWorkFlowLayoutPanel.TabIndex = 1;
+            // 
+            // welcomeMessagePanel
+            // 
+            this.welcomeMessagePanel.Controls.Add(this.apiResponseHolidayLabel);
+            this.welcomeMessagePanel.Controls.Add(this.apiResponseNameLabel);
+            this.welcomeMessagePanel.Controls.Add(this.welcomeMessageLabel);
+            this.welcomeMessagePanel.Location = new System.Drawing.Point(12, 12);
+            this.welcomeMessagePanel.Name = "welcomeMessagePanel";
+            this.welcomeMessagePanel.Size = new System.Drawing.Size(536, 243);
+            this.welcomeMessagePanel.StateCommon.Color1 = System.Drawing.Color.Ivory;
+            this.welcomeMessagePanel.TabIndex = 2;
+            // 
+            // apiResponseHolidayLabel
+            // 
+            this.apiResponseHolidayLabel.AutoSize = false;
+            this.apiResponseHolidayLabel.Location = new System.Drawing.Point(3, 175);
+            this.apiResponseHolidayLabel.Name = "apiResponseHolidayLabel";
+            this.apiResponseHolidayLabel.Size = new System.Drawing.Size(530, 50);
+            this.apiResponseHolidayLabel.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.apiResponseHolidayLabel.TabIndex = 2;
+            this.apiResponseHolidayLabel.Values.Text = "Today\'s holiday: ";
+            // 
+            // apiResponseNameLabel
+            // 
+            this.apiResponseNameLabel.AutoSize = false;
+            this.apiResponseNameLabel.Location = new System.Drawing.Point(3, 86);
+            this.apiResponseNameLabel.Name = "apiResponseNameLabel";
+            this.apiResponseNameLabel.Size = new System.Drawing.Size(530, 50);
+            this.apiResponseNameLabel.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.apiResponseNameLabel.TabIndex = 1;
+            this.apiResponseNameLabel.Values.Text = "Today\'s day is for:";
+            // 
+            // welcomeMessageLabel
+            // 
+            this.welcomeMessageLabel.AutoSize = false;
+            this.welcomeMessageLabel.Location = new System.Drawing.Point(3, 3);
+            this.welcomeMessageLabel.Name = "welcomeMessageLabel";
+            this.welcomeMessageLabel.Size = new System.Drawing.Size(530, 50);
+            this.welcomeMessageLabel.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.welcomeMessageLabel.TabIndex = 0;
+            this.welcomeMessageLabel.Values.Text = "Welcome, username";
             // 
             // MyDashboardForm
             // 
@@ -55,10 +103,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1269, 703);
+            this.Controls.Add(this.welcomeMessagePanel);
             this.Controls.Add(this.colleaguesAtWorkFlowLayoutPanel);
             this.Controls.Add(this.kryptonLabel1);
             this.Name = "MyDashboardForm";
             this.Text = "MyDashboardForm";
+            ((System.ComponentModel.ISupportInitialize)(this.welcomeMessagePanel)).EndInit();
+            this.welcomeMessagePanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -68,5 +119,9 @@
 
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private System.Windows.Forms.FlowLayoutPanel colleaguesAtWorkFlowLayoutPanel;
+        private ComponentFactory.Krypton.Toolkit.KryptonPanel welcomeMessagePanel;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel welcomeMessageLabel;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel apiResponseHolidayLabel;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel apiResponseNameLabel;
     }
 }

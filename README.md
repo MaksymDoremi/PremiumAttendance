@@ -21,7 +21,7 @@
     ✅DashboardForm
 
 ### Sidebar forms to develop
-    ⚠️HomepageForm
+    ✅HomepageForm
     MyDashboardForm
     ✅NotificationForm
     ✅MyAccountForm
@@ -39,7 +39,7 @@
     ✅EmployeeAccount
 
 ### Controls to develop
-    ⚠️EmployeeStatusControl
+    ✅EmployeeStatusControl
     ✅NotificationControl
     ColleagueControl
     ✅EmployeeControl

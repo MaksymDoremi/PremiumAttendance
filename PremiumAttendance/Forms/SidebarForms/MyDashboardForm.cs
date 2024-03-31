@@ -16,20 +16,54 @@ namespace PremiumAttendance.Forms.SidebarForms
     {
 
         private List<ColleagueControl> colleaguesAtWorkList;
-        private string currentEmployeeLogin;
-        public MyDashboardForm(string currentEmployeeLogin)
+        private Employee currentEmployee;
+        public MyDashboardForm(Employee currentEmployee)
         {
             InitializeComponent();
             this.colleaguesAtWorkList = new List<ColleagueControl>();
-            this.currentEmployeeLogin = currentEmployeeLogin;
+            this.currentEmployee = currentEmployee;
 
             InitItems();
+            GetApiData();
         }
 
         public void InitItems()
-        {
+        {      
+            this.welcomeMessageLabel.Text = $"Welcome, {this.currentEmployee.Name} {this.currentEmployee.Surname}";
             InitColleaguesList();
             InitControls();
+        }
+
+        public async Task GetApiData()
+        {
+            APIClient apiClient = new APIClient();
+
+            SvatkyAPIObject svatek = null;
+
+
+            try
+            {
+                svatek = await apiClient.GetJsonResponse();
+
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
+            }
+
+            if (svatek != null)
+            {
+                this.apiResponseNameLabel.Text = $"Today's day is for: {svatek.name}";
+                if (svatek.isHoliday)
+                {
+                    this.apiResponseHolidayLabel.Text = $"Today's holiday: {svatek.holidayName}";
+                }
+                else
+                {
+                    this.apiResponseHolidayLabel.Text = $"No holiday for today.";
+                }
+
+            }
         }
 
         public void InitColleaguesList()
@@ -39,7 +73,7 @@ namespace PremiumAttendance.Forms.SidebarForms
             this.colleaguesAtWorkList.Clear();
             try
             {
-                DataTable dt = bll.GetColleguesAtWork(this.currentEmployeeLogin);
+                DataTable dt = bll.GetColleguesAtWork(this.currentEmployee.Login);
 
                 foreach (DataRow row in dt.Rows)
                 {

@@ -113,7 +113,10 @@ namespace PremiumAttendance.Objects
             try
             {
                 string insertAttendanceQuery = "insert into Attendance(Employee_ID, Datetime_of_entry, Type_of_entry) values((select Employee.ID from Employee where Employee.RFID_Tag = @rfidTag),CURRENT_TIMESTAMP,@type)";
-                string getAttendanceType = "select top 1 Attendance.Type_of_entry from Attendance where Attendance.Employee_ID = (select Employee.ID from Employee where Employee.RFID_Tag = @rfidTag) order by Attendance.Datetime_of_entry desc";
+                
+                // select last attendance type, if today employee didn't have any record so he gets 1
+                // if employee yesterday came to job and didn't came out(assume he left at midnight) so he also gets 1 for today
+                string getAttendanceType = "select top 1 Attendance.Type_of_entry from Attendance where Attendance.Employee_ID = (select Employee.ID from Employee where Employee.RFID_Tag = @rfidTag)\r\nand CAST(Attendance.Datetime_of_entry AS DATE) = CAST(GETDATE() AS DATE) order by Attendance.Datetime_of_entry desc";
                 using (SqlCommand cmd = new SqlCommand(insertAttendanceQuery, DatabaseConnection.GetConnection()))
                 {
                     // 0 check out, 1 check in

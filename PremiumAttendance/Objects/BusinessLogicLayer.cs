@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
@@ -166,6 +167,24 @@ namespace PremiumAttendance.Objects
             {
                 DataAccessLayer dal = new DataAccessLayer();
                 return dal.GetColleguesAtWork(currentEmployeeLogin);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Returns <see cref="SqlDataReader"> overall worked hours for employee and overall days
+        /// </summary>
+        /// <param name="currentLogin"></param>
+        /// <returns></returns>
+        public Dictionary<string,int> GetHoursDays(string currentLogin)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                return dal.GetHoursDays(currentLogin);
             }
             catch
             {

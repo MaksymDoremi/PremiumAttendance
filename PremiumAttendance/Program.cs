@@ -19,6 +19,12 @@ namespace PremiumAttendance
         [STAThread]
         static void Main()
         {
+
+            DataAccessLayer dal = new DataAccessLayer();
+
+            
+
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());

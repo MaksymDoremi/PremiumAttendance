@@ -236,7 +236,7 @@ namespace PremiumAttendance.Objects
             }
             try
             {
-                string query = "SELECT \r\n    e.Name,\r\n    e.Surname,\r\n\te.Photo\r\nFROM \r\n    Employee e\r\nLEFT JOIN (\r\n    SELECT \r\n        a.Employee_ID,\r\n        a.Type_of_entry,\r\n        a.Datetime_of_entry\r\n    FROM \r\n        Attendance a \r\n    JOIN (\r\n        SELECT \r\n            Attendance.Employee_ID,\r\n            MAX(Attendance.Datetime_of_entry) AS max_datetime \r\n        FROM \r\n            Attendance \r\n        GROUP BY \r\n            Attendance.Employee_ID\r\n    ) b ON a.Employee_ID = b.Employee_ID AND a.Datetime_of_entry = b.max_datetime\r\n    WHERE \r\n        CAST(a.Datetime_of_entry AS DATE) = CAST(GETDATE() AS DATE)\r\n) a ON e.ID = a.Employee_ID\r\nwhere a.Type_of_entry = 1 and e.Login != @currentEmployeeLogin";
+                string query = "SELECT e.Name, e.Surname, e.Photo FROM Employee e LEFT JOIN (SELECT  a.Employee_ID, a.Type_of_entry, a.Datetime_of_entry FROM Attendance a JOIN (SELECT  Attendance.Employee_ID,MAX(Attendance.Datetime_of_entry) AS max_datetime  FROM   Attendance   GROUP BY  Attendance.Employee_ID ) b ON a.Employee_ID = b.Employee_ID AND a.Datetime_of_entry = b.max_datetime    WHERE   CAST(a.Datetime_of_entry AS DATE) = CAST(GETDATE() AS DATE)) a ON e.ID = a.Employee_ID where a.Type_of_entry = 1 and e.Login != @currentEmployeeLogin";
                 using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
                 {
                     cmd.Parameters.AddWithValue("@currentEmployeeLogin", currentEmployeeLogin);
@@ -261,6 +261,56 @@ namespace PremiumAttendance.Objects
             }
 
         }
+
+        /// <summary>
+        /// Returns <see cref="SqlDataReader"> overall worked hours for employee and overall days
+        /// </summary>
+        /// <param name="employeeLogin"></param>
+        /// <returns></returns>
+        public Dictionary<string, int> GetHoursDays(string employeeLogin)
+        {
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
+
+
+            try
+            {
+                string query = "WITH AllDays AS (SELECT DATEADD(DAY, number, @StartDate) AS Date FROM master.dbo.spt_values WHERE type = 'P' AND DATEADD(DAY, number, @StartDate) <= @EndDate) SELECT E.Name, SUM(CASE  WHEN CheckIn.Datetime_of_entry IS NOT NULL AND CheckOut.Datetime_of_entry IS NOT NULL THEN DATEDIFF(HOUR, CheckIn.Datetime_of_entry, CheckOut.Datetime_of_entry) WHEN CheckIn.Datetime_of_entry IS NOT NULL THEN DATEDIFF(HOUR, CheckIn.Datetime_of_entry, DATEADD(DAY, 1, AD.Date)) ELSE 0 END) AS Total_Worked_Hours, COUNT(DISTINCT CASE WHEN CheckIn.Datetime_of_entry IS NOT NULL THEN AD.Date END) AS Worked_Days FROM Employee E CROSS JOIN AllDays AD LEFT JOIN (SELECT Employee_ID, CAST(Datetime_of_entry AS date) AS Attendance_Date,MAX(CASE WHEN Type_of_entry = 1 THEN Datetime_of_entry END) AS CheckIn, MAX(CASE WHEN Type_of_entry = 0 THEN Datetime_of_entry END) AS CheckOut FROM Attendance GROUP BY Employee_ID, CAST(Datetime_of_entry AS date)) AS AttendanceDetail ON E.ID = AttendanceDetail.Employee_ID AND AD.Date = AttendanceDetail.Attendance_Date LEFT JOIN Attendance AS CheckIn ON CheckIn.Employee_ID = AttendanceDetail.Employee_ID AND CheckIn.Datetime_of_entry = AttendanceDetail.CheckIn LEFT JOIN Attendance AS CheckOut ON CheckOut.Employee_ID = AttendanceDetail.Employee_ID AND CheckOut.Datetime_of_entry = AttendanceDetail.CheckOut WHERE E.Login = @currentLogin GROUP BY E.Name";
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
+                {
+                    DateTime date = DateTime.Now;
+                    var firstDayOfMonth = new DateTime(date.Year, date.Month, 1);
+                    var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
+                    cmd.Parameters.AddWithValue("@StartDate", firstDayOfMonth);
+                    cmd.Parameters.AddWithValue("@EndDate", lastDayOfMonth);
+                    cmd.Parameters.AddWithValue("@currentLogin", employeeLogin);
+
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    reader.Read();
+
+                    if (!reader.HasRows) { return null; }
+
+                    return new Dictionary<string, int>()
+                    { {"days", (int)reader[2] },
+                       { "hours", (int)reader[1] } };
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                DatabaseConnection.GetConnection().Close();
+            }
+
+        }
+
+
         #endregion
     }
 }

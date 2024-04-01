@@ -4,11 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.AxHost;
 
 namespace PremiumAttendance.Forms.SidebarForms
 {
@@ -24,16 +26,50 @@ namespace PremiumAttendance.Forms.SidebarForms
             this.currentEmployee = currentEmployee;
 
             InitItems();
-            GetApiData();
+
         }
 
-        public void InitItems()
-        {      
+        /// <summary>
+        /// Init method for all things to be initialized and set
+        /// </summary>
+        /// <returns></returns>
+        public async Task InitItems()
+        {
+            try
+            {
+                BusinessLogicLayer bll = new BusinessLogicLayer();
+
+                Dictionary<string, int> hoursDays = bll.GetHoursDays(this.currentEmployee.Login);
+
+                this.workedDaysLabel.Text = "Total worked days: " + hoursDays["days"];
+                this.workedHoursLabel.Text = "Total worked hours: " + hoursDays["hours"];
+            }
+            catch (Exception ex)
+            {              
+                Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
+            }
+
+
             this.welcomeMessageLabel.Text = $"Welcome, {this.currentEmployee.Name} {this.currentEmployee.Surname}";
+
             InitColleaguesList();
             InitControls();
+
+            var somethingTask = GetApiData();
+            var winner = await Task.WhenAny(
+                somethingTask,
+                Task.Delay(TimeSpan.FromSeconds(3)));
+            if (winner != somethingTask)
+            {
+                this.apiResponseNameLabel.Text = $"Today's day is for: API Timeout";
+                this.apiResponseHolidayLabel.Text = $"No holiday for today. API Timeout";
+            }
         }
 
+        /// <summary>
+        /// Fetches data from API using the async and await. Sets labels text
+        /// </summary>
+        /// <returns></returns>
         public async Task GetApiData()
         {
             APIClient apiClient = new APIClient();
@@ -49,6 +85,8 @@ namespace PremiumAttendance.Forms.SidebarForms
             catch (Exception ex)
             {
                 Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
+                this.apiResponseNameLabel.Text = $"Today's day is for: API Error";
+                this.apiResponseHolidayLabel.Text = $"No holiday for today. API Error";
             }
 
             if (svatek != null)
@@ -66,6 +104,9 @@ namespace PremiumAttendance.Forms.SidebarForms
             }
         }
 
+        /// <summary>
+        /// Fetches <see cref="DataTable"> of collegues into list
+        /// </summary>
         public void InitColleaguesList()
         {
             BusinessLogicLayer bll = new BusinessLogicLayer();
@@ -90,6 +131,9 @@ namespace PremiumAttendance.Forms.SidebarForms
             }
         }
 
+        /// <summary>
+        /// Initializes <see cref="PremiumAttendance.Controls.ColleagueControl"> into <see cref="FlowLayoutPanel">
+        /// </summary>
         public void InitControls()
         {
             this.colleaguesAtWorkFlowLayoutPanel.Controls.Clear();

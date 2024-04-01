@@ -34,8 +34,14 @@
             this.apiResponseHolidayLabel = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.apiResponseNameLabel = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.welcomeMessageLabel = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.reportPanel = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.workedDaysLabel = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.workedHoursLabel = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             ((System.ComponentModel.ISupportInitialize)(this.welcomeMessagePanel)).BeginInit();
             this.welcomeMessagePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reportPanel)).BeginInit();
+            this.reportPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // kryptonLabel1
@@ -75,7 +81,7 @@
             this.apiResponseHolidayLabel.Size = new System.Drawing.Size(530, 50);
             this.apiResponseHolidayLabel.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.apiResponseHolidayLabel.TabIndex = 2;
-            this.apiResponseHolidayLabel.Values.Text = "Today\'s holiday: ";
+            this.apiResponseHolidayLabel.Values.Text = "No holiday for today.";
             // 
             // apiResponseNameLabel
             // 
@@ -97,12 +103,53 @@
             this.welcomeMessageLabel.TabIndex = 0;
             this.welcomeMessageLabel.Values.Text = "Welcome, username";
             // 
+            // reportPanel
+            // 
+            this.reportPanel.Controls.Add(this.kryptonLabel2);
+            this.reportPanel.Controls.Add(this.workedHoursLabel);
+            this.reportPanel.Controls.Add(this.workedDaysLabel);
+            this.reportPanel.Location = new System.Drawing.Point(721, 12);
+            this.reportPanel.Name = "reportPanel";
+            this.reportPanel.Size = new System.Drawing.Size(536, 243);
+            this.reportPanel.StateCommon.Color1 = System.Drawing.Color.Ivory;
+            this.reportPanel.TabIndex = 3;
+            // 
+            // workedDaysLabel
+            // 
+            this.workedDaysLabel.AutoSize = false;
+            this.workedDaysLabel.Location = new System.Drawing.Point(3, 81);
+            this.workedDaysLabel.Name = "workedDaysLabel";
+            this.workedDaysLabel.Size = new System.Drawing.Size(530, 50);
+            this.workedDaysLabel.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.workedDaysLabel.TabIndex = 1;
+            this.workedDaysLabel.Values.Text = "Total worked days: \r\n";
+            // 
+            // workedHoursLabel
+            // 
+            this.workedHoursLabel.AutoSize = false;
+            this.workedHoursLabel.Location = new System.Drawing.Point(3, 160);
+            this.workedHoursLabel.Name = "workedHoursLabel";
+            this.workedHoursLabel.Size = new System.Drawing.Size(530, 50);
+            this.workedHoursLabel.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.workedHoursLabel.TabIndex = 2;
+            this.workedHoursLabel.Values.Text = "Total worked hours: \r\n";
+            // 
+            // kryptonLabel2
+            // 
+            this.kryptonLabel2.Location = new System.Drawing.Point(3, 13);
+            this.kryptonLabel2.Name = "kryptonLabel2";
+            this.kryptonLabel2.Size = new System.Drawing.Size(135, 31);
+            this.kryptonLabel2.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.kryptonLabel2.TabIndex = 3;
+            this.kryptonLabel2.Values.Text = "This month";
+            // 
             // MyDashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1269, 703);
+            this.Controls.Add(this.reportPanel);
             this.Controls.Add(this.welcomeMessagePanel);
             this.Controls.Add(this.colleaguesAtWorkFlowLayoutPanel);
             this.Controls.Add(this.kryptonLabel1);
@@ -110,6 +157,9 @@
             this.Text = "MyDashboardForm";
             ((System.ComponentModel.ISupportInitialize)(this.welcomeMessagePanel)).EndInit();
             this.welcomeMessagePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.reportPanel)).EndInit();
+            this.reportPanel.ResumeLayout(false);
+            this.reportPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,5 +173,9 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLabel welcomeMessageLabel;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel apiResponseHolidayLabel;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel apiResponseNameLabel;
+        private ComponentFactory.Krypton.Toolkit.KryptonPanel reportPanel;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel workedHoursLabel;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel workedDaysLabel;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
     }
 }

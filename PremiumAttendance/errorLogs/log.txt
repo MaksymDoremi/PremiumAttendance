@@ -96,3 +96,141 @@ Parameter name: PortName
    at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate)
    at PremiumAttendance.Objects.RFID..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 28
    at PremiumAttendance.LoginForm..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\LoginForm.cs:line 31
+ERROR [01.04.2024 11:57:08]: The PortName cannot be empty.
+Parameter name: PortName
+   at System.IO.Ports.SerialPort.set_PortName(String value)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate)
+   at PremiumAttendance.Objects.RFID..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 28
+   at PremiumAttendance.LoginForm..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\LoginForm.cs:line 31
+ERROR [01.04.2024 11:57:27]: The PortName cannot be empty.
+Parameter name: PortName
+   at System.IO.Ports.SerialPort.set_PortName(String value)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate)
+   at PremiumAttendance.Objects.RFID..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 28
+   at PremiumAttendance.LoginForm..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\LoginForm.cs:line 31
+ERROR [01.04.2024 11:57:41]: The PortName cannot be empty.
+Parameter name: PortName
+   at System.IO.Ports.SerialPort.set_PortName(String value)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate)
+   at PremiumAttendance.Objects.RFID..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 28
+   at PremiumAttendance.LoginForm..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\LoginForm.cs:line 31
+ERROR [01.04.2024 11:57:57]: The PortName cannot be empty.
+Parameter name: PortName
+   at System.IO.Ports.SerialPort.set_PortName(String value)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate)
+   at PremiumAttendance.Objects.RFID..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 28
+   at PremiumAttendance.LoginForm..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\LoginForm.cs:line 31
+ERROR [01.04.2024 12:05:45]: The PortName cannot be empty.
+Parameter name: PortName
+   at System.IO.Ports.SerialPort.set_PortName(String value)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate)
+   at PremiumAttendance.Objects.RFID..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 28
+   at PremiumAttendance.LoginForm..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\LoginForm.cs:line 31
+ERROR [01.04.2024 12:06:06]: The PortName cannot be empty.
+Parameter name: PortName
+   at System.IO.Ports.SerialPort.set_PortName(String value)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate)
+   at PremiumAttendance.Objects.RFID..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 28
+   at PremiumAttendance.LoginForm..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\LoginForm.cs:line 31
+ERROR [01.04.2024 12:06:10]: An error occurred while sending the request.
+   at PremiumAttendance.Objects.APIClient.<GetJsonResponse>d__2.MoveNext() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\APIClient.cs:line 33
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at PremiumAttendance.Forms.SidebarForms.MyDashboardForm.<GetApiData>d__4.MoveNext() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\SidebarForms\MyDashboardForm.cs:line 63
+ERROR [01.04.2024 12:07:00]: The PortName cannot be empty.
+Parameter name: PortName
+   at System.IO.Ports.SerialPort.set_PortName(String value)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate)
+   at PremiumAttendance.Objects.RFID..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 28
+   at PremiumAttendance.LoginForm..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\LoginForm.cs:line 31
+ERROR [01.04.2024 12:07:09]: An error occurred while sending the request.
+   at PremiumAttendance.Objects.APIClient.<GetJsonResponse>d__2.MoveNext() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\APIClient.cs:line 33
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at PremiumAttendance.Forms.SidebarForms.MyDashboardForm.<GetApiData>d__4.MoveNext() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\SidebarForms\MyDashboardForm.cs:line 63
+ERROR [01.04.2024 12:07:44]: The PortName cannot be empty.
+Parameter name: PortName
+   at System.IO.Ports.SerialPort.set_PortName(String value)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate)
+   at PremiumAttendance.Objects.RFID..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 28
+   at PremiumAttendance.LoginForm..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\LoginForm.cs:line 31
+ERROR [01.04.2024 12:08:25]: An error occurred while sending the request.
+   at PremiumAttendance.Objects.APIClient.<GetJsonResponse>d__2.MoveNext() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\APIClient.cs:line 33
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at PremiumAttendance.Forms.SidebarForms.MyDashboardForm.<GetApiData>d__4.MoveNext() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\SidebarForms\MyDashboardForm.cs:line 63
+ERROR [01.04.2024 12:10:01]: The PortName cannot be empty.
+Parameter name: PortName
+   at System.IO.Ports.SerialPort.set_PortName(String value)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate)
+   at PremiumAttendance.Objects.RFID..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 28
+   at PremiumAttendance.LoginForm..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\LoginForm.cs:line 31
+ERROR [01.04.2024 12:10:45]: The PortName cannot be empty.
+Parameter name: PortName
+   at System.IO.Ports.SerialPort.set_PortName(String value)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate)
+   at PremiumAttendance.Objects.RFID..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 28
+   at PremiumAttendance.LoginForm..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\LoginForm.cs:line 31
+ERROR [01.04.2024 12:11:11]: The PortName cannot be empty.
+Parameter name: PortName
+   at System.IO.Ports.SerialPort.set_PortName(String value)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate)
+   at PremiumAttendance.Objects.RFID..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 28
+   at PremiumAttendance.LoginForm..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\LoginForm.cs:line 31
+ERROR [01.04.2024 12:11:34]: Delegate to an instance method cannot have null 'this'.
+   at System.MulticastDelegate.CtorClosed(Object target, IntPtr methodPtr)
+   at PremiumAttendance.Forms.SubForms.CustomizeAccountForm..ctor(Employee& currentUser, RFID& rfidModule) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\SubForms\CustomizeAccountForm.cs:line 34
+ERROR [01.04.2024 12:13:31]: Cannot insert the value NULL into column 'Employee_ID', table 'kintor.dbo.Attendance'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at PremiumAttendance.Objects.DataAccessLayer.InsertAttendance(String rfidTag) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\DataAccessLayer\CreateDataAccessLayer.cs:line 142
+   at PremiumAttendance.Objects.BusinessLogicLayer.InsertAttendance(String rfidTag) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\BusinessLogicLayer.cs:line 60
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 184
+ERROR [01.04.2024 12:13:35]: Cannot insert the value NULL into column 'Employee_ID', table 'kintor.dbo.Attendance'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at PremiumAttendance.Objects.DataAccessLayer.InsertAttendance(String rfidTag) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\DataAccessLayer\CreateDataAccessLayer.cs:line 142
+   at PremiumAttendance.Objects.BusinessLogicLayer.InsertAttendance(String rfidTag) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\BusinessLogicLayer.cs:line 60
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 184
+ERROR [01.04.2024 14:01:49]: Incorrect syntax near 'eLEFT'.
+Incorrect syntax near 'a'.
+   at PremiumAttendance.Objects.DataAccessLayer.GetColleguesAtWork(String currentEmployeeLogin) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\DataAccessLayer\RetrieveDataAccessLayer.cs:line 256
+   at PremiumAttendance.Objects.BusinessLogicLayer.GetColleguesAtWork(String currentEmployeeLogin) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\BusinessLogicLayer.cs:line 173
+   at PremiumAttendance.Forms.SidebarForms.MyDashboardForm.InitColleaguesList() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\SidebarForms\MyDashboardForm.cs:line 117
+ERROR [01.04.2024 14:04:19]: Invalid attempt to call CheckDataIsReady when reader is closed.
+   at System.Data.SqlClient.SqlDataReader.CheckDataIsReady(Int32 columnIndex, Boolean allowPartiallyReadColumn, Boolean permitAsync, String methodName)
+   at System.Data.SqlClient.SqlDataReader.TryReadColumn(Int32 i, Boolean setTimeout, Boolean allowPartiallyReadColumn)
+   at System.Data.SqlClient.SqlDataReader.GetValueInternal(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.GetValue(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.get_Item(Int32 i)
+   at PremiumAttendance.Forms.SidebarForms.MyDashboardForm.<InitItems>d__3.MoveNext() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\SidebarForms\MyDashboardForm.cs:line 44
+ERROR [01.04.2024 14:04:19]: Incorrect syntax near 'a'.
+   at PremiumAttendance.Objects.DataAccessLayer.GetColleguesAtWork(String currentEmployeeLogin) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\DataAccessLayer\RetrieveDataAccessLayer.cs:line 256
+   at PremiumAttendance.Objects.BusinessLogicLayer.GetColleguesAtWork(String currentEmployeeLogin) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\BusinessLogicLayer.cs:line 173
+   at PremiumAttendance.Forms.SidebarForms.MyDashboardForm.InitColleaguesList() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\SidebarForms\MyDashboardForm.cs:line 118
+ERROR [01.04.2024 14:06:28]: Invalid attempt to call CheckDataIsReady when reader is closed.
+   at System.Data.SqlClient.SqlDataReader.CheckDataIsReady(Int32 columnIndex, Boolean allowPartiallyReadColumn, Boolean permitAsync, String methodName)
+   at System.Data.SqlClient.SqlDataReader.TryReadColumn(Int32 i, Boolean setTimeout, Boolean allowPartiallyReadColumn)
+   at System.Data.SqlClient.SqlDataReader.GetValueInternal(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.GetValue(Int32 i)
+   at System.Data.SqlClient.SqlDataReader.get_Item(Int32 i)
+   at PremiumAttendance.Forms.SidebarForms.MyDashboardForm.<InitItems>d__3.MoveNext() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\SidebarForms\MyDashboardForm.cs:line 44
+ERROR [01.04.2024 14:12:25]: Unable to cast object of type 'System.Int32' to type 'System.String'.
+   at PremiumAttendance.Objects.DataAccessLayer.GetHoursDays(String employeeLogin) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\DataAccessLayer\RetrieveDataAccessLayer.cs:line 304
+   at PremiumAttendance.Objects.BusinessLogicLayer.GetHoursDays(String currentLogin) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\BusinessLogicLayer.cs:line 191
+   at PremiumAttendance.Forms.SidebarForms.MyDashboardForm.<InitItems>d__3.MoveNext() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\SidebarForms\MyDashboardForm.cs:line 42

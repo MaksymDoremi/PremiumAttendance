@@ -191,6 +191,19 @@ namespace PremiumAttendance.Objects
                 throw;
             }
         }
+
+        public DataTable GetAttendanceOverall()
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                return dal.GetAttendanceOverall();
+            }
+            catch
+            {
+                throw;
+            }
+        }
         #endregion
         #region UPDATE
 

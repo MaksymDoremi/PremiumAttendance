@@ -161,3 +161,7 @@ FROM Employee E
 CROSS JOIN AllDays AD
 LEFT JOIN Attendance A ON E.ID = A.Employee_ID AND CAST(A.Datetime_of_entry AS date) = AD.Date
 ORDER BY E.Name, AD.Date;
+
+
+
+

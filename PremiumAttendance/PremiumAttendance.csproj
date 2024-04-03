@@ -96,6 +96,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\AttendanceFormAttendanceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AttendanceFormAttendanceControl.Designer.cs">
+      <DependentUpon>AttendanceFormAttendanceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AttendanceFormEmployeeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AttendanceFormEmployeeControl.Designer.cs">
+      <DependentUpon>AttendanceFormEmployeeControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ColleagueControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -218,6 +230,12 @@
     <Compile Include="Objects\SvatkyAPIObject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\AttendanceFormAttendanceControl.resx">
+      <DependentUpon>AttendanceFormAttendanceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AttendanceFormEmployeeControl.resx">
+      <DependentUpon>AttendanceFormEmployeeControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ColleagueControl.resx">
       <DependentUpon>ColleagueControl.cs</DependentUpon>
     </EmbeddedResource>

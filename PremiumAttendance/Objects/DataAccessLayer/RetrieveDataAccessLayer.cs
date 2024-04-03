@@ -310,7 +310,54 @@ namespace PremiumAttendance.Objects
 
         }
 
+        public DataTable GetAttendanceOverall()
+        {
 
+
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
+
+
+            try
+            {
+                string query = "WITH AllDays AS (\r\n    SELECT DATEADD(DAY, number, @StartDate) AS Date\r\n    FROM master.dbo.spt_values\r\n    WHERE type = 'P'\r\n    AND DATEADD(DAY, number, @StartDate) <= @EndDate\r\n)\r\nSELECT CONCAT(E.Name,' ', E.Surname) as Employee_NameSurname,\r\n       AD.Date AS Attendance_Date,\r\n       COALESCE(CONVERT(varchar, A.Datetime_of_entry, 108), 'Absent') AS Time_of_Entry, -- Display time or \"Absent\"\r\n       CASE \r\n           WHEN A.Type_of_entry = 1 THEN 'Check In'\r\n           WHEN A.Type_of_entry = 0 THEN 'Check Out'\r\n           ELSE 'Unknown'\r\n       END AS Attendance_Type\r\nFROM Employee E\r\nCROSS JOIN AllDays AD\r\nLEFT JOIN Attendance A ON E.ID = A.Employee_ID AND CAST(A.Datetime_of_entry AS date) = AD.Date\r\nORDER BY Employee_NameSurname, AD.Date";
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
+                {
+
+
+                    //DateTime date = DateTime.Now;
+                    //var firstDayOfMonth = new DateTime(date.Year, date.Month, 1);
+                    //var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
+                    DateTime date = DateTime.Now;
+                    DateTime lastMonthDate = date.AddMonths(-1); // Subtract 1 month to get the previous month
+                    var firstDayOfMonth = new DateTime(lastMonthDate.Year, lastMonthDate.Month, 1);
+                    var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
+                    cmd.Parameters.AddWithValue("@StartDate", firstDayOfMonth);
+                    cmd.Parameters.AddWithValue("@EndDate", lastDayOfMonth);
+
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+
+                        sda.Fill(dt);
+
+                        return dt;
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                DatabaseConnection.GetConnection().Close();
+            }
+
+        }
         #endregion
     }
 }

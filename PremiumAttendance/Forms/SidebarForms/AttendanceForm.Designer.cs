@@ -28,13 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.attendanceTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.SuspendLayout();
+            // 
+            // attendanceTableLayoutPanel
+            // 
+            this.attendanceTableLayoutPanel.AutoScroll = true;
+            this.attendanceTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.attendanceTableLayoutPanel.Location = new System.Drawing.Point(12, 143);
+            this.attendanceTableLayoutPanel.MaximumSize = new System.Drawing.Size(1260, 580);
+            this.attendanceTableLayoutPanel.Name = "attendanceTableLayoutPanel";
+            this.attendanceTableLayoutPanel.Size = new System.Drawing.Size(1245, 580);
+            this.attendanceTableLayoutPanel.TabIndex = 0;
             // 
             // AttendanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1269, 703);
+            this.ClientSize = new System.Drawing.Size(1269, 734);
+            this.Controls.Add(this.attendanceTableLayoutPanel);
             this.Name = "AttendanceForm";
             this.Text = "AttendanceForm";
             this.ResumeLayout(false);
@@ -42,5 +54,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.TableLayoutPanel attendanceTableLayoutPanel;
     }
 }

@@ -23,8 +23,6 @@ namespace PremiumAttendance.Forms
 
         private LoginForm loginForm;
 
-        private BusinessLogicLayer bll;
-
         private Thread rfidThread;
 
         private RFID rfidModule;
@@ -202,16 +200,10 @@ namespace PremiumAttendance.Forms
         private void timer_Tick(object sender, EventArgs e)
         {
             this.dateTimeLabel.Text = System.DateTime.Now.ToString();
-            /*
-            if (this.rfidThread != null && rfidThread.ThreadState == ThreadState.WaitSleepJoin)
+
+            // in case of dead port try to resuscitate RFID reader
+            if (rfidModule == null)
             {
-                this.rfidStatusLabel.Text = "Running";
-                this.rfidStatusLabel.ForeColor = System.Drawing.Color.Green;
-                Console.WriteLine(rfidThread.ThreadState.ToString());
-            }
-            else
-            {
-                
                 this.rfidStatusLabel.Text = "Stopped";
                 this.rfidStatusLabel.ForeColor = System.Drawing.Color.Red;
 
@@ -219,17 +211,40 @@ namespace PremiumAttendance.Forms
                 {
                     rfidModule = new RFID();
                     rfidThread = new Thread(rfidModule.ReadTag);
+                    rfidThread.IsBackground = true;
                     rfidThread.Start();
-                    Console.WriteLine(rfidThread.ThreadState.ToString());
                 }
                 catch (Exception ex)
                 {
-                    //ignore error
-                    //MessageBox.Show("RFID can't be opened");
-                    Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
+                    Console.WriteLine(ex.Message);
                 }
             }
-            */
+
+            if (this.rfidThread != null) { Console.WriteLine(this.rfidThread.ThreadState); }
+
+            if (this.rfidThread != null && this.rfidThread.ThreadState != ThreadState.Stopped)
+            {
+                this.rfidStatusLabel.Text = "Running";
+                this.rfidStatusLabel.ForeColor = System.Drawing.Color.Green;
+            }
+            else if (this.rfidThread != null && this.rfidThread.ThreadState == ThreadState.Stopped)
+            {
+                this.rfidStatusLabel.Text = "Stopped";
+                this.rfidStatusLabel.ForeColor = System.Drawing.Color.Red;
+
+                try
+                {
+                    rfidModule.OpenSerialPort();
+                    rfidThread = new Thread(rfidModule.ReadTag);
+                    rfidThread.IsBackground = true;
+                    rfidThread.Start();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+
 
         }
 
@@ -250,7 +265,7 @@ namespace PremiumAttendance.Forms
         private void myAccountBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.activeColor);
-            MyAccountForm form = new MyAccountForm(this, ref currentUser, ref rfidModule);
+            MyAccountForm form = new MyAccountForm(this, ref currentUser);
             form.updateChangesEventHandler += InitItemsEvent;
             OpenChildForm(form);
         }
@@ -264,7 +279,7 @@ namespace PremiumAttendance.Forms
         private void employeesBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.activeColor);
-            OpenChildForm(new EmployeesForm(this, ref this.currentUser, ref rfidModule));
+            OpenChildForm(new EmployeesForm(this, ref this.currentUser));
         }
 
         private void attendanceBtn_Click(object sender, EventArgs e)

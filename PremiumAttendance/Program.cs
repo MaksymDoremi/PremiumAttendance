@@ -11,8 +11,14 @@ using System.Windows.Forms;
 
 namespace PremiumAttendance
 {
+    
     public static class Program
     {
+        /// <summary>
+        /// Flag for <see cref="RFID"> thread, whether or not to mark attendance or show it in <see cref="MessageBox">
+        /// </summary>
+        public static bool markRfidAttendance = true;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

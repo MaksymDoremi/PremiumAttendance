@@ -269,6 +269,7 @@
             this.Controls.Add(this.closeBtn);
             this.Name = "AddEmployeeForm";
             this.Text = "AddEmployeeForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddEmployeeForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.imageBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -17,35 +17,16 @@ namespace PremiumAttendance.Forms.SubForms
         private BusinessLogicLayer bll;
         public event EventHandler newEmployeeAddedEvent;
 
-        private Thread rfidThread;
 
-        private RFID rfidModule;
-        public AddEmployeeForm(ref RFID rfidModule)
+        public AddEmployeeForm()
         {
             InitializeComponent();
             bll = new BusinessLogicLayer();
-            this.rfidModule = rfidModule;
 
-            try
-            {
-                this.rfidThread = new Thread(rfidModule.ReturnTag);
-                rfidThread.IsBackground = true;
-                rfidThread.Start();
-            }
-            catch (Exception ex)
-            {
-                Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
-                //MessageBox.Show(ex.Message);
-            }
         }
 
         private void closeBtn_Click(object sender, EventArgs e)
         {
-            if (this.rfidModule != null)
-            {
-                this.rfidModule.SetEndgameToken();
-                rfidModule.SetEventWaitHandle(sender, e);
-            }
             this.Close();
         }
 
@@ -59,12 +40,6 @@ namespace PremiumAttendance.Forms.SubForms
                 if (newEmployeeAddedEvent != null)
                 {
                     newEmployeeAddedEvent.Invoke(this, e);
-                }
-
-                if (this.rfidModule != null)
-                {
-                    this.rfidModule.SetEndgameToken();
-                    rfidModule.SetEventWaitHandle(sender, e);
                 }
                 this.Close();
             }
@@ -95,6 +70,11 @@ namespace PremiumAttendance.Forms.SubForms
                 Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void AddEmployeeForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Program.markRfidAttendance = true;
         }
     }
 }

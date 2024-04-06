@@ -20,13 +20,12 @@ namespace PremiumAttendance.Forms.SidebarForms
         private BusinessLogicLayer bll = new BusinessLogicLayer();
         private Employee currentUser;
 
-        private RFID rfidModule;
-        public EmployeesForm(DashBoardForm dashboardForm, ref Employee currentUser, ref RFID rfidModule)
+        public EmployeesForm(DashBoardForm dashboardForm, ref Employee currentUser)
         {
             InitializeComponent();
             this.dashboardForm = dashboardForm;
             this.currentUser = currentUser;
-            this.rfidModule = rfidModule;
+           
             employeeList = new List<Employee>();
 
             InitItems();
@@ -92,7 +91,7 @@ namespace PremiumAttendance.Forms.SidebarForms
 
             foreach (Employee emoployee in newList)
             {
-                EmployeeControl control = new EmployeeControl(emoployee, dashboardForm, ref this.rfidModule);
+                EmployeeControl control = new EmployeeControl(emoployee, dashboardForm);
                 this.employeeFlowLayoutPanel.Controls.Add(control);
                 
             }
@@ -100,14 +99,9 @@ namespace PremiumAttendance.Forms.SidebarForms
 
         private void addEmployeeBtn_Click(object sender, EventArgs e)
         {
-            AddEmployeeForm form = new AddEmployeeForm(ref this.rfidModule);
-            if (this.rfidModule != null)
-            {
-                //form.FormClosed += rfidModule.SetEventWaitHandle;
-                rfidModule.ResetEventWaitHandle(sender, e);
-                rfidModule.ResetEndgameToken();
-
-            }
+            AddEmployeeForm form = new AddEmployeeForm();
+            Program.markRfidAttendance = false;
+      
             this.dashboardForm.OpenChildFormOverChildForm(form);
             form.newEmployeeAddedEvent += InitItemsEvent;
         }

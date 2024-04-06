@@ -18,16 +18,15 @@ namespace PremiumAttendance.Forms.SubForms
         private DashBoardForm dashboardForm;
         private BusinessLogicLayer bll;
 
-        private RFID rfidModule;
        
 
         public EventHandler deleteEvent;
-        public EmployeeAccount(Employee employee, DashBoardForm dashboardForm, ref RFID rfidModule)
+        public EmployeeAccount(Employee employee, DashBoardForm dashboardForm)
         {
             InitializeComponent();
             this.employee = employee;
             this.dashboardForm = dashboardForm;
-            this.rfidModule = rfidModule;
+            
 
             bll = new BusinessLogicLayer();
 
@@ -74,15 +73,9 @@ namespace PremiumAttendance.Forms.SubForms
 
         private void changeAccountInfoBtn_Click(object sender, EventArgs e)
         {
-            CustomizeAccountForm form = new CustomizeAccountForm(ref employee, true, ref this.rfidModule);
-            if (this.rfidModule != null)
-            {
-                //form.FormClosed += rfidModule.SetEventWaitHandle;
-                rfidModule.ResetEventWaitHandle(sender, e);
-                rfidModule.ResetEndgameToken();
+            CustomizeAccountForm form = new CustomizeAccountForm(ref employee, true);
 
-            }
-
+            Program.markRfidAttendance = false;
             this.dashboardForm.OpenChildFormOverChildForm(form);
         }
 

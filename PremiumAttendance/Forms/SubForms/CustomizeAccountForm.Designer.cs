@@ -199,6 +199,7 @@
             this.Controls.Add(this.label1);
             this.Name = "CustomizeAccountForm";
             this.Text = "CustomizeAccountForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CustomizeAccountForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.changeImageBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

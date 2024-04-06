@@ -21,16 +21,16 @@ namespace PremiumAttendance.Forms.SidebarForms
 
         public EventHandler updateChangesEventHandler;
 
-        private RFID rfidModule;
+        
 
-        public MyAccountForm(DashBoardForm dashboardForm, ref Employee currentUser, ref RFID rfidModule)
+        public MyAccountForm(DashBoardForm dashboardForm, ref Employee currentUser)
         {
             InitializeComponent();
             bll = new BusinessLogicLayer();
 
             this.currentUser = currentUser;
             this.dashboardForm = dashboardForm;
-            this.rfidModule = rfidModule;
+           
       
             InitItems();
         }
@@ -92,17 +92,10 @@ namespace PremiumAttendance.Forms.SidebarForms
         /// <param name="e"></param>
         private void changeAccountInfoBtn_Click(object sender, EventArgs e)
         {
-            CustomizeAccountForm form = new CustomizeAccountForm(ref currentUser, ref rfidModule);
+            CustomizeAccountForm form = new CustomizeAccountForm(ref currentUser);
             form.submitChangeEventHandler += InitItemsEvent;
-            if (this.rfidModule != null)
-            {
-                //form.FormClosed += rfidModule.SetEventWaitHandle;
-                rfidModule.ResetEventWaitHandle(sender, e);
-                rfidModule.ResetEndgameToken();
-                
-            }
 
-
+            Program.markRfidAttendance = false;
             this.dashboardForm.OpenChildFormOverChildForm(form);
         }
 

@@ -18,51 +18,21 @@ namespace PremiumAttendance.Forms.SubForms
         public event EventHandler submitChangeEventHandler;
         private bool adminMode;
 
-        private RFID rfidModule;
-        private Thread rfidThread;
 
-        public CustomizeAccountForm(ref Employee currentUser, ref RFID rfidModule)
+        public CustomizeAccountForm(ref Employee currentUser)
         {
             InitializeComponent();
             this.currentUser = currentUser;
             InitItems();
-
-            this.rfidModule = rfidModule;
-
-            try
-            {
-                this.rfidThread = new Thread(rfidModule.ReturnTag);
-                rfidThread.IsBackground = true;
-                rfidThread.Start();
-            }
-            catch (Exception ex)
-            {
-                Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
-                //MessageBox.Show(ex.Message);
-            }
-
         }
 
-        public CustomizeAccountForm(ref Employee currentUser, bool adminMode, ref RFID rfidModule)
+        public CustomizeAccountForm(ref Employee currentUser, bool adminMode)
         {
             InitializeComponent();
             this.currentUser = currentUser;
             this.adminMode = adminMode;
             InitItems();
 
-            this.rfidModule = rfidModule;
-
-            try
-            {
-                this.rfidThread = new Thread(rfidModule.ReturnTag);
-                rfidThread.IsBackground = true;
-                rfidThread.Start();
-            }
-            catch (Exception ex)
-            {
-                Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
-                //MessageBox.Show(ex.Message);
-            }
         }
 
         /// <summary>
@@ -91,11 +61,6 @@ namespace PremiumAttendance.Forms.SubForms
 
         private void closeBtn_Click(object sender, EventArgs e)
         {
-            if (this.rfidModule != null)
-            {
-                this.rfidModule.SetEndgameToken();
-                rfidModule.SetEventWaitHandle(sender, e);
-            }
             this.Close();
         }
 
@@ -153,13 +118,7 @@ namespace PremiumAttendance.Forms.SubForms
                 {
                     submitChangeEventHandler.Invoke(this, e);
                 }
-
-                if (this.rfidModule != null)
-                {
-                    this.rfidModule.SetEndgameToken();
-                    rfidModule.SetEventWaitHandle(sender, e);
-                }
-
+                
                 this.Close();
             }
             catch (Exception ex)
@@ -168,6 +127,11 @@ namespace PremiumAttendance.Forms.SubForms
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void CustomizeAccountForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Program.markRfidAttendance = true;
         }
     }
 }

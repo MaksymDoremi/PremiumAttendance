@@ -19,13 +19,13 @@ namespace PremiumAttendance.Controls
         private Employee employee;
         private DashBoardForm dashboardForm;
         private Color currentColor;
-        private RFID rfidModule;
-        public EmployeeControl(Employee employee, DashBoardForm dashboardForm, ref RFID rfidModule)
+    
+        public EmployeeControl(Employee employee, DashBoardForm dashboardForm)
         {
             InitializeComponent();
             this.employee = employee;
             this.dashboardForm = dashboardForm;
-            this.rfidModule = rfidModule;
+            
             InitItems();
         }
 
@@ -60,7 +60,7 @@ namespace PremiumAttendance.Controls
 
         private void EmployeeControl_Click(object sender, EventArgs e)
         {
-            EmployeeAccount form = new EmployeeAccount(employee, dashboardForm, ref this.rfidModule);
+            EmployeeAccount form = new EmployeeAccount(employee, dashboardForm);
             this.dashboardForm.OpenChildFormOverChildForm(form);
 
             form.deleteEvent += HideControl;

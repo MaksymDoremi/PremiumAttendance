@@ -310,7 +310,7 @@ namespace PremiumAttendance.Objects
 
         }
 
-        public DataTable GetAttendanceOverall()
+        public DataTable GetAttendanceOverall(int year, int month)
         {
             if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
             {
@@ -325,8 +325,8 @@ namespace PremiumAttendance.Objects
                 {
 
 
-                    DateTime date = DateTime.Now;
-                    var firstDayOfMonth = new DateTime(date.Year, date.Month, 1);
+                    DateTime startDate = new DateTime(year, month, 1);
+                    var firstDayOfMonth = new DateTime(startDate.Year, startDate.Month, 1);
                     var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
                     // DateTime date = DateTime.Now;
                     //DateTime lastMonthDate = date.AddMonths(-1); // Subtract 1 month to get the previous month

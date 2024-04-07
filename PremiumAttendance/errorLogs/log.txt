@@ -3995,3 +3995,1150 @@ Parameter name: PortName
    at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate)
    at PremiumAttendance.Objects.RFID..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 27
    at PremiumAttendance.LoginForm..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\LoginForm.cs:line 31
+ERROR [06.04.2024 20:57:31]: A transport-level error has occurred when receiving results from the server. (provider: TCP Provider, error: 0 - The semaphore timeout period has expired.)
+   at PremiumAttendance.Objects.DataAccessLayer.GetNotifications(Int32 employeeID) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\DataAccessLayer\RetrieveDataAccessLayer.cs:line 139
+   at PremiumAttendance.Objects.BusinessLogicLayer.GetNotifications(Int32 employeeID) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\BusinessLogicLayer.cs:line 117
+   at PremiumAttendance.Forms.SidebarForms.NotificationForm.InitNotificationList() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\SidebarForms\NotificationForm.cs:line 58
+ERROR [06.04.2024 21:07:52]: The I/O operation has been aborted because of either a thread exit or an application request.
+
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream.EndRead(IAsyncResult asyncResult)
+   at System.IO.Ports.SerialStream.Read(Byte[] array, Int32 offset, Int32 count, Int32 timeout)
+   at System.IO.Ports.SerialStream.Read(Byte[] array, Int32 offset, Int32 count)
+   at System.IO.Ports.SerialPort.InternalRead(Char[] buffer, Int32 offset, Int32 count, Int32 timeout, Boolean countMultiByteCharsAsOne)
+   at System.IO.Ports.SerialPort.ReadTo(String value)
+   at System.IO.Ports.SerialPort.ReadLine()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 98
+ERROR [06.04.2024 21:07:52]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:53]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:53]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:53]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:53]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:53]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:53]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:53]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:53]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:53]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:53]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:53]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:53]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:53]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:53]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:53]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:53]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:53]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:53]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:53]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:53]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:54]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:54]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:54]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:54]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:54]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:54]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:54]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:54]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:54]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:54]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:54]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:54]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:54]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:54]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:54]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:54]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:54]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:54]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:55]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:55]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:55]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:55]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:55]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:55]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:55]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:55]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:55]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:55]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:55]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:55]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:55]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:55]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:55]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:55]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:55]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:55]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:56]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:56]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:56]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:56]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:56]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:56]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:56]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:56]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:56]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:56]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:56]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:56]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:56]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:56]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:56]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:56]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:56]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:56]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:57]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:57]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:57]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:57]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:57]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:57]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:57]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:57]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:57]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:57]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:57]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:57]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:57]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:57]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:57]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:57]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:57]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:57]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:58]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:58]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:58]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:58]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:58]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:58]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:58]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:58]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:58]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:58]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:58]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:58]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:58]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:58]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:58]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:58]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:58]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:58]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:59]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:59]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:59]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:59]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:59]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:59]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:59]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:59]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:59]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:59]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:59]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:59]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:59]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:59]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:59]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:59]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:07:59]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:07:59]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:00]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:00]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:00]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:00]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:00]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:00]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:00]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:00]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:00]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:00]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:00]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:00]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:00]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:00]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:00]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:00]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:00]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:00]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:00]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:00]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:01]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:01]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:01]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:01]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:01]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:01]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:01]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:01]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:01]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:01]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:01]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:01]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:01]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:01]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:01]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:01]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:01]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:01]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:02]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:02]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:02]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:02]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:02]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:02]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:02]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:02]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:02]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:02]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:02]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:02]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:02]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:02]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:02]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:02]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:02]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:02]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:03]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:03]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:03]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:03]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:03]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:03]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:03]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:03]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:03]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:03]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:03]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:03]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:03]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:03]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:03]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:03]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:03]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:03]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:04]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:04]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:04]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:04]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:04]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:04]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:09]: The I/O operation has been aborted because of either a thread exit or an application request.
+
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream.EndRead(IAsyncResult asyncResult)
+   at System.IO.Ports.SerialStream.Read(Byte[] array, Int32 offset, Int32 count, Int32 timeout)
+   at System.IO.Ports.SerialStream.Read(Byte[] array, Int32 offset, Int32 count)
+   at System.IO.Ports.SerialPort.InternalRead(Char[] buffer, Int32 offset, Int32 count, Int32 timeout, Boolean countMultiByteCharsAsOne)
+   at System.IO.Ports.SerialPort.ReadTo(String value)
+   at System.IO.Ports.SerialPort.ReadLine()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 98
+ERROR [06.04.2024 21:08:09]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:09]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:09]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:09]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:09]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:09]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:09]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:09]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:09]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:09]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:09]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:09]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:09]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:09]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:09]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:09]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:09]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:09]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:09]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:10]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:10]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:10]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:10]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:10]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:10]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:10]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:10]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:10]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:10]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:10]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:10]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:10]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:10]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:10]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:10]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:10]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:10]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:11]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:11]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:11]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:11]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:11]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:11]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:11]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:11]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:11]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:11]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:11]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:11]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:11]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:11]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:11]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:11]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:11]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:11]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:12]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:12]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:12]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:12]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:12]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:12]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:12]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:12]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:12]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:12]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [06.04.2024 21:08:12]: The port 'COM3' does not exist.
+   at System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   at System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   at System.IO.Ports.SerialPort.Open()
+   at PremiumAttendance.Objects.RFID.OpenSerialPort() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 64
+ERROR [06.04.2024 21:08:12]: The port is closed.
+   at System.IO.Ports.SerialPort.DiscardInBuffer()
+   at PremiumAttendance.Objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 97
+ERROR [07.04.2024 20:51:20]: The PortName cannot be empty.
+Parameter name: PortName
+   at System.IO.Ports.SerialPort.set_PortName(String value)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate)
+   at PremiumAttendance.Objects.RFID..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 27
+   at PremiumAttendance.LoginForm..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\LoginForm.cs:line 31
+ERROR [07.04.2024 20:52:30]: The PortName cannot be empty.
+Parameter name: PortName
+   at System.IO.Ports.SerialPort.set_PortName(String value)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate)
+   at PremiumAttendance.Objects.RFID..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 27
+   at PremiumAttendance.LoginForm..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\LoginForm.cs:line 31
+ERROR [07.04.2024 20:52:45]: The PortName cannot be empty.
+Parameter name: PortName
+   at System.IO.Ports.SerialPort.set_PortName(String value)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits)
+   at System.IO.Ports.SerialPort..ctor(String portName, Int32 baudRate)
+   at PremiumAttendance.Objects.RFID..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Objects\RFID.cs:line 27
+   at PremiumAttendance.LoginForm..ctor() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\Forms\LoginForm.cs:line 31

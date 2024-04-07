@@ -192,12 +192,12 @@ namespace PremiumAttendance.Objects
             }
         }
 
-        public DataTable GetAttendanceOverall()
+        public DataTable GetAttendanceOverall(int year, int month)
         {
             try
             {
                 DataAccessLayer dal = new DataAccessLayer();
-                return dal.GetAttendanceOverall();
+                return dal.GetAttendanceOverall(year, month);
             }
             catch
             {

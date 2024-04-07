@@ -16,18 +16,22 @@ namespace PremiumAttendance.Forms.SidebarForms
 {
     public partial class AttendanceForm : Form
     {
+        private int month;
+        private int year;
         public AttendanceForm()
         {
             InitializeComponent();
-            InitItems();
+            month = DateTime.Now.Month;
+            year = DateTime.Now.Year;
+            InitItems(year, month);
         }
 
-        public void InitItems()
+        public void InitItems( int year, int month)
         {
             attendanceTableLayoutPanel.Controls.Clear();
             BusinessLogicLayer bll = new BusinessLogicLayer();
 
-            DataTable dt = bll.GetAttendanceOverall();
+            DataTable dt = bll.GetAttendanceOverall(year, month);
 
             int employeeHeight = 70;
             int employeeWidth = 200;
@@ -42,7 +46,9 @@ namespace PremiumAttendance.Forms.SidebarForms
             this.attendanceTableLayoutPanel.RowStyles.Clear();
             this.attendanceTableLayoutPanel.ColumnStyles.Clear();
 
-            DateTime startDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            
+            DateTime startDate = new DateTime(year, month, 1);
+            this.monthYearLabel.Text = DateTimeFormatInfo.CurrentInfo.GetMonthName(month)+" "+year;
 
             for (int i = 0; i < 1; i++)
             {
@@ -116,6 +122,37 @@ namespace PremiumAttendance.Forms.SidebarForms
                 }
             }
 
+        }
+
+        private void previousMonthBtn_Click(object sender, EventArgs e)
+        {
+            if (month - 1 == 0)
+            {
+                month = 12;
+                year--;
+            }
+            else
+            {
+                month--;
+            }
+            
+            this.InitItems(year, month);
+        }
+
+        private void nextMonthBtn_Click(object sender, EventArgs e)
+        {
+            if(month+1 == 13)
+            {
+                month = 1;
+                year++;
+            }
+            else
+            {
+                month++;
+            }
+           
+         
+            this.InitItems(year, month);
         }
     }
 }

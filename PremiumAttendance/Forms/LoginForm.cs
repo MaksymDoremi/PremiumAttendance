@@ -25,7 +25,7 @@ namespace PremiumAttendance
         {
             InitializeComponent();
             //start rfid thread
-            
+            Console.WriteLine("LOGIN PAGE");
             try
             {
                 rfidModule = new RFID();

@@ -16,8 +16,8 @@ namespace PremiumAttendance.Controls
         private string name;
         private string surname;
         private bool? type_of_entry;
-        private DateTime? datetime_of_entry;
-        public EmployeeStatusControl(string name, string surname, bool ?type_of_entry, DateTime ?datetime_of_entry)
+        private DateTime datetime_of_entry;
+        public EmployeeStatusControl(string name, string surname, bool ?type_of_entry, DateTime datetime_of_entry)
         {
             InitializeComponent();
             this.name = name;
@@ -38,7 +38,7 @@ namespace PremiumAttendance.Controls
             }
             else
             {
-                this.lastRecordLabel.Text = (bool)this.type_of_entry ? $"Check in {this.datetime_of_entry}" : $"Check out {this.datetime_of_entry}";
+                this.lastRecordLabel.Text = (bool)this.type_of_entry ? $"Check in {this.datetime_of_entry.ToString("t")}" : $"Check out {this.datetime_of_entry.ToString("t")}";
                 this.employeeStatusImage.Image = (bool)this.type_of_entry ? global::PremiumAttendance.Properties.Resources.greenMark : global::PremiumAttendance.Properties.Resources.yellowMark;
             }
         }

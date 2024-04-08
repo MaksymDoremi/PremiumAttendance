@@ -13,12 +13,14 @@ using System.Windows.Forms;
 
 namespace PremiumAttendance.Objects
 {
+    /// <summary>
+    /// RFID module, used for reading RFID-tag
+    /// </summary>
     public class RFID
     {
-        public SerialPort serialPort;
+        private SerialPort serialPort;
 
         private BusinessLogicLayer bll;
-        public ManualResetEvent manualResetEvent;
 
         public RFID()
         {
@@ -30,7 +32,7 @@ namespace PremiumAttendance.Objects
         }
 
         /// <summary>
-        /// Closes serial port
+        /// Closes <see cref="SerialPort"/>
         /// </summary>
         public void CloseSerialPort()
         {
@@ -52,13 +54,13 @@ namespace PremiumAttendance.Objects
         }
 
         /// <summary>
-        /// Opens serial port
+        /// Opens <see cref="SerialPort"/>
         /// </summary>
         public void OpenSerialPort()
         {
             try
             {
-                
+
                 if (!serialPort.IsOpen)
                 {
                     serialPort.Open();
@@ -74,23 +76,18 @@ namespace PremiumAttendance.Objects
         }
 
         /// <summary>
-        /// Reads tag and inserts attendance to database
-        /// Main RFID reading thread, has to work during the whole app execution
+        /// <para>Reads tag and inserts attendance to database</para>
+        /// <para>Main RFID reading thread, has to work during the whole app execution</para>
         /// </summary>
         public void ReadTag()
         {
-            string rfid = "";
-            
+            string rfid = String.Empty;
+
 
             bll = new BusinessLogicLayer();
             while (true)
             {
-
-                //in case ReturnTag works it will wait here until it gets singal
-                //Console.WriteLine("before INSERT TAG");
-                //manualResetEvent.WaitOne();
-                //Console.WriteLine("after INSERT TAG");
-                rfid = null;
+                rfid = String.Empty;
 
                 try
                 {
@@ -102,51 +99,47 @@ namespace PremiumAttendance.Objects
                     {
                         Console.WriteLine(rfid);
 
+                        //mark attendance
                         if (Program.markRfidAttendance)
                         {
-
                             bll.InsertAttendance(rfid);
                             Console.WriteLine("Attendance marked");
                         }
+                        //show messagebox with RFID tag
                         else
                         {
                             Console.WriteLine("RFID message box");
                             MessageBox.Show("RFID tag: " + rfid);
-                            Console.WriteLine("After messagebox");
-
                         }
-
                     }
                 }
                 catch (InvalidOperationException ex)
                 {
-                    //CloseSerialPort();
+                    //fatal error, need to stop execution
                     Console.WriteLine("Serial port error");
                     Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
                     CloseSerialPort();
                     break;
                 }
-                catch(SqlException ex)
+                catch (SqlException ex)
                 {
                     Console.WriteLine(ex.Message);
                     Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
                     Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
                 }
                 System.Threading.Thread.Sleep(3);
-
             }
         }
 
-       
-
         /// <summary>
-        /// Finds the COM port where the Arduino is connected
+        /// <para>Finds the COM port where the Arduino is connected</para>
+        /// <para>Selects all serial ports from Windows register and checks if it's Arduino</para>
         /// </summary>
-        /// <returns></returns>
+        /// <returns>string of COM port</returns>
         private string AutodetectArduinoPort()
         {
             ManagementScope connectionScope = new ManagementScope();

@@ -8,15 +8,18 @@ using System.Threading.Tasks;
 
 namespace PremiumAttendance.Objects
 {
-    internal class Logger
+    /// <summary>
+    /// Logger object, can log messages and errors
+    /// </summary>
+    public class Logger
     {
         private static readonly object _lock = new object();
 
         /// <summary>
         /// Writes program logs to file specidied in App.config at "logFilePath"
         /// </summary>
-        /// <param name="message"></param>
-        /// <param name="error"></param>
+        /// <param name="message">Message to be logged</param>
+        /// <param name="error">Marks it as ERROR log</param>
         public static void WriteLog(string message, bool error)
         {
             lock (_lock)

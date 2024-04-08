@@ -83,10 +83,10 @@ namespace PremiumAttendance.Objects
         }
 
         /// <summary>
-        /// Gets user by login from database
+        /// Gets <see cref="Employee"/> by login from database
         /// </summary>
         /// <param name="login"></param>
-        /// <returns>An instance of <see cref="PremiumAttendance.Objects.Employee"/> class</returns>
+        /// <returns>An instance of <see cref="Employee"/> class</returns>
         public Employee GetCurrentUser(string login)
         {
             try
@@ -101,7 +101,7 @@ namespace PremiumAttendance.Objects
         }
 
         /// <summary>
-        /// Reads notifications for current employee
+        /// Gets all <see cref="Notification"/> for the current <see cref="Employee"/> that he received
         /// </summary>
         /// <param name="employeeID"></param>
         /// <returns><see cref="System.Data.DataTable"/> of <see cref="PremiumAttendance.Objects.Notification"/> instances</returns>
@@ -116,14 +116,13 @@ namespace PremiumAttendance.Objects
             {
                 throw;
             }
-
         }
 
         /// <summary>
-        /// Returns Employee status in format Type_of_entry, Datetime_of_entry, Name, Surname       
+        /// <para>Returns <see cref="DataTable"/> of employee status in format Type_of_entry, Datetime_of_entry, Name, Surname</para>       
         /// </summary>
         /// <param name="currentEmployeeLogin"></param>
-        /// <returns><see cref="System.Data.DataTable"></returns>
+        /// <returns><see cref="System.Data.DataTable"/> of employee status</returns>
         public DataTable GetEmployeeStatus(string currentEmployeeLogin)
         {
             try
@@ -142,7 +141,7 @@ namespace PremiumAttendance.Objects
         /// ID, Name, Surname, RFID_Tag, Role_name, Login, Photo, Email, Phone
         /// </summary>
         /// <param name="currentEmployeeLogin"></param>
-        /// <returns><see cref="System.Data.DataTable"/> of <see cref="PremiumAttendance.Objects.Employee"/>'s</returns>
+        /// <returns><see cref="System.Data.DataTable"/> of <see cref="PremiumAttendance.Objects.Employee"/></returns>
         public DataTable GetEmployees(string currentEmployeeLogin)
         {
             try
@@ -157,10 +156,10 @@ namespace PremiumAttendance.Objects
         }
 
         /// <summary>
-        /// Returns <see cref="DataTable"> of employees who are momentally at work
+        /// Returns <see cref="DataTable"/> of <see cref="Employee"/> who are momentally at work
         /// </summary>
         /// <param name="currentEmployeeLogin"></param>
-        /// <returns></returns>
+        /// <returns><see cref="DataTable"/> of <see cref="Employee"/></returns>
         public DataTable GetColleguesAtWork(string currentEmployeeLogin)
         {
             try
@@ -175,11 +174,11 @@ namespace PremiumAttendance.Objects
         }
 
         /// <summary>
-        /// Returns <see cref="SqlDataReader"> overall worked hours for employee and overall days
+        /// Returns <see cref="Dictionary{string, int}"/> overall worked hours and days for current <see cref="Employee"/>
         /// </summary>
         /// <param name="currentLogin"></param>
-        /// <returns></returns>
-        public Dictionary<string,int> GetHoursDays(string currentLogin)
+        /// <returns><see cref="Dictionary{TKey, TValue}"/> in format days : n, hours : m</returns>
+        public Dictionary<string, int> GetHoursDays(string currentLogin)
         {
             try
             {
@@ -192,6 +191,13 @@ namespace PremiumAttendance.Objects
             }
         }
 
+        /// <summary>
+        /// <para>Retrieves overall attendance report for employees</para>
+        /// <para>Format: Employee_NameSurname, Attendance_Date, Time_of_Entry, Attendance_Type</para>
+        /// </summary>
+        /// <param name="year"></param>
+        /// <param name="month"></param>
+        /// <returns><see cref="DataTable"/></returns>
         public DataTable GetAttendanceOverall(int year, int month)
         {
             try
@@ -204,11 +210,32 @@ namespace PremiumAttendance.Objects
                 throw;
             }
         }
+
+        /// <summary>
+        /// <para>Retrieves overall attendance report for exact employee using current login</para>
+        /// <para>Format: Employee_NameSurname, Attendance_Date, Time_of_Entry, Attendance_Type</para>
+        /// </summary>
+        /// <param name="year"></param>
+        /// <param name="month"></param>
+        /// <param name="employeeLogin"></param>
+        /// <returns><see cref="DataTable"/></returns>
+        public DataTable GetAttendanceOverall(int year, int month, string employeeLogin)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                return dal.GetAttendanceOverall(year, month, employeeLogin);
+            }
+            catch
+            {
+                throw;
+            }
+        }
         #endregion
         #region UPDATE
 
         /// <summary>
-        /// Update <see cref="PremiumAttendance.Objects.Employee"/> attributes
+        /// Updates <see cref="PremiumAttendance.Objects.Employee"/> attributes
         /// </summary>
         /// <param name="userInstance"></param>
         /// <returns>True if success</returns>
@@ -247,7 +274,7 @@ namespace PremiumAttendance.Objects
         }
 
         /// <summary>
-        /// Mark message as read
+        /// Marks <see cref="Notification"/> as read
         /// </summary>
         /// <param name="haveReadID"></param>
         /// <returns>True if success</returns>
@@ -266,10 +293,10 @@ namespace PremiumAttendance.Objects
         #endregion
         #region DELETE
         /// <summary>
-        /// Method for deleting <see cref="PremiumAttendance.Objects.Employee">
+        /// Deletes <see cref="PremiumAttendance.Objects.Employee"/> from database using ID
         /// </summary>
-        /// <param name="employeeID">Id of the use to delete</param>
-        /// <returns></returns>
+        /// <param name="employeeID">Id of the employee to be deleted</param>
+        /// <returns>True if success</returns>
         public bool DeleteEmployee(int employeeID)
         {
             try

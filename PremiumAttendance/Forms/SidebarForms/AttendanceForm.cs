@@ -18,20 +18,43 @@ namespace PremiumAttendance.Forms.SidebarForms
     {
         private int month;
         private int year;
-        public AttendanceForm()
+        private Employee currentEmployee;
+        public AttendanceForm(Employee currentEmployee)
         {
             InitializeComponent();
             month = DateTime.Now.Month;
             year = DateTime.Now.Year;
+            this.currentEmployee = currentEmployee;
             InitItems(year, month);
+            
         }
 
-        public void InitItems( int year, int month)
+        public void InitItems(int year, int month)
         {
             attendanceTableLayoutPanel.Controls.Clear();
-            BusinessLogicLayer bll = new BusinessLogicLayer();
 
-            DataTable dt = bll.GetAttendanceOverall(year, month);
+            DateTime startDate = new DateTime(year, month, 1);
+            this.monthYearLabel.Text = DateTimeFormatInfo.CurrentInfo.GetMonthName(month) + " " + year;
+
+            BusinessLogicLayer bll = new BusinessLogicLayer();
+            DataTable dt = new DataTable();
+            try
+            {
+                if(this.currentEmployee.Role == "Administrator")
+                {
+                    dt = bll.GetAttendanceOverall(year, month);
+                }
+                else
+                {
+                    dt = bll.GetAttendanceOverall(year, month, this.currentEmployee.Login);
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Couldn't load attendance data, contact developer.");
+                Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
+            }
 
             int employeeHeight = 70;
             int employeeWidth = 200;
@@ -45,10 +68,7 @@ namespace PremiumAttendance.Forms.SidebarForms
             attendanceTableLayoutPanel.Dock = DockStyle.None;
             this.attendanceTableLayoutPanel.RowStyles.Clear();
             this.attendanceTableLayoutPanel.ColumnStyles.Clear();
-
-            
-            DateTime startDate = new DateTime(year, month, 1);
-            this.monthYearLabel.Text = DateTimeFormatInfo.CurrentInfo.GetMonthName(month)+" "+year;
+       
 
             for (int i = 0; i < 1; i++)
             {
@@ -135,13 +155,13 @@ namespace PremiumAttendance.Forms.SidebarForms
             {
                 month--;
             }
-            
+
             this.InitItems(year, month);
         }
 
         private void nextMonthBtn_Click(object sender, EventArgs e)
         {
-            if(month+1 == 13)
+            if (month + 1 == 13)
             {
                 month = 1;
                 year++;
@@ -150,8 +170,8 @@ namespace PremiumAttendance.Forms.SidebarForms
             {
                 month++;
             }
-           
-         
+
+
             this.InitItems(year, month);
         }
     }

@@ -1,6 +1,7 @@
 ﻿using PremiumAttendance.Objects;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace PremiumAttendance
 {
-    
+
     public static class Program
     {
         /// <summary>
@@ -25,61 +26,46 @@ namespace PremiumAttendance
         [STAThread]
         static void Main()
         {
-
-            DataAccessLayer dal = new DataAccessLayer();
-
-            
-
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());
         }
 
         /// <summary>
-        /// Computes sha256 and applies salt to it
+        /// Computes sha256 for given string and applies salt to it from App.config
         /// </summary>
-        /// <param name="s"></param>
-        /// <returns></returns>
-        public static string ComputeSHA256(string s)
+        /// <param name="input">String to be hashed</param>
+        /// <returns>Hashed string</returns>
+        public static string ComputeSHA256(string input)
         {
             string hash = String.Empty;
-
-            // Initialize a SHA256 hash object
             using (SHA256 sha256 = SHA256.Create())
             {
-                // Compute the hash of the given string
-                byte[] hashValue = sha256.ComputeHash(Encoding.UTF8.GetBytes(s + "XyZ987&*#"));
+                byte[] hashValue = sha256.ComputeHash(Encoding.UTF8.GetBytes(input + ConfigurationManager.AppSettings["passwordSalt"]));
 
-                // Convert the byte array to string format
                 foreach (byte b in hashValue)
                 {
                     hash += $"{b:X2}";
                 }
             }
-
             return hash;
         }
 
         /// <summary>
         /// Takes Image and converts to byte[]
         /// </summary>
-        /// <param name="imageIn"></param>
-        /// <returns></returns>
-        public static byte[] ImageToByteArray(Image imageIn)
+        /// <param name="image">Image to be converted</param>
+        /// <returns>byte[] or null</returns>
+        public static byte[] ImageToByteArray(Image image)
         {
-            //ImageConverter converter = new ImageConverter();
-
-            //return (byte[])converter.ConvertTo(imageIn, typeof(byte[]));
-            if (imageIn == null)
+            if (image == null)
             {
                 return null;
             }
 
             using (var ms = new MemoryStream())
             {
-                //imageIn.Save(ms, imageIn.RawFormat);
-                (new Bitmap(imageIn)).Save(ms, imageIn.RawFormat);
+                (new Bitmap(image)).Save(ms, image.RawFormat);
                 return ms.ToArray();
             }
 
@@ -88,19 +74,19 @@ namespace PremiumAttendance
         /// <summary>
         /// Takes byte[] and converts to Image
         /// </summary>
-        /// <param name="data"></param>
-        /// <returns></returns>
+        /// <param name="data">byte[] to be converted</param>
+        /// <returns>Image object</returns>
         public static Image ConvertByteArrayToImage(byte[] data)
         {
-            if (data != null)
+            if (data == null)
             {
-                using (MemoryStream ms = new MemoryStream(data))
-                {
-                    return Image.FromStream(ms);
-                }
+                return null;
             }
-            return null;
 
+            using (MemoryStream ms = new MemoryStream(data))
+            {
+                return Image.FromStream(ms);
+            }
         }
     }
 }

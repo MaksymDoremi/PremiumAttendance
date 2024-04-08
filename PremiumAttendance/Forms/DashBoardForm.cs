@@ -253,6 +253,7 @@ namespace PremiumAttendance.Forms
         private void logoutBtn_Click(object sender, EventArgs e)
         {
             loginForm.Show();
+
             this.Hide();
         }
 
@@ -285,7 +286,7 @@ namespace PremiumAttendance.Forms
         private void attendanceBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.activeColor);
-            OpenChildForm(new AttendanceForm());
+            OpenChildForm(new AttendanceForm(this.currentUser));
         }
 
         private void homepageBtn_Click(object sender, EventArgs e)

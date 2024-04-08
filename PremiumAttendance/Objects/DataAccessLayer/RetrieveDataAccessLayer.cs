@@ -356,6 +356,51 @@ namespace PremiumAttendance.Objects
             }
 
         }
+
+        public DataTable GetAttendanceOverall(int year, int month, string employeeLogin)
+        {
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
+
+
+            try
+            {
+                string query = "WITH AllDays AS (\r\n    SELECT DATEADD(DAY, number, @StartDate) AS Date\r\n    FROM master.dbo.spt_values\r\n    WHERE type = 'P'\r\n    AND DATEADD(DAY, number, @StartDate) <= @EndDate\r\n)\r\nSELECT CONCAT(E.Name,' ', E.Surname) as Employee_NameSurname,\r\n       AD.Date AS Attendance_Date,\r\n       COALESCE(CONVERT(varchar, A.Datetime_of_entry, 108), 'Absent') AS Time_of_Entry, -- Display time or \"Absent\"\r\n       CASE \r\n           WHEN A.Type_of_entry = 1 THEN 'Check In'\r\n           WHEN A.Type_of_entry = 0 THEN 'Check Out'\r\n           ELSE 'Unknown'\r\n       END AS Attendance_Type\r\nFROM Employee E\r\nCROSS JOIN AllDays AD\r\nLEFT JOIN Attendance A ON E.ID = A.Employee_ID AND CAST(A.Datetime_of_entry AS date) = AD.Date WHERE E.Login = @employeeLogin ORDER BY AD.Date";
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
+                {
+
+
+                    DateTime startDate = new DateTime(year, month, 1);
+                    var firstDayOfMonth = new DateTime(startDate.Year, startDate.Month, 1);
+                    var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
+                    
+                    cmd.Parameters.AddWithValue("@StartDate", firstDayOfMonth);
+                    cmd.Parameters.AddWithValue("@EndDate", lastDayOfMonth);
+                    cmd.Parameters.AddWithValue("@employeeLogin", employeeLogin);
+
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+
+                        sda.Fill(dt);
+
+                        return dt;
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                DatabaseConnection.GetConnection().Close();
+            }
+
+        }
         #endregion
     }
 }

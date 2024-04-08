@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace PremiumAttendance.Objects
 {
+    /// <summary>
+    /// Notification object, contains message that admin can send to the whole company
+    /// </summary>
     public class Notification
     {
         private int id;
@@ -18,7 +21,7 @@ namespace PremiumAttendance.Objects
         public Notification(int id, int have_read_id, bool is_read, string authorName, string title, string content, DateTime dateOfDelivery)
         {
             this.id = id;
-            this.Have_read_id= have_read_id;
+            this.Have_read_id = have_read_id;
             this.Is_read = is_read;
             this.AuthorName = authorName;
             this.Title = title;

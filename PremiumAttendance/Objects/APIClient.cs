@@ -6,14 +6,23 @@ using System.Threading.Tasks;
 
 namespace PremiumAttendance.Objects
 {
+    /// <summary>
+    /// Module used for retrieving data from svatkyapi.cz
+    /// </summary>
     public class APIClient
     {
         private HttpClient client;
+
         public APIClient()
         {
             this.client = new HttpClient();
         }
 
+        /// <summary>
+        /// <para>Asyns method that request svatkyapi.cz for current holiday</para>
+        /// <para>Format according to <see cref="SvatkyAPIObject"/></para>
+        /// </summary>
+        /// <returns><see cref="SvatkyAPIObject"/></returns>
         public async Task<SvatkyAPIObject> GetJsonResponse()
         {
             string path = ConfigurationManager.AppSettings["apiURL"];

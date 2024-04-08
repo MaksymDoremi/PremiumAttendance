@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace PremiumAttendance.Objects
 {
+    /// <summary>
+    /// <para>Employee object</para>
+    /// <para>Attributes</para>
+    /// <para>id, rfid_tag, role, name, surname, login, password, email, phone, photo</para>
+    /// </summary>
     public class Employee
     {
         private int id;

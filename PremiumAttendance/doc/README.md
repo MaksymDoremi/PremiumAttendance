@@ -1,5 +1,5 @@
 # Premium Attendance
-Attendance system build in C# and uses Arduino RFID reader for recording attendance into MSSQL database. It was developed as school final project called "Omega".
+Attendance system built in C#, uses Arduino RFID reader for recording attendance into MSSQL database. It was developed as school final project called "Omega".
 
 ## Author
 - Name: Maksym Kintor
@@ -11,13 +11,13 @@ Attendance system build in C# and uses Arduino RFID reader for recording attenda
 - C# .NET
 - MSSQL
 - Arduino UNO & RFID reader
+- Krypton Toolkit (https://github.com/ComponentFactory/Krypton)
 
 ## Table of Contents
 - [Installation](#installation)
 - [Run](#run)
 - [Configuration](#configuration)
 - [Use Case](#use-case)
-- [Test Case](#test-case)
 - [Architecture](#architecture)
   - [User tier](#user-tier)
   - [Business tier](#business-tier)
@@ -25,120 +25,91 @@ Attendance system build in C# and uses Arduino RFID reader for recording attenda
 - [E-R diagram](#e-r-diagram)
 - [File structure](#file-structure)
 - [Errors](#errors)
+- [Licence](#licence)
 - [Resume](#resume)
 
 
 ## Installation
 ```bash
-git clone https://github.com/MaksymDoremi/Alpha_Three.git
+git clone https://github.com/MaksymDoremi/PremiumAttendance.git
 ```
 
 ## Run 
-Before execution, do the following steps according to [Configuration](#configuration).  
-Run by the exact instructions!  
 Windows CMD
 ```bash
-cd Alpha_Three/Alpha_Three/bin/Debug/net6.0/
+cd PremiumAttendance/PremiumAttendance/bin/Debug/
 
-Alpha_Three.exe # execute exe file, or you can just click on it.
+PremiumAttendance.exe # execute exe file, or you can just click on it.
 ```
 Git Bash
 ```bash
-cd Alpha_Three/Alpha_Three/bin/Debug/net6.0/
+cd PremiumAttendance/PremiumAttendance/bin/Debug/
 
-./Alpha_Three.exe # execute exe file, or you can just click on it.
+./PremiumAttendance.exe # execute exe file, or you can just click on it.
 ```
 
-
-
 ## Configuration
-1) Before running the program, firstly import database, script you can find at `Alpha_Three/data/export.sql`. Use MSSQL Server Management Studio to do so.
-    - You can change the login and password -> if you do so, then you must change it in connectionString. Default is "admin_user" with password "123"
 
-User has access to configure following variables at `Alpha_Three/App.config`
-- **skolniConnection** connectionString="Data Source=**PCXXX**;Initial Catalog=Alpha_Three;Persist Security Info=True;User ID=**admin_user**;Password=**123**"  
-Connection string to the database. Uses custom user, which is created with database export, **You have to change PCXXX to your PC**.
+User has access to configure following variables at `PremiumAttendance/App.config`
+- **remoteConnection** - remote connection to database, do not change it.
+- **skolniConnection** connectionString="Data Source=**PCXXX**;Initial Catalog=Alpha_Three;Persist Security Info=True;User ID=**sa**;Password=**student**"  
+Connection string to the database. Uses sa user, **You have to change PCXXX to your PC**.
 - **logFilePath** value="../../../errorLogs/log.txt"  
 Path where erros are logged, you can change it if you want.
-Default is `Alpha_Three/errorLogs/log.txt`.  
+Default is `PremiumAttendance/errorLogs/log.txt`.  
 You can use relative path or absolute `C:/somewhere`
-- **ticketViewReportPath** value="../../../data/ticketReport.txt"  
-Path where you get ticket report, default is `Alpha_Three/data/ticketReport.txt`.  
-You can use relative path or absolute `C:/somewhere`
-- **driveViewReportPath** value="../../../data/driveReport.txt"  
-Path where you get drive report, default is `Alpha_Three/data/driveReport.txt`.  
-You can use relative path or absolute `C:/somewhere`
-
+--
 
 ## Use Case
-User can choose what he wants to do just by typing 1-n numbers => to choose from list of available commands.  
-Tables and report sections are accessed through strings "tables" and "report" from Application layer.  
-Each CRUD command has its own environment that requires user to provide data needed for operation.
+Default user is created in database: **Login**=admin, **Password**=123, role of the user is Administrator
+- As administrator you can:
+    - Edit your account
+    - CRUD all employees
+    - See attendance records for everyone
+    - See and send notifications into system
+- As employee you can:
+    - Edit your account
+    - Receive new notifications
+    - See your attendance
 
-Application
-- tables
-    - Drive {create, retrieve, update, delete}
-    - Passenger {create, retrieve, update, delete, import_json}
-    - Station {create, retrieve, update, delete, import_json}
-    - Ticket {create, retrieve, update, delete}
-    - Track {create, retrieve, update, delete}
-    - Train_driver {create, retrieve, update, delete, import_json}
-    - Train {create, retrieve, update, delete, import_json}
-    - Travel_class {retrieve}
-- report
-    - DriveReportCommand
-    - TicketReportCommand
-
-## Test Case
-Test cases you can find at `Alpha_Three/tests/`
 
 ## Architecture
-Project is developed as three-tier application.
-Main functionality is provided by ICommand, BLL(Business Logic Layer) and DAL(Data Access Layer).
+Project is developed as three-tier application.  
+Main functionality is provided by Forms, BLL(Business Logic Layer) and DAL(Data Access Layer).
+
+Design patterns: 
+- DatabaseConnection is Singleton
 
 ### User tier
-- Application - first entry point, displays message on the screen, gives access to tables and report sections.  
-It's while(True) loop that requires user to type in command he wants to execute, in case of bad command returns "Unknown command". 
+- Provided by WinForms. Main forms are LoginForm and DashBoardForm.
+- Admin specific forms: HomepageForm, EmployeesForm
+- Employee specific forms: MyDashboardForm
 
 ### Business tier
-- ICommand - interface for other commands, has string Execute(){} method, that each command executes differently.
-- TablenameCommand - commands that are entry points to the CRUD commands available for each command. It's while(True) loop, that works on the same principe as Application loop.  
-Requires user to type 1-n to execute CRUD command, in case of bad command returns "Unknown command" and execution goes on.
-- CRUDTablenameCommand - commands that execute the exact CRUD operation. Requires user to interact, require user to provide data for execution, in case of bad input exception occurs -> user is notified, error logged, and execution terminates, user returns back on TablenameCommand while(True) loop.
-- TablenameBLL - business logic layer for each table in the database, it's middleware between application tier and data tier, executes TablenameDAL functions, throws exception to the CRUDTablenamCommand, which catches that exception.
+- BusinessLogicLayer - access the DataAccessLayer
 
 ### Data tier
-- TablenameDAL - data access layer for each table in the database, directly communicates with database, manipulates with data. Throws exception to the TablenameBLL, which throws that exception to CRUDTablenameCommand.
+- DataAccessLayer - divided into 4 files: CreateDataAccessLayer, RetrieveDataAccessLayer, UpdateDataAccessLayer, DeleteDataAccessLayer
+- Directly communicates with database.
 
 ## E-R diagram
-![ER diagram](../Alpha_Three/data/ERdiagram.png "Diagram")
+![ER diagram](../../img/ERdiagram.png "Diagram")
 
 ## File structure
 <pre>
-│   .gitignore
-│   Dokumentace.docx
-│   Elevator Pitch.docx
-│   Elevator Pitch.txt
 │   PremiumAttendance.sln
-│
-├───.github
-├───img
-│       diagram.png
-│       Untitled design.png
 │
 ├───PremiumAttendance
 │   │   App.config
-│   │   packages.config
 │   │   PremiumAttendance.csproj
 │   │
-│   ├───data
+│   │───data
+│   │       rfid.ino
 │   ├───doc
 │   │       README.md <b>(this file)</b>
 │   │
 │   ├───errorLogs
 │   │       log.txt
-│   │
-│   ├───Resources
 │   ├───src
 │   │   │   Program.cs
 │   │   │
@@ -213,7 +184,7 @@ Requires user to type 1-n to execute CRUD command, in case of bad command return
 │   │   │           SendNotificationForm.Designer.cs
 │   │   │           SendNotificationForm.resx
 │   │   │
-│   │   └───Objects
+│   │   └───objects
 │   │       │   APIClient.cs
 │   │       │   BusinessLogicLayer.cs
 │   │       │   Employee.cs
@@ -228,7 +199,6 @@ Requires user to type 1-n to execute CRUD command, in case of bad command return
 │   │               RetrieveDataAccessLayer.cs
 │   │               UpdateDataAccessLayer.cs
 │   │
-│   ├───tests
 │   └───vendor
 │           ComponentFactory.Krypton.Design.dll
 │           ComponentFactory.Krypton.Design.pdb
@@ -248,10 +218,31 @@ Requires user to type 1-n to execute CRUD command, in case of bad command return
 </pre>
 
 ## Errors
-There might be wrong connection string or some issues, in that case application will try to connect 3 more times with interval 2 seconds, if still can't then it's shutdown.  
-You can find errors at `Alpha_Three/errorLogs/log.txt`
+- Application handles SqlExceptions => notify user and log error, application can continue execution
+- Error might occur with RFID reader: no reader at all, issue with COM port => application will try to reconnect COM port to RFID reader
 
-Application handles DML errors, in case of error -> notify uses and log error, with those errors application may continue to run without issues.
+## Licence
+MIT License
+
+Copyright (c) 2024 Maksym Kintor
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 ## Resume
 This project was developed as school task in order to teach students how to work on bigger solutions.  

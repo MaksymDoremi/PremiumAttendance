@@ -261,7 +261,7 @@ namespace PremiumAttendance.Forms
         private void logoutBtn_Click(object sender, EventArgs e)
         {
             loginForm.Show();
-
+            this.timer.Stop();
             this.Hide();
         }
 

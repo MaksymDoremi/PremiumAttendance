@@ -96,198 +96,198 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\AttendanceFormAttendanceControl.cs">
+    <Compile Include="src\Controls\AttendanceFormAttendanceControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\AttendanceFormAttendanceControl.Designer.cs">
+    <Compile Include="src\Controls\AttendanceFormAttendanceControl.Designer.cs">
       <DependentUpon>AttendanceFormAttendanceControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\AttendanceFormEmployeeControl.cs">
+    <Compile Include="src\Controls\AttendanceFormEmployeeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\AttendanceFormEmployeeControl.Designer.cs">
+    <Compile Include="src\Controls\AttendanceFormEmployeeControl.Designer.cs">
       <DependentUpon>AttendanceFormEmployeeControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\ColleagueControl.cs">
+    <Compile Include="src\Controls\ColleagueControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\ColleagueControl.Designer.cs">
+    <Compile Include="src\Controls\ColleagueControl.Designer.cs">
       <DependentUpon>ColleagueControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\EmployeeControl.cs">
+    <Compile Include="src\Controls\EmployeeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\EmployeeControl.Designer.cs">
+    <Compile Include="src\Controls\EmployeeControl.Designer.cs">
       <DependentUpon>EmployeeControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\EmployeeStatusControl.cs">
+    <Compile Include="src\Controls\EmployeeStatusControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\EmployeeStatusControl.Designer.cs">
+    <Compile Include="src\Controls\EmployeeStatusControl.Designer.cs">
       <DependentUpon>EmployeeStatusControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\NotificationControl.cs">
+    <Compile Include="src\Controls\NotificationControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\NotificationControl.Designer.cs">
+    <Compile Include="src\Controls\NotificationControl.Designer.cs">
       <DependentUpon>NotificationControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="DB\DatabaseConnection.cs" />
-    <Compile Include="Forms\DashBoardForm.cs">
+    <Compile Include="src\DB\DatabaseConnection.cs" />
+    <Compile Include="src\Forms\DashBoardForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DashBoardForm.Designer.cs">
+    <Compile Include="src\Forms\DashBoardForm.Designer.cs">
       <DependentUpon>DashBoardForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\LoginForm.cs">
+    <Compile Include="src\Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\LoginForm.Designer.cs">
+    <Compile Include="src\Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SidebarForms\AttendanceForm.cs">
+    <Compile Include="src\Forms\SidebarForms\AttendanceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SidebarForms\AttendanceForm.Designer.cs">
+    <Compile Include="src\Forms\SidebarForms\AttendanceForm.Designer.cs">
       <DependentUpon>AttendanceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SidebarForms\EmployeesForm.cs">
+    <Compile Include="src\Forms\SidebarForms\EmployeesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SidebarForms\EmployeesForm.Designer.cs">
+    <Compile Include="src\Forms\SidebarForms\EmployeesForm.Designer.cs">
       <DependentUpon>EmployeesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SidebarForms\HomepageForm.cs">
+    <Compile Include="src\Forms\SidebarForms\HomepageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SidebarForms\HomepageForm.Designer.cs">
+    <Compile Include="src\Forms\SidebarForms\HomepageForm.Designer.cs">
       <DependentUpon>HomepageForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SidebarForms\MyAccountForm.cs">
+    <Compile Include="src\Forms\SidebarForms\MyAccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SidebarForms\MyAccountForm.Designer.cs">
+    <Compile Include="src\Forms\SidebarForms\MyAccountForm.Designer.cs">
       <DependentUpon>MyAccountForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SidebarForms\MyDashboardForm.cs">
+    <Compile Include="src\Forms\SidebarForms\MyDashboardForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SidebarForms\MyDashboardForm.Designer.cs">
+    <Compile Include="src\Forms\SidebarForms\MyDashboardForm.Designer.cs">
       <DependentUpon>MyDashboardForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SidebarForms\NotificationForm.cs">
+    <Compile Include="src\Forms\SidebarForms\NotificationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SidebarForms\NotificationForm.Designer.cs">
+    <Compile Include="src\Forms\SidebarForms\NotificationForm.Designer.cs">
       <DependentUpon>NotificationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SubForms\AddEmployeeForm.cs">
+    <Compile Include="src\Forms\SubForms\AddEmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SubForms\AddEmployeeForm.Designer.cs">
+    <Compile Include="src\Forms\SubForms\AddEmployeeForm.Designer.cs">
       <DependentUpon>AddEmployeeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SubForms\ChangePasswordForm.cs">
+    <Compile Include="src\Forms\SubForms\ChangePasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SubForms\ChangePasswordForm.Designer.cs">
+    <Compile Include="src\Forms\SubForms\ChangePasswordForm.Designer.cs">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SubForms\CustomizeAccountForm.cs">
+    <Compile Include="src\Forms\SubForms\CustomizeAccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SubForms\CustomizeAccountForm.Designer.cs">
+    <Compile Include="src\Forms\SubForms\CustomizeAccountForm.Designer.cs">
       <DependentUpon>CustomizeAccountForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SubForms\EmployeeAccount.cs">
+    <Compile Include="src\Forms\SubForms\EmployeeAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SubForms\EmployeeAccount.Designer.cs">
+    <Compile Include="src\Forms\SubForms\EmployeeAccount.Designer.cs">
       <DependentUpon>EmployeeAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SubForms\NotificationDetailsForm.cs">
+    <Compile Include="src\Forms\SubForms\NotificationDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SubForms\NotificationDetailsForm.Designer.cs">
+    <Compile Include="src\Forms\SubForms\NotificationDetailsForm.Designer.cs">
       <DependentUpon>NotificationDetailsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SubForms\SendNotificationForm.cs">
+    <Compile Include="src\Forms\SubForms\SendNotificationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SubForms\SendNotificationForm.Designer.cs">
+    <Compile Include="src\Forms\SubForms\SendNotificationForm.Designer.cs">
       <DependentUpon>SendNotificationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Objects\APIClient.cs" />
-    <Compile Include="Objects\BusinessLogicLayer.cs" />
-    <Compile Include="Objects\DataAccessLayer\CreateDataAccessLayer.cs" />
-    <Compile Include="Objects\DataAccessLayer\DeleteDataAccessLayer.cs" />
-    <Compile Include="Objects\Employee.cs" />
-    <Compile Include="Objects\Logger.cs" />
-    <Compile Include="Objects\Notification.cs" />
-    <Compile Include="Objects\DataAccessLayer\RetrieveDataAccessLayer.cs" />
-    <Compile Include="Objects\RFID.cs" />
-    <Compile Include="Objects\DataAccessLayer\UpdateDataAccessLayer.cs" />
-    <Compile Include="Objects\SvatkyAPIObject.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="src\Objects\APIClient.cs" />
+    <Compile Include="src\Objects\BusinessLogicLayer.cs" />
+    <Compile Include="src\Objects\DataAccessLayer\CreateDataAccessLayer.cs" />
+    <Compile Include="src\Objects\DataAccessLayer\DeleteDataAccessLayer.cs" />
+    <Compile Include="src\Objects\Employee.cs" />
+    <Compile Include="src\Objects\Logger.cs" />
+    <Compile Include="src\Objects\Notification.cs" />
+    <Compile Include="src\Objects\DataAccessLayer\RetrieveDataAccessLayer.cs" />
+    <Compile Include="src\Objects\RFID.cs" />
+    <Compile Include="src\Objects\DataAccessLayer\UpdateDataAccessLayer.cs" />
+    <Compile Include="src\Objects\SvatkyAPIObject.cs" />
+    <Compile Include="src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Controls\AttendanceFormAttendanceControl.resx">
+    <EmbeddedResource Include="src\Controls\AttendanceFormAttendanceControl.resx">
       <DependentUpon>AttendanceFormAttendanceControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AttendanceFormEmployeeControl.resx">
+    <EmbeddedResource Include="src\Controls\AttendanceFormEmployeeControl.resx">
       <DependentUpon>AttendanceFormEmployeeControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ColleagueControl.resx">
+    <EmbeddedResource Include="src\Controls\ColleagueControl.resx">
       <DependentUpon>ColleagueControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\EmployeeControl.resx">
+    <EmbeddedResource Include="src\Controls\EmployeeControl.resx">
       <DependentUpon>EmployeeControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\EmployeeStatusControl.resx">
+    <EmbeddedResource Include="src\Controls\EmployeeStatusControl.resx">
       <DependentUpon>EmployeeStatusControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\NotificationControl.resx">
+    <EmbeddedResource Include="src\Controls\NotificationControl.resx">
       <DependentUpon>NotificationControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DashBoardForm.resx">
+    <EmbeddedResource Include="src\Forms\DashBoardForm.resx">
       <DependentUpon>DashBoardForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LoginForm.resx">
+    <EmbeddedResource Include="src\Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SidebarForms\AttendanceForm.resx">
+    <EmbeddedResource Include="src\Forms\SidebarForms\AttendanceForm.resx">
       <DependentUpon>AttendanceForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SidebarForms\EmployeesForm.resx">
+    <EmbeddedResource Include="src\Forms\SidebarForms\EmployeesForm.resx">
       <DependentUpon>EmployeesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SidebarForms\HomepageForm.resx">
+    <EmbeddedResource Include="src\Forms\SidebarForms\HomepageForm.resx">
       <DependentUpon>HomepageForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SidebarForms\MyAccountForm.resx">
+    <EmbeddedResource Include="src\Forms\SidebarForms\MyAccountForm.resx">
       <DependentUpon>MyAccountForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SidebarForms\MyDashboardForm.resx">
+    <EmbeddedResource Include="src\Forms\SidebarForms\MyDashboardForm.resx">
       <DependentUpon>MyDashboardForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SidebarForms\NotificationForm.resx">
+    <EmbeddedResource Include="src\Forms\SidebarForms\NotificationForm.resx">
       <DependentUpon>NotificationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SubForms\AddEmployeeForm.resx">
+    <EmbeddedResource Include="src\Forms\SubForms\AddEmployeeForm.resx">
       <DependentUpon>AddEmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SubForms\ChangePasswordForm.resx">
+    <EmbeddedResource Include="src\Forms\SubForms\ChangePasswordForm.resx">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SubForms\CustomizeAccountForm.resx">
+    <EmbeddedResource Include="src\Forms\SubForms\CustomizeAccountForm.resx">
       <DependentUpon>CustomizeAccountForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SubForms\EmployeeAccount.resx">
+    <EmbeddedResource Include="src\Forms\SubForms\EmployeeAccount.resx">
       <DependentUpon>EmployeeAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SubForms\NotificationDetailsForm.resx">
+    <EmbeddedResource Include="src\Forms\SubForms\NotificationDetailsForm.resx">
       <DependentUpon>NotificationDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SubForms\SendNotificationForm.resx">
+    <EmbeddedResource Include="src\Forms\SubForms\SendNotificationForm.resx">
       <DependentUpon>SendNotificationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

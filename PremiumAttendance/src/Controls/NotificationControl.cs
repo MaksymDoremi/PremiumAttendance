@@ -1,6 +1,6 @@
 ﻿using PremiumAttendance.Forms;
 using PremiumAttendance.Forms.SubForms;
-using PremiumAttendance.Objects;
+using PremiumAttendance.objects;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

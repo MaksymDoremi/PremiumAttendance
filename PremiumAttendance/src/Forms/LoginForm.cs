@@ -1,6 +1,6 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
 using PremiumAttendance.Forms;
-using PremiumAttendance.Objects;
+using PremiumAttendance.objects;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

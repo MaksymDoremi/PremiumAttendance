@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
 
-namespace PremiumAttendance.Objects
+namespace PremiumAttendance.objects
 {
     /// <summary>
     /// RFID module, used for reading RFID-tag

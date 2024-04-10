@@ -1,4 +1,4 @@
-﻿using PremiumAttendance.Objects;
+﻿using PremiumAttendance.objects;
 using System;
 using System.Collections.Generic;
 using System.Configuration;

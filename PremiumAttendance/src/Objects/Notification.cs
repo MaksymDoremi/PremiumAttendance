@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PremiumAttendance.Objects
+namespace PremiumAttendance.objects
 {
     /// <summary>
     /// Notification object, contains message that admin can send to the whole company

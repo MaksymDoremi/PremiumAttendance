@@ -11,7 +11,7 @@ namespace PremiumAttendance.DB
     /// <summary>
     /// Singleton database connection class
     /// </summary>
-    class DatabaseConnection
+    public class DatabaseConnection
     {
         private DatabaseConnection() { }
 

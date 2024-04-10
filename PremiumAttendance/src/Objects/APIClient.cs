@@ -4,7 +4,7 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace PremiumAttendance.Objects
+namespace PremiumAttendance.objects
 {
     /// <summary>
     /// Module used for retrieving data from svatkyapi.cz

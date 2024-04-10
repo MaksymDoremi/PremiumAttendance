@@ -217,17 +217,17 @@
     <Compile Include="src\Forms\SubForms\SendNotificationForm.Designer.cs">
       <DependentUpon>SendNotificationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\Objects\APIClient.cs" />
-    <Compile Include="src\Objects\BusinessLogicLayer.cs" />
-    <Compile Include="src\Objects\DataAccessLayer\CreateDataAccessLayer.cs" />
-    <Compile Include="src\Objects\DataAccessLayer\DeleteDataAccessLayer.cs" />
-    <Compile Include="src\Objects\Employee.cs" />
-    <Compile Include="src\Objects\Logger.cs" />
-    <Compile Include="src\Objects\Notification.cs" />
-    <Compile Include="src\Objects\DataAccessLayer\RetrieveDataAccessLayer.cs" />
-    <Compile Include="src\Objects\RFID.cs" />
-    <Compile Include="src\Objects\DataAccessLayer\UpdateDataAccessLayer.cs" />
-    <Compile Include="src\Objects\SvatkyAPIObject.cs" />
+    <Compile Include="src\objects\APIClient.cs" />
+    <Compile Include="src\objects\BusinessLogicLayer.cs" />
+    <Compile Include="src\objects\DataAccessLayer\CreateDataAccessLayer.cs" />
+    <Compile Include="src\objects\DataAccessLayer\DeleteDataAccessLayer.cs" />
+    <Compile Include="src\objects\Employee.cs" />
+    <Compile Include="src\objects\Logger.cs" />
+    <Compile Include="src\objects\Notification.cs" />
+    <Compile Include="src\objects\DataAccessLayer\RetrieveDataAccessLayer.cs" />
+    <Compile Include="src\objects\RFID.cs" />
+    <Compile Include="src\objects\DataAccessLayer\UpdateDataAccessLayer.cs" />
+    <Compile Include="src\objects\SvatkyAPIObject.cs" />
     <Compile Include="src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="src\Controls\AttendanceFormAttendanceControl.resx">

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PremiumAttendance.Objects
+namespace PremiumAttendance.objects
 {
     /// <summary>
     /// Logger object, can log messages and errors

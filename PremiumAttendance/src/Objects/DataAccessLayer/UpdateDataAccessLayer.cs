@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PremiumAttendance.Objects
+namespace PremiumAttendance.objects
 {
     public partial class DataAccessLayer
     {

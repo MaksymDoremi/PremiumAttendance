@@ -93,7 +93,7 @@ Design patterns:
 - Directly communicates with database.
 
 ## E-R diagram
-![ER diagram](../../img/ERdiagram.png "Diagram")
+![ER diagram](/img/ERdiagram.png "Diagram")
 
 ## File structure
 <pre>

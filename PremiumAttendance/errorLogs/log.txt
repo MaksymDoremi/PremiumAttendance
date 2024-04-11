@@ -1,1 +1,55 @@
-﻿
+﻿ERROR [10.04.2024 23:01:51]: Cannot insert the value NULL into column 'Employee_ID', table 'kintor.dbo.Attendance'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at PremiumAttendance.objects.DataAccessLayer.InsertAttendance(String rfidTag) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\DataAccessLayer\CreateDataAccessLayer.cs:line 145
+   at PremiumAttendance.objects.BusinessLogicLayer.InsertAttendance(String rfidTag) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\BusinessLogicLayer.cs:line 61
+   at PremiumAttendance.objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\RFID.cs:line 105
+ERROR [10.04.2024 23:01:53]: Cannot insert the value NULL into column 'Employee_ID', table 'kintor.dbo.Attendance'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at PremiumAttendance.objects.DataAccessLayer.InsertAttendance(String rfidTag) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\DataAccessLayer\CreateDataAccessLayer.cs:line 145
+   at PremiumAttendance.objects.BusinessLogicLayer.InsertAttendance(String rfidTag) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\BusinessLogicLayer.cs:line 61
+   at PremiumAttendance.objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\RFID.cs:line 105
+ERROR [10.04.2024 23:01:54]: Cannot insert the value NULL into column 'Employee_ID', table 'kintor.dbo.Attendance'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at PremiumAttendance.objects.DataAccessLayer.InsertAttendance(String rfidTag) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\DataAccessLayer\CreateDataAccessLayer.cs:line 145
+   at PremiumAttendance.objects.BusinessLogicLayer.InsertAttendance(String rfidTag) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\BusinessLogicLayer.cs:line 61
+   at PremiumAttendance.objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\RFID.cs:line 105
+ERROR [10.04.2024 23:01:57]: Cannot insert the value NULL into column 'Employee_ID', table 'kintor.dbo.Attendance'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at PremiumAttendance.objects.DataAccessLayer.InsertAttendance(String rfidTag) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\DataAccessLayer\CreateDataAccessLayer.cs:line 145
+   at PremiumAttendance.objects.BusinessLogicLayer.InsertAttendance(String rfidTag) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\BusinessLogicLayer.cs:line 61
+   at PremiumAttendance.objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\RFID.cs:line 105
+ERROR [10.04.2024 23:01:58]: Cannot insert the value NULL into column 'Employee_ID', table 'kintor.dbo.Attendance'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at PremiumAttendance.objects.DataAccessLayer.InsertAttendance(String rfidTag) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\DataAccessLayer\CreateDataAccessLayer.cs:line 145
+   at PremiumAttendance.objects.BusinessLogicLayer.InsertAttendance(String rfidTag) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\BusinessLogicLayer.cs:line 61
+   at PremiumAttendance.objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\RFID.cs:line 105
+ERROR [10.04.2024 23:02:00]: Cannot insert the value NULL into column 'Employee_ID', table 'kintor.dbo.Attendance'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at PremiumAttendance.objects.DataAccessLayer.InsertAttendance(String rfidTag) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\DataAccessLayer\CreateDataAccessLayer.cs:line 145
+   at PremiumAttendance.objects.BusinessLogicLayer.InsertAttendance(String rfidTag) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\BusinessLogicLayer.cs:line 61
+   at PremiumAttendance.objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\RFID.cs:line 105
+ERROR [10.04.2024 23:02:18]: Cannot insert the value NULL into column 'Employee_ID', table 'kintor.dbo.Attendance'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at PremiumAttendance.objects.DataAccessLayer.InsertAttendance(String rfidTag) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\DataAccessLayer\CreateDataAccessLayer.cs:line 145
+   at PremiumAttendance.objects.BusinessLogicLayer.InsertAttendance(String rfidTag) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\BusinessLogicLayer.cs:line 61
+   at PremiumAttendance.objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\RFID.cs:line 105
+ERROR [10.04.2024 23:02:21]: Cannot insert the value NULL into column 'Employee_ID', table 'kintor.dbo.Attendance'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at PremiumAttendance.objects.DataAccessLayer.InsertAttendance(String rfidTag) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\DataAccessLayer\CreateDataAccessLayer.cs:line 145
+   at PremiumAttendance.objects.BusinessLogicLayer.InsertAttendance(String rfidTag) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\BusinessLogicLayer.cs:line 61
+   at PremiumAttendance.objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\RFID.cs:line 105
+ERROR [10.04.2024 23:05:21]: Cannot insert the value NULL into column 'Employee_ID', table 'kintor.dbo.Attendance'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at PremiumAttendance.objects.DataAccessLayer.InsertAttendance(String rfidTag) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\DataAccessLayer\CreateDataAccessLayer.cs:line 145
+   at PremiumAttendance.objects.BusinessLogicLayer.InsertAttendance(String rfidTag) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\BusinessLogicLayer.cs:line 61
+   at PremiumAttendance.objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\RFID.cs:line 105
+ERROR [10.04.2024 23:05:22]: Cannot insert the value NULL into column 'Employee_ID', table 'kintor.dbo.Attendance'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at PremiumAttendance.objects.DataAccessLayer.InsertAttendance(String rfidTag) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\DataAccessLayer\CreateDataAccessLayer.cs:line 145
+   at PremiumAttendance.objects.BusinessLogicLayer.InsertAttendance(String rfidTag) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\BusinessLogicLayer.cs:line 61
+   at PremiumAttendance.objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\RFID.cs:line 105
+ERROR [10.04.2024 23:06:33]: Cannot insert the value NULL into column 'Employee_ID', table 'kintor.dbo.Attendance'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at PremiumAttendance.objects.DataAccessLayer.InsertAttendance(String rfidTag) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\DataAccessLayer\CreateDataAccessLayer.cs:line 145
+   at PremiumAttendance.objects.BusinessLogicLayer.InsertAttendance(String rfidTag) in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\BusinessLogicLayer.cs:line 61
+   at PremiumAttendance.objects.RFID.ReadTag() in C:\Users\kinto\C#Dev\PremiumAttendance\PremiumAttendance\src\objects\RFID.cs:line 105

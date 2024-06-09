@@ -14,6 +14,7 @@ Attendance system built in C#, uses Arduino RFID reader for recording attendance
 - Krypton Toolkit (https://github.com/ComponentFactory/Krypton)
 
 ## Table of Contents
+- [Intro](#intro)
 - [Installation](#installation)
 - [Run](#run)
 - [Configuration](#configuration)
@@ -27,6 +28,11 @@ Attendance system built in C#, uses Arduino RFID reader for recording attendance
 - [Errors](#errors)
 - [Licence](#licence)
 - [Resume](#resume)
+
+## Intro
+![Admin Dashboard](/img/adminDashboard.png "Admin Dashboard")
+![Admin Attendance](/img/adminAttendance.png "Admin Attendance")
+![Admin Employees](/img/adminEmployees.png "Admin Employees")
 
 
 ## Installation
